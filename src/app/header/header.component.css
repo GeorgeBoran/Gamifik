@@ -1,54 +1,86 @@
-.toolbar {
+/*Atributos de la barra de navegacion:*/
+.barraNavegacion {
+  background-color: rgba(1, 27, 255, 0.664);
+  min-height: 90px;
+  max-height: 110px;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  background-color: gray;
-  color: white;
-  font-weight: 600;
-}
-
-.toolbar img {
-  margin: 0 16px;
-  padding: 1em;
-}
-
-.toolbar #twitter-logo {
-  height: 40px;
-  margin: 0 8px;
-}
-
-.toolbar #youtube-logo {
-  height: 40px;
-  margin: 0 16px;
-}
-
-.toolbar #twitter-logo:hover,
-.toolbar #youtube-logo:hover {
-  opacity: 0.8;
-}
-
-.spacer {
-  flex: 1;
-}
-.toolbar {
+  width: 100%;
+  display: inline-flex;
+  z-index: 5;
   caret-color: transparent;
 }
-.porcionBarra {
-  width: 33.33%;
+
+/*Compartimentacion de la barra de navegacion:*/
+.espacio-izquierda {
+  justify-content: left;
+  min-width: 30%;
 }
-.toolbar .cajaIconos {
-  gap: 1em;
+
+/*Logo:*/
+.logo {
+  max-width: 200px;
+  min-width: 180px;
+  padding-left: 0.6em;
+  background-size: cover;
+  background-position: center;
+}
+
+.espacio-medio {
+  min-width: 40%;
+}
+
+.espacio-derecha {
+  justify-content: right;
+  min-width: 30%;
+  padding-right: 1em;
+}
+
+/*Desplegable:*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  font-size: medium;
+  display: none;
+  border: 1px solid black;
+  top: 100% !important;
+  right: 10% !important;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  border-radius: 10%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*Boton que abre un desplegable con varias opciones:*/
+.dropbtn {
+  background-image: url(../../assets/opciones.png);
+}
+.persona {
+  background-image: url(../../assets/usuario.png);
+}
+.rankings {
+  background-image: url(../../assets/analytics.png);
 }
 
 .iconos {
-  z-index: 2;
-  position: absolute;
-  max-width: 48px;
-  max-height: 48px;
-  min-width: 36px;
-  min-height: 36px;
+  margin-right: 1.2em;
+  min-height: 40px;
+  min-width: 40px;
+  border: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*span del desplegable:*/
+.opcionesAuth {
+  font-size: large;
 }

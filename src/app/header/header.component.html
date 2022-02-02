@@ -1,23 +1,39 @@
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <div class="porcionBarra">
-    <img width="200" alt="Goat Logo" src="../assets/logo_blanco.png" />
-  </div>
+<header>
+  <!--Barra de navegacion:-->
+  <div class="barraNavegacion">
 
-  <div class=" flex porcionBarra">
-
-  </div>
-
-  <div class="flex porcionBarra cajaIconos">
-    <div class="spacer iconos flex">
-      <a src="../../assets/usuario.png" href="https://twitter.com/angular" title="usuario">
-      </a>
+    <!--Logo con router:-->
+    <div class="espacio-izquierda flex " [routerLink]="['/main']">
+      <img class="logo" src="../../assets/logo_blanco.png">
     </div>
-    <div class="spacer iconos flex">
-      <a src="../../assets/analytics.png" href="https://twitter.com/angular" title="usuario">
-      </a>
+
+    <div class="espacio-medio">
     </div>
+
+    <div class="espacio-derecha flex">
+      <!--Dropdown con router a login y register:-->
+      <div class="persona iconos">
+        <a [routerLink]="['/']"></a>
+      </div>
+      <div class="rankings iconos">
+        <a [routerLink]="['/']"></a>
+      </div>
+      <div class="dropbtn dropdown iconos">
+        <div class=" dropdown-content flex">
+          <br>
+
+          <div class="rutas flex"><a [routerLink]="['/login']" style="text-decoration: none;"><span
+                class=" opcionesAuth">Loguearse</span></a>
+          </div>
+          <br>
+          <div class="rutas flex"> <a [routerLink]="['/registro']" style="text-decoration: none;"><span
+                class=" opcionesAuth">Registrarse</span></a>
+          </div>
+
+          <br>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-
-</div>
+</header>
