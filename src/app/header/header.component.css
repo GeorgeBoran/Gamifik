@@ -19,7 +19,8 @@
 /*Logo:*/
 .logo {
   max-width: 200px;
-  min-width: 180px;
+  min-width: 160px;
+  padding-top: 0.2em;
   padding-left: 0.6em;
   background-size: cover;
   background-position: center;
@@ -32,7 +33,7 @@
 .espacio-derecha {
   justify-content: right;
   min-width: 30%;
-  padding-right: 1em;
+  margin-right: 1em;
 }
 
 /*Desplegable:*/
