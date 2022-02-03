@@ -1,0 +1,10 @@
+.bloquePrincipal {
+  min-height: 100%;
+  height: max-content;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../assets/fire.png);
+}

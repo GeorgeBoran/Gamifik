@@ -1,0 +1,56 @@
+/*MEDIA PARA RESPONSIVE:*/
+@media (min-width: 320px) {
+  .caja {
+    display: grid;
+    margin-top: 6em;
+    background-color: wheat;
+    box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.877);
+    border-radius: 20px;
+    width: 40vh;
+    height: 80vh;
+    position: absolute;
+    transition: width 0.5s ease;
+  }
+  .caja-barra {
+    height: 10%;
+
+    background-color: red;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+}
+
+@media (min-width: 480px) and (max-width: 600px) {
+}
+
+@media (min-width: 600px) and (max-width: 801px) {
+  .caja {
+    width: 60vh;
+  }
+}
+
+@media (min-width: 801px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .caja {
+    border-radius: 20px;
+    width: 90vh;
+    height: 60vh;
+    position: absolute;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+  .caja {
+    width: 100vh;
+  }
+}
+
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+  .caja {
+    height: 70vh;
+    width: 110vh;
+  }
+}

@@ -1,6 +1,6 @@
 /*Atributos de la barra de navegacion:*/
 .barraNavegacion {
-  background-color: rgba(1, 27, 255, 0.664);
+  background-color: rgba(255, 255, 255, 0.966);
   min-height: 90px;
   max-height: 110px;
   position: absolute;
@@ -8,6 +8,7 @@
   display: inline-flex;
   z-index: 5;
   caret-color: transparent;
+  border-bottom: solid rgba(0, 0, 0, 0.897) 4px;
 }
 
 /*Compartimentacion de la barra de navegacion:*/
