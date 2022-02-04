@@ -91,24 +91,16 @@
 }
 
 @media (min-width: 900px) and (max-width: 912px) {
-  .caja {
-    width: 60vh;
-    height: 80vh;
-  }
-  .caja-router {
-    height: 70vh;
-    width: 55vh;
-  }
 }
 
 @media (min-width: 1025px) {
   /* big landscape tablets, laptops, and desktops */
   .caja {
-    height: 70vh;
+    height: 80vh;
     width: 100vh;
   }
   .caja-router {
-    height: 60vh;
+    height: 70vh;
     width: 95vh;
   }
 }

@@ -17,16 +17,6 @@
   min-width: 30%;
 }
 
-/*Logo:*/
-.logo {
-  max-width: 200px;
-  min-width: 160px;
-  padding-top: 0.2em;
-  padding-left: 0.6em;
-  background-size: cover;
-  background-position: center;
-}
-
 .espacio-medio {
   min-width: 40%;
 }
@@ -85,4 +75,20 @@
 /*span del desplegable:*/
 .opcionesAuth {
   font-size: large;
+}
+
+/*Logo:*/
+.logo {
+  width: 140px;
+  padding-top: 0.6em;
+  padding-left: 0.6em;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 801px) {
+  /*Logo:*/
+  .logo {
+    width: 240px;
+  }
 }

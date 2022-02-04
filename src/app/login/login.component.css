@@ -1,0 +1,100 @@
+/*MEDIA PARA RESPONSIVE:*/
+@media (min-width: 320px) {
+  .caja {
+    height: 65vh;
+  }
+  .espacio {
+    width: 100px;
+  }
+  .olvidado {
+    justify-self: left;
+  }
+  .boton-seguir {
+  }
+
+  /*Logo:*/
+  .logo {
+    padding-top: 0.6em;
+    width: 160px;
+    background-size: cover;
+    background-position: center;
+    transition: width 0.5s ease;
+  }
+  .inputs {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    color: #202124;
+    font-size: 16px;
+    height: 48px;
+    width: 220px;
+    margin: 1px 1px 0 1px;
+    padding: 13px 15px;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 220px) and (max-width: 300px) {
+  .caja {
+    height: 65vh;
+  } /*Logo:*/
+  .logo {
+    width: 160px;
+    background-size: cover;
+    background-position: center;
+    transition: width 0.5s ease;
+  }
+  .espacio {
+    width: 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .logo {
+    width: 180px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 600px) {
+  .logo {
+    width: 200px;
+  }
+  .espacio {
+    width: 120px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 801px) {
+  .logo {
+    width: 220px;
+  }
+  .espacio {
+    width: 200px;
+  }
+}
+
+@media (min-width: 801px) {
+  .logo {
+    width: 260px;
+  }
+  .espacio {
+    width: 220px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .logo {
+    width: 280px;
+  }
+  .espacio {
+    width: 260px;
+  }
+}
+
+@media (min-width: 1281px) {
+  .logo {
+    width: 300px;
+  }
+  .espacio {
+    width: 280px;
+  }
+}
