@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ventana-formulario.component.css'],
 })
 export class VentanaFormularioComponent implements OnInit {
+  progreso: number = 20;
+
   constructor() {}
 
   ngOnInit(): void {}

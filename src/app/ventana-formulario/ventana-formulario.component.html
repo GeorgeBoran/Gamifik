@@ -1,8 +1,10 @@
-<div class="caja">
+<div class="caja flex">
   <div class="caja-router flex">
-    <router-outlet class="flex"></router-outlet>
+    <router-outlet></router-outlet>
   </div>
   <div class="caja-barra flex">
-    <progress id="progreso" value="32" max="100"> 32% </progress>
+    <progress class="barra-progreso" id="progreso" value="{{progreso}}" max="100">
+
+    </progress>
   </div>
 </div>
