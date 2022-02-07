@@ -13,23 +13,25 @@
     <br> <br>
   </div>
   <div class="caja-input">
+
     <!--[(ngModel)]="email"-->
     <div class="flex">
       <input class="inputs" type="email" name="email" minlength="10" maxlength="30" placeholder="Introduzca su Email"
         required="required" />
     </div>
   </div>
+
+
+
+
   <br> <br>
   <br> <br>
-  <div class="caja-extras flex">
-    <div class="flex olvidado">
-      <a href="">Crea una cuenta</a>
-    </div>
-    <div class="flex espacio">
-    </div>
-    <div class="flex boton-seguir">
-      <button>Siguiente</button>
-    </div>
+  <div class="flex boton-seguir">
+    <button>Siguiente</button>
+  </div>
+  <br> <br>
+  <div class="flex loguear">
+    <p><a [routerLink]="['/registro']" class="color">Registrate</a></p>
   </div>
 
 </div>
