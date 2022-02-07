@@ -1,3 +1,9 @@
+.parte-arriba {
+  caret-color: transparent;
+}
+.caja-extras {
+  caret-color: transparent;
+}
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja {
