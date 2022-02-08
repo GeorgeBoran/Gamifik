@@ -5,21 +5,19 @@
   caret-color: transparent;
 }
 
-
-.distancia-05em{
-  padding-bottom:0.5em;
+.distancia-05em {
+  padding-bottom: 0.5em;
 }
-
-
-.distancia-2em{
+.distancia-1em {
+  padding-bottom: 1em;
+}
+.distancia-2em {
   padding-bottom: 2em;
 }
 
-.distancia-3em{
+.distancia-3em {
   padding-bottom: 3em;
 }
-
-
 
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {

@@ -9,7 +9,7 @@
   </div>
   <div class="caja-input">
     <!--[(ngModel)]="email"-->
-    <div class="flex distancia-2em">
+    <div class="flex distancia-1em">
       <input class="inputs" type="email" name="email" minlength="10" maxlength="30" placeholder="Introduzca su Email"
         required="required" />
     </div>
@@ -20,6 +20,11 @@
       </button>
     </a>
   </div>
+  <div class="caja-barra flex">
+    <progress class="barra-progreso" id="progreso" value="{{progreso}}" max="100">
+    </progress>
+  </div>
+  <br>
   <div class="flex loguear">
     <p><a [routerLink]="['/login']" class="color">Login</a></p>
   </div>

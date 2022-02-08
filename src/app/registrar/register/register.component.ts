@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
+  progreso: number = 20;
+
   constructor() {}
 
   ngOnInit(): void {}
