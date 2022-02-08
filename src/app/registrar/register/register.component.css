@@ -4,6 +4,29 @@
 .caja-extras {
   caret-color: transparent;
 }
+
+
+.distancia-05em{
+  padding-bottom:0.5em;
+}
+
+.distancia-2em{
+  padding-bottom: 2em;
+}
+
+.distancia-3em{
+  padding-bottom: 3em;
+}
+
+
+
+
+
+
+
+
+
+
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja {
@@ -14,8 +37,6 @@
   }
   .olvidado {
     justify-self: left;
-  }
-  .boton-seguir {
   }
 
   /*Logo:*/

@@ -4,8 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [],
   imports: [CommonModule, RouterModule],
-  exports: [LoginComponent],
+  exports: [],
 })
 export class LoguearModule {}

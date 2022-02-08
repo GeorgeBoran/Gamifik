@@ -24,7 +24,7 @@
 .espacio-derecha {
   justify-content: right;
   min-width: 30%;
-  margin-right: 1em;
+  padding-right: 1.4em;
 }
 
 /*Desplegable:*/
@@ -63,7 +63,7 @@
 }
 
 .iconos {
-  margin-right: 1.2em;
+  margin-left: 2.8em;
   min-height: 40px;
   min-width: 40px;
   border: none;
@@ -86,9 +86,27 @@
   background-position: center;
 }
 
+
 @media (min-width: 801px) {
   /*Logo:*/
   .logo {
     width: 240px;
+  }
+}
+
+
+@media (min-width: 220px) and (max-width: 300px) {
+
+  .logo {
+    width: 100px;
+  }
+  .espacio-derecha{
+    margin-right: -1em;
+  }
+  .iconos{
+    margin-left: 1em;
+    margin-top: 0.4em;
+    min-width: 30px;
+    min-height: 30px;
   }
 }

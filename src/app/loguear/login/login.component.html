@@ -3,33 +3,25 @@
     <div class="flex">
       <img class="logo" src=" ../../assets/logo_negro.png">
     </div>
-
-    <br><br>
-    <br><br>
-    <br><br>
-    <h1 class="flex">Conectate</h1>
     <br>
-    <h4 class="flex">Utiliza una Cuenta Goat</h4>
-    <br> <br>
+    <h1 class="flex distancia-05em">Conectate</h1>
+    <h4 class="flex distancia-3em">Utiliza una Cuenta Goat</h4>
   </div>
   <div class="caja-input">
 
     <!--[(ngModel)]="email"-->
-    <div class="flex">
+    <div class="flex distancia-2em">
       <input class="inputs" type="email" name="email" minlength="10" maxlength="30" placeholder="Introduzca su Email"
         required="required" />
     </div>
   </div>
-
-
-
-
-  <br> <br>
-  <br> <br>
   <div class="flex boton-seguir">
-    <button>Siguiente</button>
+    <a href="/">
+      <button class="boton-siguiente boton-siguiente-extra">
+        Siguiente
+      </button>
+    </a>
   </div>
-  <br> <br>
   <div class="flex loguear">
     <p><a [routerLink]="['/registro']" class="color">Registrate</a></p>
   </div>

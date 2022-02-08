@@ -1,5 +1,5 @@
 * {
-  font-family: Aldrich, sans-serif;
+  font-family: -webkit-pictograph;
   scroll-behavior: smooth;
   margin: 0px;
   box-sizing: border-box;
@@ -15,3 +15,48 @@ html {
   justify-content: center;
   align-items: center;
 }
+
+
+/*BOTON SIGUIENTE Y SUS EFECTOS:*/
+.boton-siguiente{
+  width: 160px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -moz-transition: all .6s ease-in-out;
+  -o-transition: all .6s ease-in-out;
+  -webkit-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out;
+}
+
+
+.boton-siguiente:hover {
+  background-position: 100% 0;
+  -moz-transition: all .6s ease-in-out;
+  -o-transition: all .6s ease-in-out;
+  -webkit-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out;
+}
+
+.boton-siguiente:focus{
+  outline: none;
+}
+.boton-siguiente.boton-siguiente-extra {
+  background-image: linear-gradient(
+    to right,
+    #039153,
+    #04f18b,
+    #03b367,
+    #05d37a
+
+  );
+  box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+

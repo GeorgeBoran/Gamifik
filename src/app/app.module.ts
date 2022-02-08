@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { VentanaFormularioComponent } from './ventana-formulario/ventana-formulario.component';
+import { LoginComponent } from './loguear/login/login.component';
+import { RegisterComponent } from './registrar/register/register.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,9 @@ import { VentanaFormularioComponent } from './ventana-formulario/ventana-formula
     HeaderComponent,
     FooterComponent,
     VentanaFormularioComponent,
+    LoginComponent,
+    RegisterComponent
+
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
