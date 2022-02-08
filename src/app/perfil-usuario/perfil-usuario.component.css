@@ -23,17 +23,56 @@
 .distancia-3em {
   padding-bottom: 3em;
 }
+.prueba{
+ width: 50px !important;
+ height: 50px !important;
+}
+
+.caja-izquierda{
+  border: 1px solid black;
+  justify-self: left;
+  position: absolute;
+}
+.caja-derecha{
+  border: 1px solid black;
+  justify-self: right;
+  background-color: red;
+  position: absolute;
+}
+
+.caja-foto-nombre{
+width: 100%;
+height: 50%;
+display: grid;
+background-color: yellow;
+}
+
+.caja-datos-cambiar{
+  width: 100%;
+  height: 50%;
+  background-color: rgb(136, 136, 223);
+}
+
+.caja-foto{
+  width: 20vh;
+  height: 20vh;
+  background-color: beige;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.caja-nombre{
+  width: 20vh;
+  height: 7vh;
+  display: grid;
+  justify-items: center;
+
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: cyan;
+}
 
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
-  .caja-router {
-    height: 70vh;
-    width: 45vh;
-    border-radius: 20px;
-    background-color: rgba(247, 207, 132, 0.699);
-    box-shadow: 4px 4px 4px 4px rgb(172, 163, 148);
-    transition: width 0.5s ease;
-  }
   .caja-principal {
     margin-top: 6em;
     display: grid;
@@ -42,24 +81,6 @@
     border-radius: 20px;
     width: 50vh;
     height: 80vh;
-    transition: width 0.5s ease;
-  }
-  .caja {
-    height: 65vh;
-  }
-  .espacio {
-    width: 100px;
-  }
-  .olvidado {
-    justify-self: left;
-  }
-
-  /*Logo:*/
-  .logo {
-    padding-top: 0.6em;
-    width: 160px;
-    background-size: cover;
-    background-position: center;
     transition: width 0.5s ease;
   }
   .inputs {
@@ -73,25 +94,12 @@
     padding: 13px 15px;
     z-index: 1;
   }
-
-  .caja-barra {
-    width: 100%;
-    height: 5vh;
-  }
-
-  .barra-progreso {
-    width: 100%;
-    height: 100%;
-  }
 }
 
-@media (min-width: 220px) and (max-width: 300px) {
-  .caja-router {
-    height: 70vh;
-    width: 35vh;
-    transition: width 0.5s ease;
-    box-shadow: 4px 4px 4px 4px rgba(206, 201, 201, 0.877);
-  }
+@media (min-width: 220px) and (max-width: 320px) {
+  .prueba{
+    background-color: blue;
+      }
   .caja-principal {
     margin-top: 6em;
     display: grid;
@@ -102,116 +110,179 @@
     height: 80vh;
     transition: width 0.5s ease;
   }
-  .caja {
-    height: 65vh;
-  } /*Logo:*/
-  .logo {
-    width: 160px;
-    background-size: cover;
-    background-position: center;
-    transition: width 0.5s ease;
+
+  .caja-izquierda{
+    display: inline-flex;
+    width: inherit;
+     height: 40vh;
   }
-  .espacio {
-    width: 20px;
+
+  .caja-derecha{
+    width: inherit;
+    height: 40vh;
+    align-self: flex-end;
   }
-  .caja-barra {
-    justify-self: center;
-    width: 100%;
-    height: 5vh;
-  }
-  .barra-progreso {
-    width: 100%;
+
+  .caja-foto-nombre{
+    width: 50%;
     height: 100%;
-  }
+    background-color: yellow;
+    }
+
+    .caja-datos-cambiar{
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  .caja-router {
-    width: 35vh;
-  }
   .caja-principal {
-    width: 40vh;
+    width: 43vh;
   }
-  .logo {
-    width: 180px;
+
+  .caja-izquierda{
+    display: inline-flex;
+    width: inherit;
+     height: 40vh;
   }
+
+  .caja-derecha{
+    width: inherit;
+    height: 40vh;
+    align-self: flex-end;
+  }
+
+  .caja-foto-nombre{
+    width: 50%;
+    height: 100%;
+    background-color: yellow;
+    }
+
+    .caja-datos-cambiar{
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+    }
+
 }
 
 @media (min-width: 480px) and (max-width: 600px) {
-  .logo {
-    width: 200px;
+  .caja-principal {
+    width: 55vh;
   }
-  .espacio {
-    width: 120px;
+  .caja-izquierda{
+    display: inline-flex;
+    width: inherit;
+     height: 40vh;
   }
+
+  .caja-derecha{
+    width: inherit;
+    height: 40vh;
+    align-self: flex-end;
+  }
+
+  .caja-foto-nombre{
+    width: 50%;
+    height: 100%;
+    background-color: yellow;
+    }
+
+    .caja-datos-cambiar{
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+    }
+
 }
 
 @media (min-width: 600px) and (max-width: 801px) {
-  .caja-router {
-    height: 70vh;
-    width: 55vh;
-  }
-  .caja-principal {
-    width: 60vh;
-  }
-  .logo {
-    width: 220px;
-  }
-  .espacio {
-    width: 200px;
-  }
+  .caja-principal{
+    background-color: rgb(234, 0, 255);
+      }
+      .caja-principal {
+        width: 62vh;
+      }
+
+      .caja-izquierda{
+        width: 24.8vh;
+    height: inherit;
+      }
+
+      .caja-derecha{
+        width: 37.2vh;
+    height: inherit;
+      }
+
 }
 
 @media (min-width: 801px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
-  .caja-router {
-    height: 70vh;
-    width: 55vh;
-  }
   .caja-principal {
-    width: 60vh;
-    height: 80vh;
+    width: 64vh;
   }
-  .logo {
-    width: 260px;
+
+  .caja-izquierda{
+    justify-self: left;
+    width: 25.6vh;
+    height: inherit;
+    position: absolute;
   }
-  .espacio {
-    width: 220px;
+  .caja-derecha{
+    justify-self: right;
+    width: 38.4vh;
+    height: inherit;
+    position: absolute;
   }
+}
+
+@media (min-width: 980px) and (max-width:1024px){
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .caja-principal {
+    width: 110vh;
+      }
+      .caja-izquierda{
+        width: 44vh;
+      }
+      .caja-derecha{
+        width: 66vh;
+      }
 }
 
 @media (min-width: 1025px) {
   /* big landscape tablets, laptops, and desktops */
-  .caja-router {
-    height: 70vh;
-    width: 95vh;
-  }
+  .prueba{
+    background-color: rgb(0, 45, 245);
+      }
   .caja-principal {
+    width: 105vh;
     height: 80vh;
-    width: 100vh;
   }
-  .logo {
-    width: 280px;
+  .caja-izquierda{
+    width: 42vh;
   }
-  .espacio {
-    width: 260px;
+  .caja-derecha{
+    width: 63vh;
   }
 }
 
+
 @media (min-width: 1281px) {
   /* hi-res laptops and desktops */
-  .caja-router {
-    height: 70vh;
-    width: 105vh;
-  }
+  .prueba{
+    background-color: rgb(251, 255, 0);
+      }
   .caja-principal {
-    width: 110vh;
+    width: 130vh;
     height: 80vh;
   }
-  .logo {
-    width: 300px;
-  }
-  .espacio {
-    width: 280px;
-  }
+
+.caja-izquierda{
+  width: 52vh;
+}
+.caja-derecha{
+  width: 78vh;
+}
+
 }

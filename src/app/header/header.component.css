@@ -24,7 +24,7 @@
 .espacio-derecha {
   justify-content: right;
   min-width: 30%;
-  padding-right: 1.4em;
+  padding-right: 0.2em;
 }
 
 /*Desplegable:*/
@@ -63,7 +63,7 @@
 }
 
 .iconos {
-  margin-left: 2.8em;
+  margin-left: 1.6em;
   min-height: 40px;
   min-width: 40px;
   border: none;
@@ -108,5 +108,11 @@
     margin-top: 0.4em;
     min-width: 30px;
     min-height: 30px;
+  }
+}
+
+@media (min-width: 801px) {
+  .iconos{
+    margin-left: 3em;
   }
 }
