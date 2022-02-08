@@ -5,7 +5,7 @@
     </div>
     <br>
     <h1 class="flex distancia-05em">Registrate</h1>
-    <h4 class="flex distancia-3em">Crea una Cuenta Goat</h4>
+    <h3 class="flex distancia-3em">Crea una Cuenta Goat</h3>
   </div>
   <div class="caja-input">
     <!--[(ngModel)]="email"-->
@@ -20,12 +20,12 @@
       </button>
     </a>
   </div>
+  <div class="flex loguear">
+    <p class="hiper-link">Ya tienes cuenta?<a [routerLink]="['/login']" class="color"> Conectate</a></p>
+  </div>
+  <br>
   <div class="caja-barra flex">
     <progress class="barra-progreso" id="progreso" value="{{progreso}}" max="100">
     </progress>
-  </div>
-  <br>
-  <div class="flex loguear">
-    <p><a [routerLink]="['/login']" class="color">Login</a></p>
   </div>
 </div>
