@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VentanaFormularioComponent } from './ventana-formulario.component';
+import { PerfilUsuarioComponent } from './perfil-usuario.component';
 
-describe('VentanaFormularioComponent', () => {
-  let component: VentanaFormularioComponent;
-  let fixture: ComponentFixture<VentanaFormularioComponent>;
+describe('PerfilUsuarioComponent', () => {
+  let component: PerfilUsuarioComponent;
+  let fixture: ComponentFixture<PerfilUsuarioComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VentanaFormularioComponent ]
+      declarations: [ PerfilUsuarioComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VentanaFormularioComponent);
+    fixture = TestBed.createComponent(PerfilUsuarioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -26,6 +26,23 @@
 
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
+  .caja-router {
+    height: 70vh;
+    width: 45vh;
+    border-radius: 20px;
+    background-color: rgba(247, 207, 132, 0.699);
+    box-shadow: 4px 4px 4px 4px rgb(172, 163, 148);
+    transition: width 0.5s ease;
+  }
+  .caja-principal {
+    display: grid;
+    background-color: wheat;
+    box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.877);
+    border-radius: 20px;
+    width: 50vh;
+    height: 80vh;
+    transition: width 0.5s ease;
+  }
   .caja {
     height: 65vh;
   }
@@ -35,9 +52,6 @@
   .olvidado {
     justify-self: left;
   }
-  .boton-seguir {
-  }
-
   /*Logo:*/
   .logo {
     padding-top: 0.6em;
@@ -60,6 +74,21 @@
 }
 
 @media (min-width: 220px) and (max-width: 300px) {
+  .caja-router {
+    height: 70vh;
+    width: 35vh;
+    transition: width 0.5s ease;
+    box-shadow: 4px 4px 4px 4px rgba(206, 201, 201, 0.877);
+  }
+  .caja-principal {
+    display: grid;
+    background-color: wheat;
+    box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.877);
+    border-radius: 20px;
+    width: 40vh;
+    height: 80vh;
+    transition: width 0.5s ease;
+  }
   .caja {
     height: 65vh;
   } /*Logo:*/
@@ -75,6 +104,12 @@
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
+  .caja-router {
+    width: 35vh;
+  }
+  .caja-principal {
+    width: 40vh;
+  }
   .logo {
     width: 180px;
   }
@@ -90,6 +125,13 @@
 }
 
 @media (min-width: 600px) and (max-width: 801px) {
+  .caja-router {
+    height: 70vh;
+    width: 55vh;
+  }
+  .caja-principal {
+    width: 60vh;
+  }
   .logo {
     width: 220px;
   }
@@ -99,6 +141,15 @@
 }
 
 @media (min-width: 801px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .caja-router {
+    height: 70vh;
+    width: 55vh;
+  }
+  .caja-principal {
+    width: 60vh;
+    height: 80vh;
+  }
   .logo {
     width: 260px;
   }
@@ -108,6 +159,16 @@
 }
 
 @media (min-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+
+  .caja-router {
+    height: 70vh;
+    width: 95vh;
+  }
+  .caja-principal {
+    height: 80vh;
+    width: 100vh;
+  }
   .logo {
     width: 280px;
   }
@@ -117,6 +178,15 @@
 }
 
 @media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+  .caja-router {
+    height: 70vh;
+    width: 105vh;
+  }
+  .caja-principal {
+    width: 110vh;
+    height: 80vh;
+  }
   .logo {
     width: 300px;
   }

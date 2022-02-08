@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { LoginComponent } from './loguear/login/login.component';
 import { RegisterComponent } from './registrar/register/register.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+    component: PerfilUsuarioComponent,
     pathMatch: 'full',
   },
   {
@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'pagina',
-    component: AppComponent,
+    component: PerfilUsuarioComponent,
     pathMatch: 'full',
   },
 ];

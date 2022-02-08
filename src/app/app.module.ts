@@ -5,19 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { VentanaFormularioComponent } from './ventana-formulario/ventana-formulario.component';
 import { LoginComponent } from './loguear/login/login.component';
 import { RegisterComponent } from './registrar/register/register.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    VentanaFormularioComponent,
     LoginComponent,
-    RegisterComponent
-
+    RegisterComponent,
+    PerfilUsuarioComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
