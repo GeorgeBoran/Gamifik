@@ -16,10 +16,10 @@
             style="display:{{ displays[0] }};" />
 
           <img class="imghover" src="{{ img }}" id="icon" alt="User Icon" style="width: 100%; height: 100%; object-fit: cover; display:{{displays[1]}};" />
-          <input class="inputs" type="text" name="username" placeholder="Introduzca su Username" style="display:{{ displays[1] }};" />
+          <input class="inputs" type="text" name="username" [(ngModel)]="username" placeholder="Introduzca su Username" style="display:{{ displays[1] }};" />
 
-          <input class="inputs" type="text" name="password" placeholder="Password" style="display:{{ displays[2] }};" />
-          <input class="inputs" type="text" name="passwordconfirm" placeholder="Confirm Password" style="display:{{ displays[2] }};" />
+          <input class="inputs" type="text" name="password" [(ngModel)]="password" placeholder="Password" style="display:{{ displays[2] }};" />
+          <input class="inputs" type="text" name="repassword" [(ngModel)]="repassword" placeholder="Confirm Password" style="display:{{ displays[2] }};" />
 
           <input class="inputs" type="text" name="name" [(ngModel)]="name" placeholder="Name" style="display:{{ displays[3] }};" />
           <input class="inputs" type="text" name="cognom" [(ngModel)]="cognom" placeholder="Subname"
