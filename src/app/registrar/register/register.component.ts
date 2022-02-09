@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   repassword: string = '';
   centro: string = '';
 
-  displays: string[] = [' ', 'none', 'none', 'none'];
+  displays: string[] = [' ', 'none', 'none', 'none','none'];
 
   next() {
     if (this.displays[0] == ' ') {
