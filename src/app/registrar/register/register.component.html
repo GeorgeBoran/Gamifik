@@ -30,10 +30,48 @@
       />
       <input
         class="inputs"
-        type="email"
+        type="text"
         name="username"
-        placeholder="Introduzca su Email"
+        placeholder="Introduzca su Username"
         style="display:{{ displays[1] }};"
+      />
+      <input
+        class="inputs"
+        type="text"
+        name="password"
+        placeholder="Password"
+        style="display:{{ displays[2] }};"
+      />
+      <input
+        class="inputs"
+        type="text"
+        name="passwordconfirm"
+        placeholder="Confirm Password"
+        style="display:{{ displays[2] }};"
+      />
+      <input
+        class="inputs"
+        type="text"
+        name="name"
+        [(ngModel)]="name"
+        placeholder="Name"
+        style="display:{{ displays[2] }};"
+      />
+      <input
+        class="inputs"
+        type="text"
+        name="cognom"
+        [(ngModel)]="cognom"
+        placeholder="Name"
+        style="display:{{ displays[2] }};"
+      />
+      <input
+        class="inputs"
+        type="text"
+        name="centro"
+        [(ngModel)]="centro"
+        placeholder="Name"
+        style="display:{{ displays[3] }};"
       />
     </div>
   </div>
