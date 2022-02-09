@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './loguear/login/login.component';
 import { RegisterComponent } from './registrar/register/register.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
     RegisterComponent,
     PerfilUsuarioComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, CommonModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent, HeaderComponent],
 })
