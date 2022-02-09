@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import swal from 'sweetalert2';
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,7 +8,7 @@ export class RegisterComponent implements OnInit {
   constructor () { }
 
   progreso: number = 50;
-  
+
   mail: string = '';
   img: string = '';
   username: string = '';
@@ -21,23 +19,23 @@ export class RegisterComponent implements OnInit {
   centro: string = '';
 
   displays: string[] = [' ','none','none','none'];
-  
- 
+
+
 
   next ()
   {
     if ( this.displays[ 0 ] == ' ' )
     {
-      
+
         this.displays[ 0 ] = 'none';
         this.displays[ 1 ] = ' ';
-      
+
     } else if(this.displays[ 1 ] == ' ')
     {
-      
+
         this.displays[ 1 ] = 'none';
         this.displays[ 2 ] = ' ';
-      
+
     }else if(this.displays[ 2 ] == ' ')
     {
       this.displays[ 3 ] = '';
@@ -47,7 +45,7 @@ export class RegisterComponent implements OnInit {
       this.displays[ 0 ] = '';
       this.displays[ 3 ] = 'none';
     }
-    
+
   }
 
   ngOnInit(): void {}
