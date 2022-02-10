@@ -38,19 +38,30 @@
   transition: width 0.3s ease;
 }
 
+.caja-principal {
+  background-color: rgba(223, 218, 180, 0.801);
+}
+
+.caja-foto-nombre {
+  background-color: rgba(240, 217, 174, 0.945);
+}
+
 .caja-ranking {
   display: grid;
-  background-color: rgba(247, 207, 132, 0.918);
+  background-color: rgba(240, 217, 174, 0.945);
   box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.877);
   border-radius: 20px;
   transition: width 0.3s ease;
 }
 
 .caja-ranking-iconos {
-  background-color: rgba(247, 207, 132, 0.918);
+  background-color: rgba(240, 217, 174, 0.945);
   box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.877);
   border-radius: 20px;
   transition: width 0.3s ease;
+}
+.caja-datos-cambiar {
+  background-color: rgba(240, 217, 174, 0.945);
 }
 .caja-inputs {
   display: grid;
@@ -73,7 +84,6 @@
   .caja-principal {
     margin-top: 6em;
     display: grid;
-    background-color: wheat;
     box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.877);
     border-radius: 20px;
     width: 50vh;
@@ -94,7 +104,6 @@
     width: 98%;
     height: 49.5%;
     display: grid;
-    background-color: rgba(247, 207, 132, 0.918);
     box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.699);
     border-radius: 15px;
     margin-bottom: 0.6em;
@@ -103,7 +112,6 @@
   .caja-datos-cambiar {
     width: 98%;
     height: 49.5%;
-    background-color: rgba(247, 207, 132, 0.918);
     box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.699);
     border-radius: 15px;
   }
@@ -138,7 +146,6 @@
   .caja-principal {
     margin-top: 6em;
     display: grid;
-    background-color: wheat;
     box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.877);
     border-radius: 20px;
     width: 40vh;
@@ -160,13 +167,11 @@
   .caja-foto-nombre {
     width: 50%;
     height: 98%;
-    background-color: rgba(247, 207, 132, 0.918);
   }
 
   .caja-datos-cambiar {
     width: 50%;
     height: 98%;
-    background-color: rgba(247, 207, 132, 0.918);
   }
 
   .caja-foto {
@@ -246,14 +251,12 @@
   .caja-foto-nombre {
     width: 49%;
     height: 100%;
-    background-color: rgba(247, 207, 132, 0.699);
   }
 
   .caja-datos-cambiar {
     width: 49%;
     height: 100%;
     margin-left: 1em;
-    background-color: rgba(247, 207, 132, 0.699);
   }
 }
 
@@ -279,7 +282,7 @@
   }
   .caja-ranking-iconos {
     width: 35.2vh;
-    height: 17vh;
+    height: 16.5vh;
   }
 }
 
@@ -322,7 +325,7 @@
   }
   .caja-ranking-iconos {
     width: 36.4vh;
-    height: 17vh;
+    height: 16.5vh;
   }
 }
 
@@ -344,7 +347,7 @@
   }
   .caja-ranking-iconos {
     width: 55vh;
-    height: 17vh;
+    height: 16vh;
   }
 
   .caja-foto {
@@ -381,7 +384,7 @@
   }
   .caja-ranking-iconos {
     width: 61vh;
-    height: 17vh;
+    height: 16.5vh;
   }
   .caja-foto {
     width: 28vh;
@@ -418,6 +421,6 @@
   }
   .caja-ranking-iconos {
     width: 76vh;
-    height: 17vh;
+    height: 16.5vh;
   }
 }
