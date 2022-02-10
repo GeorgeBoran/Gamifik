@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
   centro: string = '';
   fecha: string = '';
 
-  alumnoProfesor: boolean = false;
+  alumno: boolean = false;
   message: string = '';
   displays: string[] = [' ', 'none', 'none', 'none','none'];
 
@@ -76,25 +76,42 @@ export class RegisterComponent implements OnInit {
       } else
       {
         this.progreso = 90;
-        this.displays[4] = '';
+        this.displays[4] = ' ';
         this.displays[3] = 'none';
       }
     }
-    else if ( this.displays[ 3 ] == ' ' )
+    else if ( this.displays[ 4 ] == ' ' )
     {
-      if ( this.centro == '' )
+      if ( this.alumno&&this.centro == '' )
       {
         swal.fire( 'Introducir nombre del centro!' );
-      } else if ( this.fecha == '' )
+      } else if ( !this.alumno&&this.fecha == '' )
       {
         swal.fire( 'Introducir fecha de nacimiento!' );
       } else
       {
+        this.registrarUsuario();
         this.progreso = 100;
         this.displays[0] = '';
         this.displays[4] = 'none';
       }
       
+    }
+  }
+
+  registrarUsuario ()
+  {
+    swal.fire('Usuario registrado!')
+  }
+
+  selectType ()
+  {
+    if ( this.alumno )
+    {
+      this.alumno = false;
+    } else
+    {
+      this.alumno = true;
     }
   }
 

@@ -22,11 +22,17 @@
           <input class="inputs" type="text" name="repassword" [(ngModel)]="repassword" placeholder="Confirm Password" style="display:{{ displays[2] }};" />
 
           <input class="inputs" type="text" name="name" [(ngModel)]="name" placeholder="Name" style="display:{{ displays[3] }};" />
-          <input class="inputs" type="text" name="cognom" [(ngModel)]="cognom" placeholder="Subname"
-            style="display:{{ displays[3] }};" />
+          <input class="inputs" type="text" name="cognom" [(ngModel)]="cognom" placeholder="Subname" style="display:{{ displays[3] }};" />
 
-          <input class="inputs" type="text" name="centro" [(ngModel)]="centro" placeholder="Centro"
-            style="display:{{ displays[4] }};" />
+          <div *ngIf="alumno; else isProfesor">
+          <input class="inputs" type="text" name="centro" [(ngModel)]="centro" placeholder="Centro" style="display:{{ displays[4] }};" />
+          </div>
+
+          <ng-template #isProfesor>
+            <input class="inputs" type="text" name="fecha" [(ngModel)]="fecha" placeholder="Fecha" style="display:{{ displays[4] }};" />
+          </ng-template>
+          <br />
+
         </div>
       </div>
       <div class="flex boton-seguir">
