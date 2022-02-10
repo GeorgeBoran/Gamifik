@@ -7,7 +7,7 @@ import { RegisterComponent } from './registrar/register/register.component';
 const routes: Routes = [
   {
     path: '',
-    component: PerfilUsuarioComponent,
+    component: LoginComponent,
     pathMatch: 'full',
   },
   {
