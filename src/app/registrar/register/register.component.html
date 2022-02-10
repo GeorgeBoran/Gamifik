@@ -14,8 +14,11 @@
           <input class="inputs" type="email" name="mail" [(ngModel)]="mail" placeholder="Introduzca su Email"
             required="required" style="display:{{ displays[0] }};" />
 
-          <img class="imghover distancia-input-04em" src="{{ img }}" id="icon" alt="User Icon"
-            style="width: 100%; height: 100%; object-fit: cover; display:{{displays[1]}};" />
+          <div class="caja-imagen-usuario flex" style="display: {{displays[1]}};">
+            <img class="imagen-usuario distancia-input-04em flex" src="{{ img }}" id="icon" alt="User Icon"
+              style="width: 100%; height: 100%; object-fit: cover; display:{{displays[1]}};" />
+          </div>
+
           <input class="inputs" type="text" name="username" [(ngModel)]="username" placeholder="Introduzca su Username"
             style="display:{{ displays[1] }};" />
 

@@ -29,6 +29,19 @@
 .distancia-input-04em {
   margin-bottom: 0.4em;
 }
+.caja-imagen-usuario {
+  justify-self: center;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-top: -3em;
+}
+
+.imagen-usuario {
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+}
 
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
