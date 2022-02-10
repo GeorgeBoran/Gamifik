@@ -24,6 +24,13 @@
   padding-bottom: 3em;
 }
 
+.grid {
+  display: grid;
+}
+.distancia-input-04em {
+  margin-bottom: 0.4em;
+}
+
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-router {
@@ -67,7 +74,6 @@
     font-size: 16px;
     height: 48px;
     width: 220px;
-    margin: 1px 1px 0 1px;
     padding: 13px 15px;
     z-index: 1;
   }

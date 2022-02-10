@@ -9,14 +9,15 @@
         <h1 class="flex distancia-05em">Conectate</h1>
         <h3 class="flex distancia-3em">Utiliza una Cuenta Goat</h3>
       </div>
-      <div class="caja-input">
-        <div class="flex distancia-1em">
-          <input class="inputs" type="text" name="username" [(ngModel)]="username" placeholder="Username" />
+      <div class="caja-input ">
+        <div class="flex grid">
+          <input class="inputs distancia-input-04em" type="text" name="username" [(ngModel)]="username"
+            placeholder="Username" />
           <input class="inputs" type="text" name="password" [(ngModel)]="password" placeholder="Password" />
         </div>
       </div>
       <div class="flex boton-seguir">
-          <button class="boton-siguiente boton-siguiente-extra" (click)="loguear()" >Siguiente</button>
+        <button class="boton-siguiente boton-siguiente-extra" (click)="loguear()">Siguiente</button>
       </div>
       <div class="flex registrar">
         <p class="hiper-link">No tienes una cuenta?<a [routerLink]="['/registro']" class="color"> Registrate</a></p>

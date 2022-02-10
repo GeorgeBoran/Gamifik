@@ -5,47 +5,52 @@
         <div class="flex">
           <img class="logo" src=" ../../assets/logo_negro.png" />
         </div>
-        <br />
         <h1 class="flex distancia-05em">Registrate</h1>
         <h3 class="flex distancia-3em">Crea una Cuenta Goat</h3>
       </div>
       <div class="caja-input">
 
-        <div class="flex distancia-1em">
-          <input class="inputs" type="email" name="mail" [(ngModel)]="mail" placeholder="Introduzca su Email" required="required"
-            style="display:{{ displays[0] }};" />
+        <div class="flex grid">
+          <input class="inputs" type="email" name="mail" [(ngModel)]="mail" placeholder="Introduzca su Email"
+            required="required" style="display:{{ displays[0] }};" />
 
-          <img class="imghover" src="{{ img }}" id="icon" alt="User Icon" style="width: 100%; height: 100%; object-fit: cover; display:{{displays[1]}};" />
-          <input class="inputs" type="text" name="username" [(ngModel)]="username" placeholder="Introduzca su Username" style="display:{{ displays[1] }};" />
+          <img class="imghover distancia-input-04em" src="{{ img }}" id="icon" alt="User Icon"
+            style="width: 100%; height: 100%; object-fit: cover; display:{{displays[1]}};" />
+          <input class="inputs" type="text" name="username" [(ngModel)]="username" placeholder="Introduzca su Username"
+            style="display:{{ displays[1] }};" />
 
-          <input class="inputs" type="text" name="password" [(ngModel)]="password" placeholder="Password" style="display:{{ displays[2] }};" />
-          <input class="inputs" type="text" name="repassword" [(ngModel)]="repassword" placeholder="Confirm Password" style="display:{{ displays[2] }};" />
+          <input class="inputs distancia-input-04em" type="text" name="password" [(ngModel)]="password"
+            placeholder="Password" style="display:{{ displays[2] }};" />
+          <input class="inputs" type="text" name="repassword" [(ngModel)]="repassword" placeholder="Confirm Password"
+            style="display:{{ displays[2] }};" />
 
-          <input class="inputs" type="text" name="name" [(ngModel)]="name" placeholder="Name" style="display:{{ displays[3] }};" />
-          <input class="inputs" type="text" name="cognom" [(ngModel)]="cognom" placeholder="Subname" style="display:{{ displays[3] }};" />
+          <input class="inputs distancia-input-04em" type="text" name="name" [(ngModel)]="name" placeholder="Name"
+            style="display:{{ displays[3] }};" />
+          <input class="inputs" type="text" name="cognom" [(ngModel)]="cognom" placeholder="Subname"
+            style="display:{{ displays[3] }};" />
 
           <div *ngIf="alumno; else isProfesor">
-          <input class="inputs" type="text" name="centro" [(ngModel)]="centro" placeholder="Centro" style="display:{{ displays[4] }};" />
+            <input class="inputs" type="text" name="centro" [(ngModel)]="centro" placeholder="Centro"
+              style="display:{{ displays[4] }};" />
           </div>
 
           <ng-template #isProfesor>
-            <input class="inputs" type="text" name="fecha" [(ngModel)]="fecha" placeholder="Fecha" style="display:{{ displays[4] }};" />
+            <input class="inputs" type="text" name="fecha" [(ngModel)]="fecha" placeholder="Fecha"
+              style="display:{{ displays[4] }};" />
           </ng-template>
-          <br />
 
         </div>
       </div>
       <div class="flex boton-seguir">
-        <button class="boton-siguiente boton-siguiente-extra" (click)="next()">
+        <button class="boton-siguiente boton-siguiente-extra " (click)="next()">
           Siguiente
         </button>
       </div>
-      <div class="flex loguear">
-        <p class="hiper-link">
+      <div class="flex loguear distancia-05em">
+        <p class="hiper-link distancia-05em">
           Ya tienes cuenta?<a [routerLink]="['/login']" class="color"> Conectate</a>
         </p>
       </div>
-      <br />
       <div class="caja-barra flex">
         <progress class="barra-progreso" id="progreso" value="{{ progreso }}" max="100"></progress>
       </div>
