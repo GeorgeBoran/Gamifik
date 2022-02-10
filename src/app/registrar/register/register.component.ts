@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
 
   mail: string = '';
 
-  img: string = '';
+  img: string = '../../assets/avatar.jpg';
   username: string = '';
 
   name: string = '';
