@@ -9,7 +9,7 @@ import swal from 'sweetalert2';
 export class RegisterComponent implements OnInit {
   constructor() {}
 
-  progreso: number = 50;
+  progreso: number = 20;
 
   mail: string = '';
 
@@ -24,10 +24,9 @@ export class RegisterComponent implements OnInit {
 
   centro: string = '';
   fecha: string = '';
-  condicion: boolean = false;
 
+  alumnoProfesor: boolean = false;
   message: string = '';
-
   displays: string[] = [' ', 'none', 'none', 'none','none'];
 
   next() {
@@ -35,52 +34,91 @@ export class RegisterComponent implements OnInit {
     {
       if ( this.comprobarEmail() )
       {
+        this.progreso = 40;
         this.displays[0] = 'none';
         this.displays[1] = ' ';
       } else
       {
-        swal.fire( 'Email no valido!' );
+        swal.fire( this.message );
       }
     } else if ( this.displays[ 1 ] == ' ' )
     {
-      if ( this.username == '' )
+      if ( this.comprobarUsername() )
       {
-        swal.fire( 'Username no valido!' );
-      } else
-      {
+        this.progreso = 60;
         this.displays[1] = 'none';
         this.displays[2] = ' ';
+      } else
+      {
+        swal.fire( this.message );
       }
       
     } else if ( this.displays[ 2 ] == ' ' )
     {
       if (this.comprobarPassword())
       {
-        this.displays[3] = '';
+        this.progreso = 80;
+        this.displays[3] = ' ';
         this.displays[2] = 'none';
       } else
       {
         swal.fire( this.message );
       }
       
-    } else if (this.displays[3] == ' ') {
-      this.displays[4] = '';
-      this.displays[3] = 'none';
+    } else if ( this.displays[ 3 ] == ' ' )
+    {
+      if ( this.name == '' )
+      {
+        swal.fire( 'Introducir Nombre!' );
+      } else if ( this.cognom == '' )
+      {
+        swal.fire( 'Introducir Apellido!' );
+      } else
+      {
+        this.progreso = 90;
+        this.displays[4] = '';
+        this.displays[3] = 'none';
+      }
     }
-    else if (this.displays[3] == ' ') {
-      this.displays[0] = '';
-      this.displays[4] = 'none';
+    else if ( this.displays[ 3 ] == ' ' )
+    {
+      if ( this.centro == '' )
+      {
+        swal.fire( 'Introducir nombre del centro!' );
+      } else if ( this.fecha == '' )
+      {
+        swal.fire( 'Introducir fecha de nacimiento!' );
+      } else
+      {
+        this.progreso = 100;
+        this.displays[0] = '';
+        this.displays[4] = 'none';
+      }
+      
     }
+  }
+
+  comprobarUsername ()
+  {
+    if ( this.username == '' )
+    {
+      this.message='Introducir username!'
+      return false;
+    } else 
+      {
+      
+    }
+    return true;
   }
 
   comprobarPassword ()
   {
-    if ( this.password == " " )
+    if ( this.password == '' )
     {
       this.message = "Debe introducir el password!";
       return false;
       
-    } else if ( this.repassword ==" ")
+    } else if ( this.repassword =='')
       {
         this.message = "Debe confirmar el password!";
         return false;
@@ -97,14 +135,21 @@ export class RegisterComponent implements OnInit {
 
   comprobarEmail ()
   {
-   
-    for (let index = 0; index < this.mail.length; index++) {
+    if ( this.mail == '' )
+    {
+      this.message='Introducir Email!'
+      return false;
+    } else
+    {
+      for (let index = 0; index < this.mail.length; index++) {
       const element = this.mail[ index ];
       if (element=='@')
       {
         return true;
       }
     }
+    }
+    this.message='Email no valido!'
     return false;
   }
 
