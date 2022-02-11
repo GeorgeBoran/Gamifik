@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import swal from 'sweetalert2';
 
 @Component({
@@ -7,7 +8,7 @@ import swal from 'sweetalert2';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor() {}
+  constructor(private sanitizer: DomSanitizer) {}
 
   progreso: number = 20;
 
@@ -25,9 +26,11 @@ export class RegisterComponent implements OnInit {
   centro: string = '';
   fecha: string = '';
 
+  inputIMG: HTMLElement = document.getElementById( 'inputIMG' ) as HTMLElement; 
+
   alumno: boolean = false;
   message: string = '';
-  displays: string[] = [' ', 'none', 'none', 'none','none'];
+  displays: string[] = [ ' ', 'none', 'none', 'none', 'none' ];
 
   next() {
     if ( this.displays[ 0 ] == ' ' )
@@ -45,13 +48,30 @@ export class RegisterComponent implements OnInit {
     {
       if ( this.comprobarUsername() )
       {
-        this.progreso = 60;
-        this.displays[1] = 'none';
-        this.displays[2] = ' ';
-      } else
+        if ( this.img = "../../assets/avatar.jpg" )
+        {
+            swal.fire({
+            title: 'Estas seguro que no quieres subir una foto de perfil?',
+            text: "Para subir una foto de perfil, haz click sobre el icono de usuario.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Confirmar'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.progreso = 60;
+              this.displays[1] = 'none';
+              this.displays[2] = ' ';
+            }
+          })
+          
+        } 
+        
+      } else 
       {
         swal.fire( this.message );
-      }
+      } 
       
     } else if ( this.displays[ 2 ] == ' ' )
     {
@@ -98,6 +118,41 @@ export class RegisterComponent implements OnInit {
       
     }
   }
+
+  imgClick ()
+  {
+    this.inputIMG = document.getElementById( 'inputIMG' ) as HTMLElement; 
+    this.inputIMG.click();
+  }
+
+  capturarFile(event:any): any {
+    const archivoCapturado = event.target.files[ 0 ];
+    this.extraerBase64(archivoCapturado).then((imagen: any) => {
+      this.img = imagen.base;
+    })
+  }
+
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject):any => {
+    try {
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve({
+          base: reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+
+    } catch (e) {
+      return null;
+    }
+  })
 
   registrarUsuario ()
   {

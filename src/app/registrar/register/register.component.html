@@ -11,16 +11,13 @@
       <div class="caja-input">
 
         <div class="flex grid">
-          <input class="inputs" type="email" name="mail" [(ngModel)]="mail" placeholder="Introduzca su Email"
-            required="required" style="display:{{ displays[0] }};" />
+          <input class="inputs" type="email" name="mail" [(ngModel)]="mail" placeholder="Introduzca su Email" style="display:{{ displays[0] }};" />
 
-          <div class="caja-imagen-usuario flex" style="display: {{displays[1]}};">
-            <img class="imagen-usuario distancia-input-04em flex" src="{{ img }}" id="icon" alt="User Icon"
-              style="width: 100%; height: 100%; object-fit: cover; display:{{displays[1]}};" />
+          <div class="caja-imagen-usuario flex" style="display: {{displays[1]}};" (click)="imgClick()">
+            <img class="imagen-usuario distancia-input-04em flex" src="{{ img }}" id="icon" alt="User Icon" style="width: 100%; height: 100%; object-fit: cover; display:{{displays[1]}};" />
           </div>
-
-          <input class="inputs" type="text" name="username" [(ngModel)]="username" placeholder="Introduzca su Username"
-            style="display:{{ displays[1] }};" />
+          <input type="file" id="inputIMG" (change)="capturarFile($event)" style="display:none;" />
+          <input class="inputs" type="text" name="username" [(ngModel)]="username" placeholder="Introduzca su Username" style="display:{{ displays[1] }};" />
 
           <input class="inputs distancia-input-04em" type="text" name="password" [(ngModel)]="password"
             placeholder="Password" style="display:{{ displays[2] }};" />
