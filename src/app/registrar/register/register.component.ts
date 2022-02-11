@@ -10,7 +10,7 @@ import swal from 'sweetalert2';
 export class RegisterComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer) {}
 
-  progreso: number = 20;
+  progreso: number = 0;
 
   mail: string = '';
 
@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
     {
       if ( this.comprobarEmail() )
       {
-        this.progreso = 40;
+        this.progreso = 25;
         this.displays[0] = 'none';
         this.displays[1] = ' ';
       } else
@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
             confirmButtonText: 'Confirmar'
           }).then((result) => {
             if (result.isConfirmed) {
-              this.progreso = 60;
+              this.progreso = 50;
               this.displays[1] = 'none';
               this.displays[2] = ' ';
             }
@@ -77,7 +77,7 @@ export class RegisterComponent implements OnInit {
     {
       if (this.comprobarPassword())
       {
-        this.progreso = 80;
+        this.progreso = 75;
         this.displays[3] = ' ';
         this.displays[2] = 'none';
       } else
@@ -95,7 +95,7 @@ export class RegisterComponent implements OnInit {
         swal.fire( 'Introducir Apellido!' );
       } else
       {
-        this.progreso = 90;
+        this.progreso = 100;
         this.displays[4] = ' ';
         this.displays[3] = 'none';
       }
