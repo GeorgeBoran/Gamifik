@@ -19,9 +19,9 @@
           <input type="file" id="inputIMG" (change)="capturarFile($event)" style="display:none;" />
           <input class="inputs" type="text" name="username" [(ngModel)]="username" placeholder="Introduzca su Username" style="display:{{ displays[1] }};" />
 
-          <input class="inputs distancia-input-04em" type="text" name="password" [(ngModel)]="password"
+          <input class="inputs distancia-input-04em" type="{{showPassword}}" name="password" [(ngModel)]="password"
             placeholder="Password" style="display:{{ displays[2] }};" />
-          <input class="inputs" type="text" name="repassword" [(ngModel)]="repassword" placeholder="Confirm Password"
+          <input class="inputs" type="{{showPassword}}" name="repassword" [(ngModel)]="repassword" placeholder="Confirm Password"
             style="display:{{ displays[2] }};" />
 
           <input class="inputs distancia-input-04em" type="text" name="name" [(ngModel)]="name" placeholder="Name"

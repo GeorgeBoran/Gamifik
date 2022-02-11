@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit {
 
   password: string = '';
   repassword: string = '';
+  showPassword: string = 'password';
 
   centro: string = '';
   fecha: string = '';
@@ -31,6 +32,17 @@ export class RegisterComponent implements OnInit {
   alumno: boolean = false;
   message: string = '';
   displays: string[] = [ ' ', 'none', 'none', 'none', 'none' ];
+
+  showPass()
+  {
+    if ( this.showPassword == 'password' )
+    {
+      this.showPassword = "text";
+    } else
+    {
+      this.showPassword = "password";
+    }
+  }
 
   next() {
     if ( this.displays[ 0 ] == ' ' )
