@@ -57,3 +57,7 @@ html {
   );
   box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
+
+.swal2-styled {
+  background-color: #039153 !important;
+}
