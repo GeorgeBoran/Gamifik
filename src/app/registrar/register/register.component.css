@@ -30,6 +30,7 @@
   margin-bottom: 0.4em;
 }
 .caja-imagen-usuario {
+  position: relative;
   justify-self: center;
   border-radius: 50%;
   width: 150px;
@@ -46,10 +47,29 @@
 .parte-abajo {
   justify-self: flex-end;
 }
+.boton-subir {
+  display: flex;
+  border-radius: 50%;
+  opacity: 0;
+  position: absolute;
+  background-color: #4d505ab0;
+  height: 150px;
+  width: 150px;
+  transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
+}
+.imagen-subir {
+  max-width: 65px;
+  max-height: 65px;
+}
+
+.boton-subir:hover {
+  opacity: 0.8;
+}
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-router {
-    align-items: flex-start;
     padding: 1em 2em 2em 2em;
     height: 80vh;
     width: 45vh;
@@ -111,7 +131,6 @@
 
 @media (min-width: 220px) and (max-width: 300px) {
   .caja-router {
-    align-items: flex-start;
     height: 80vh;
     width: 35vh;
     transition: width 0.5s ease;
@@ -174,7 +193,6 @@
   .caja-router {
     width: 55vh;
   }
-
   .caja-principal {
     width: 60vh;
   }

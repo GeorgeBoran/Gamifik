@@ -38,9 +38,8 @@
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-router {
-    align-items: flex-start;
-    padding: 1em 4em 4em 4em;
     height: fit-content;
+    height: 80vh;
     width: 45vh;
     border-radius: 20px;
     background-color: rgba(247, 207, 132, 0.699);
@@ -87,7 +86,6 @@
 
 @media (min-width: 220px) and (max-width: 300px) {
   .caja-router {
-    align-items: flex-start;
     height: 80vh;
     width: 35vh;
     transition: width 0.5s ease;
