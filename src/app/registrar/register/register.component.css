@@ -35,7 +35,7 @@
   border-radius: 50%;
   width: 150px;
   height: 150px;
-  margin-top: -2.4em;
+  margin-top: -1.2em;
   margin-bottom: 0.4em;
 }
 
@@ -106,7 +106,7 @@
   width: 100%;
 }
 .distancia-15em-margin {
-  margin-bottom: 1.5em;
+  margin-bottom: 5em;
 }
 
 /*MEDIA PARA RESPONSIVE:*/
@@ -116,7 +116,7 @@
     height: 80vh;
     width: 45vh;
     border-radius: 20px;
-    background-color: rgba(13, 160, 245, 0.295);
+    background-color: rgba(13, 160, 245, 0.411);
     box-shadow: 4px 4px 4px 4px rgba(46, 47, 48, 0.88);
     transition: width 0.5s ease;
   }
@@ -177,7 +177,7 @@
     height: 80vh;
     width: 35vh;
     transition: width 0.5s ease;
-    background-color: rgba(13, 160, 245, 0.295);
+    background-color: rgba(13, 160, 245, 0.411);
     box-shadow: 4px 4px 4px 4px rgba(46, 47, 48, 0.88);
   }
   .caja-principal {
