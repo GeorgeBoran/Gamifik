@@ -23,6 +23,15 @@
 .distancia-3em {
   padding-bottom: 3em;
 }
+
+.distancia-15em-margin {
+  margin-bottom: 5em;
+}
+
+.distancia-1em-margin{
+  margin-bottom: 1em;
+}
+
 .grid {
   display: grid;
 }
@@ -35,7 +44,6 @@
   border-radius: 50%;
   width: 150px;
   height: 150px;
-  margin-top: -1.2em;
   margin-bottom: 0.4em;
 }
 
@@ -105,10 +113,6 @@
   text-align: center;
   width: 100%;
 }
-.distancia-15em-margin {
-  margin-bottom: 5em;
-}
-
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-router {

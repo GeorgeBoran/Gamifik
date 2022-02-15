@@ -39,29 +39,29 @@
 }
 
 .caja-principal {
-  background-color: rgba(223, 218, 180, 0.801);
+  background-color: rgba(233, 234, 236, 0.932);
 }
 
 .caja-foto-nombre {
-  background-color: rgba(240, 217, 174, 0.945);
+  background-color: rgba(13, 160, 245, 0.411);
 }
 
 .caja-ranking {
   display: grid;
-  background-color: rgba(240, 217, 174, 0.945);
+  background-color: rgba(13, 160, 245, 0.411);
   box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.877);
   border-radius: 20px;
   transition: width 0.3s ease;
 }
 
 .caja-ranking-iconos {
-  background-color: rgba(240, 217, 174, 0.945);
+  background-color: rgba(13, 160, 245, 0.411);
   box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.877);
   border-radius: 20px;
   transition: width 0.3s ease;
 }
 .caja-datos-cambiar {
-  background-color: rgba(240, 217, 174, 0.945);
+  background-color: rgba(13, 160, 245, 0.411);
 }
 .caja-inputs {
   display: grid;
@@ -78,6 +78,7 @@
 .caja-nombre p {
   text-transform: uppercase;
 }
+
 
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
@@ -120,7 +121,7 @@
     width: 18vh;
     height: 18vh;
     margin-left: 0.4em;
-    background-color: beige;
+    background-color: white;
     border: 1px solid black;
     border-radius: 50%;
   }
@@ -180,7 +181,7 @@
     margin-bottom: 1em;
     width: 18vh;
     height: 18vh;
-    background-color: beige;
+    background-color: white;
     border: 1px solid black;
     border-radius: 50%;
   }
@@ -309,8 +310,6 @@
     width: 22vh;
     height: 22vh;
     margin-left: 0.4em;
-    background-color: beige;
-    border: 1px solid black;
     border-radius: 50%;
   }
 
@@ -354,7 +353,7 @@
     width: 26vh;
     height: 26vh;
     margin-left: 0.4em;
-    background-color: beige;
+    background-color: white;
     border: 1px solid black;
     border-radius: 50%;
   }
@@ -390,7 +389,7 @@
     width: 28vh;
     height: 28vh;
     margin-left: 0.4em;
-    background-color: beige;
+    background-color: white;
     border: 1px solid black;
     border-radius: 50%;
   }
