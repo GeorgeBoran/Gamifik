@@ -28,7 +28,7 @@
   margin-bottom: 5em;
 }
 
-.distancia-1em-margin{
+.distancia-1em-margin {
   margin-bottom: 1em;
 }
 
@@ -113,6 +113,21 @@
   text-align: center;
   width: 100%;
 }
+
+.inputs {
+  -webkit-border-radius: 4px;
+  border-radius: 30px;
+  color: #202124;
+  font-size: 16px;
+  height: 48px;
+  width: 220px;
+  padding: 13px 15px;
+  z-index: 1;
+  display: inline-flex;
+  border-top: none;
+  border-left: none;
+}
+
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-router {
@@ -152,17 +167,6 @@
     background-size: cover;
     background-position: center;
     transition: width 0.5s ease;
-  }
-  .inputs {
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    color: #202124;
-    font-size: 16px;
-    height: 48px;
-    width: 220px;
-    padding: 13px 15px;
-    z-index: 1;
-    display: inline-flex;
   }
 
   .caja-barra {
