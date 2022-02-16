@@ -1,9 +1,9 @@
 <div class="caja-principal flex">
   <div class="caja-router flex">
     <div class="caja">
-      <div class="parte-arriba grid distancia-2em">
+      <div class="parte-arriba grid">
         <div class="flex distancia-1em">
-          <img class="logo" src=" ../../assets/logo_negro.png" />
+          <img class="logo distancia-5em" src=" ../../assets/logo_negro.png" />
         </div>
 
         <div (click)="selectType()" class="boton-radio flex  distancia-15em-margin" style="display:{{ displays[0] }};">
@@ -16,7 +16,6 @@
       <div class="caja-input">
 
         <div class="flex grid">
-
           <input class="inputs" type="email" name="mail" [(ngModel)]="mail" placeholder="Introduzca su Email"
             style="display:{{ displays[0] }};" />
 
@@ -25,7 +24,7 @@
               <img class="flex imagen-subir" src="../../../assets/cloud-upload.png">
             </div>
 
-            <img class="imagen-usuario distancia-input-04em flex" src="{{ img }}" id="icon" alt="User Icon"
+            <img class="imagen-usuario distancia-1em-margin flex" src="{{ img }}" id="icon" alt="User Icon"
               style="width: 100%; height: 100%; object-fit: cover; display:{{displays[1]}};" />
           </div>
 
