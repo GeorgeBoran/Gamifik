@@ -1,4 +1,3 @@
-<header>
   <!--Barra de navegacion:-->
   <div class="barraNavegacion">
 
@@ -20,22 +19,9 @@
       <div class="rankings iconos">
         <a [routerLink]="['/']"></a>
       </div>
-      <div class="dropbtn dropdown iconos">
-        <div class=" dropdown-content flex">
-          <br>
-
-          <div class="rutas flex"><a [routerLink]="['/login']" style="text-decoration: none;"><span
-                class=" opcionesAuth">Loguearse</span></a>
-          </div>
-          <br>
-          <div class="rutas flex"> <a [routerLink]="['/registro']" style="text-decoration: none;"><span
-                class=" opcionesAuth">Registrarse</span></a>
-          </div>
-
-          <br>
-        </div>
+      <div class="deslogueo dropdown iconos" (click)="this.deslogueo()">
+        <a [routerLink]="['/']"></a> <!--DESLOGUEO-->
       </div>
     </div>
 
   </div>
-</header>

@@ -1,3 +1,6 @@
+.total{
+width: 100%;
+}
 .hiper-link {
   color: rgb(46, 44, 44);
   font-size: large;
@@ -39,7 +42,7 @@
 }
 
 .caja-principal {
-  background-color: rgba(233, 234, 236, 0.932);
+  background-color: rgba(255, 255, 255, 0.966);
 }
 
 .caja-foto-nombre {
@@ -83,7 +86,6 @@
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-principal {
-    margin-top: 6em;
     display: grid;
     box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.877);
     border-radius: 20px;
@@ -145,7 +147,6 @@
 
 @media (min-width: 220px) and (max-width: 320px) {
   .caja-principal {
-    margin-top: 6em;
     display: grid;
     box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.877);
     border-radius: 20px;

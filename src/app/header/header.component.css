@@ -3,12 +3,14 @@
   background-color: rgba(255, 255, 255, 0.966);
   min-height: 90px;
   max-height: 110px;
-  position: absolute;
   width: 100%;
   display: inline-flex;
-  z-index: 5;
+  border-radius: 20px;
   caret-color: transparent;
-  border-bottom: solid rgba(0, 0, 0, 0.897) 4px;
+  box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.699);
+  margin-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 /*Compartimentacion de la barra de navegacion:*/
@@ -27,7 +29,10 @@
   padding-right: 0.2em;
 }
 
+
+
 /*Desplegable:*/
+/*
 .dropdown {
   position: relative;
   display: inline-block;
@@ -51,9 +56,19 @@
   display: block;
 }
 
+SPAN DESPLEGABLE
+.opcionesAuth {
+  font-size: large;
+}
+
+*/
 /*Boton que abre un desplegable con varias opciones:*/
-.dropbtn {
-  background-image: url(../../assets/opciones.png);
+.deslogueo {
+  background-image: url(../../assets/log-out-outline.png);
+  transition: background-image 0.3s ease;
+}
+.deslogueo:hover {
+  background-image: url(../../assets/log-out.png);
 }
 .persona {
   background-image: url(../../assets/usuario.png);
@@ -72,10 +87,6 @@
   background-size: contain;
 }
 
-/*span del desplegable:*/
-.opcionesAuth {
-  font-size: large;
-}
 
 /*Logo:*/
 .logo {
