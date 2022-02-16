@@ -6,7 +6,7 @@
           <img class="logo" src=" ../../assets/logo_negro.png" />
         </div>
 
-        <div class="boton-radio flex  distancia-15em-margin" style="display:{{ displays[0] }};">
+        <div (click)="selectType()" class="boton-radio flex  distancia-15em-margin" style="display:{{ displays[0] }};">
           <input label="Alumno" type="radio" id="alumno" name="eleccion" value="alumno" checked>
           <input label="Profesor" type="radio" id="profesor" name="eleccion" value="profesor">
         </div>
@@ -52,7 +52,7 @@
           </div>
 
           <ng-template #isProfesor>
-            <input class="inputs" type="text" name="fecha" [(ngModel)]="fecha" placeholder="Fecha"
+            <input class="inputs" type="date" name="fecha" [(ngModel)]="fecha" placeholder="Fecha"
               style="display:{{ displays[4] }};" />
           </ng-template>
 

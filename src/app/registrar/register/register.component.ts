@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
 
   inputIMG: HTMLElement = document.getElementById( 'inputIMG' ) as HTMLElement; 
 
-  alumno: boolean = false;
+  alumno: boolean = true;
   message: string = '';
   displays: string[] = [ ' ', 'none', 'none', 'none', 'none' ];
 
@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
     {
       if ( this.comprobarEmail() )
       {
-        this.progreso = 25;
+        this.progreso = 20;
         this.displays[0] = 'none';
         this.displays[1] = ' ';
       } else
@@ -60,15 +60,15 @@ export class RegisterComponent implements OnInit {
     {
       if ( this.comprobarUsername() )
       {
-        if ( this.img = "../../assets/avatar.jpg" )
+        if ( this.img == '../../assets/avatar.jpg' )
         {
             swal.fire({
             title: 'Estas seguro que no quieres subir una foto de perfil?',
             text: "Para subir una foto de perfil, haz click sobre el icono de usuario.",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
+            confirmButtonColor: '#3085d6',
             confirmButtonText: 'Confirmar'
           }).then((result) => {
             if (result.isConfirmed) {
@@ -78,7 +78,12 @@ export class RegisterComponent implements OnInit {
             }
           })
           
-        } 
+        } else
+        {
+              this.progreso = 40;
+              this.displays[1] = 'none';
+              this.displays[2] = ' ';
+        }
         
       } else 
       {
@@ -89,7 +94,7 @@ export class RegisterComponent implements OnInit {
     {
       if (this.comprobarPassword())
       {
-        this.progreso = 75;
+        this.progreso = 60;
         this.displays[3] = ' ';
         this.displays[2] = 'none';
       } else
@@ -107,7 +112,7 @@ export class RegisterComponent implements OnInit {
         swal.fire( 'Introducir Apellido!' );
       } else
       {
-        this.progreso = 100;
+        this.progreso = 80;
         this.displays[4] = ' ';
         this.displays[3] = 'none';
       }
@@ -122,8 +127,9 @@ export class RegisterComponent implements OnInit {
         swal.fire( 'Introducir fecha de nacimiento!' );
       } else
       {
-        this.registrarUsuario();
+        console.log( this.fecha );
         this.progreso = 100;
+        this.registrarUsuario();
         this.displays[0] = '';
         this.displays[4] = 'none';
       }
@@ -188,11 +194,11 @@ export class RegisterComponent implements OnInit {
     {
       this.message='Introducir username!'
       return false;
-    } else 
-      {
-      
+    } else
+    {
+      return true;
     }
-    return true;
+    
   }
 
   comprobarPassword ()
