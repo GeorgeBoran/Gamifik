@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import swal from 'sweetalert2';
 
 @Component({
@@ -8,7 +9,7 @@ import swal from 'sweetalert2';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(private sanitizer: DomSanitizer, private router:Router) {}
 
   progreso: number = 0;
 
@@ -127,11 +128,8 @@ export class RegisterComponent implements OnInit {
         swal.fire( 'Introducir fecha de nacimiento!' );
       } else
       {
-        console.log( this.fecha );
         this.progreso = 100;
         this.registrarUsuario();
-        this.displays[0] = '';
-        this.displays[4] = 'none';
       }
       
     }
@@ -174,7 +172,18 @@ export class RegisterComponent implements OnInit {
 
   registrarUsuario ()
   {
-    swal.fire('Usuario registrado!')
+    swal.fire({
+            title: 'Usuario registrado!',
+            icon: 'warning',
+            showCancelButton: false,
+            cancelButtonColor: '#d33',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'OK'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.router.navigate([ '/pagina' ]);
+            }
+          })
   }
 
   selectType ()
