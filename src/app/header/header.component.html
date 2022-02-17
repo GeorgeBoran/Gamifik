@@ -4,7 +4,7 @@
     <!--Logo con router:-->
     <div class="espacio-izquierda flex " [routerLink]="['/main']">
       <div class="flex">
-        <a href="/pagina"><img class="logo" src="../../assets/logo_negro.png"></a>
+        <a [routerLink]="['/pagina']"> <img class="logo" src="../../assets/logo_negro.png"></a>
       </div>
     </div>
 
@@ -12,16 +12,16 @@
     </div>
 
     <div class="espacio-derecha flex">
-      <!--Dropdown con router a login y register:-->
-      <div class="persona iconos">
-        <a [routerLink]="['/']"></a>
-      </div>
       <div class="rankings iconos">
         <a [routerLink]="['/']"></a>
       </div>
-      <div class="deslogueo dropdown iconos" (click)="this.deslogueo()">
-        <a [routerLink]="['/']"></a> <!--DESLOGUEO-->
+      <div class="persona iconos">
+        <a [routerLink]="['/pagina']"></a>
       </div>
+      <div class="deslogueo dropdown iconos" (click)="this.deslogueo()">
+        <a [routerLink]="['/']"></a>
+      </div>
+
     </div>
 
   </div>

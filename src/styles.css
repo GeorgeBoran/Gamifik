@@ -1,5 +1,4 @@
 * {
-  font-family: -webkit-pictograph;
   scroll-behavior: smooth;
   margin: 0px;
   box-sizing: border-box;
@@ -62,7 +61,6 @@ html {
   background-color: #039153 !important;
 }
 
-
-.swal2-styled.swal2-cancel{
+.swal2-styled.swal2-cancel {
   background-color: rgb(197, 16, 16) !important;
 }

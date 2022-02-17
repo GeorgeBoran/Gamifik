@@ -52,9 +52,6 @@
   width: inherit;
   height: inherit;
 }
-.parte-abajo {
-  justify-self: flex-end;
-}
 .boton-subir {
   caret-color: transparent;
   display: flex;
@@ -114,6 +111,7 @@
   width: 100%;
 }
 .inputs {
+  text-align: center;
   -webkit-border-radius: 4px;
   border-radius: 30px;
   font-size: 16px;
@@ -126,6 +124,35 @@
 }
 .inputs:hover {
   box-shadow: 1px 1px 1px 1px rgba(46, 47, 48, 0.88);
+}
+
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 25px !important;
+}
+
+progress[value]::-webkit-progress-value {
+  border-radius: 25px !important;
+  background-image: -webkit-linear-gradient(
+      -45deg,
+      transparent 33%,
+      rgba(255, 255, 255, 0.349) 33%,
+      rgba(250, 250, 250, 0.1) 66%,
+      rgba(255, 255, 255, 0.288) 33%,
+      rgba(250, 250, 250, 0.1) 66%,
+      rgba(255, 255, 255, 0.493) 33%,
+      rgba(250, 250, 250, 0.1) 66%,
+      transparent 66%
+    ),
+    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -webkit-linear-gradient(left, #14ee8f, #039153, #1ceb91, #039153);
 }
 
 /*MEDIA PARA RESPONSIVE:*/
@@ -171,7 +198,7 @@
 
   .caja-barra {
     width: 100%;
-    height: 5vh;
+    height: 25px !important;
   }
 
   .barra-progreso {
@@ -213,9 +240,8 @@
     width: 20px;
   }
   .caja-barra {
-    justify-self: center;
     width: 100%;
-    height: 5vh;
+    height: 25px !important;
   }
   .barra-progreso {
     width: 100%;
