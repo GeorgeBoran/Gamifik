@@ -53,6 +53,10 @@
 .inputs:hover {
   box-shadow: 1px 1px 1px 1px rgba(46, 47, 48, 0.88);
 }
+.far {
+  cursor: pointer;
+}
+
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-router {
