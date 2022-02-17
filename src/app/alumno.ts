@@ -10,5 +10,5 @@ export interface alumno
   cognom: string ;
   password: string;
 
-  centro: string;
+  fecha: string;
 }

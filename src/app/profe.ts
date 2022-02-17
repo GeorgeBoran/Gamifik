@@ -10,7 +10,7 @@ export interface profe
   cognom: string ;
   password: string;
 
-  fecha: string ;
- 
+  centro: string ;
+
 
 }
