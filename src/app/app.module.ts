@@ -10,6 +10,7 @@ import { RegisterComponent } from './registrar/register/register.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RankingsModule } from './rankings/rankings.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,13 @@ import { FormsModule } from '@angular/forms';
     RegisterComponent,
     PerfilUsuarioComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, CommonModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CommonModule,
+    FormsModule,
+    RankingsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

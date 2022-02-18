@@ -1,5 +1,5 @@
-.total{
-width: 100%;
+.total {
+  width: 100%;
 }
 .hiper-link {
   color: rgb(46, 44, 44);
@@ -82,6 +82,10 @@ width: 100%;
   text-transform: uppercase;
 }
 
+.componente-rankings {
+  height: inherit;
+  width: inherit;
+}
 
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {

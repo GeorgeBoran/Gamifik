@@ -1,0 +1,16 @@
+.tabla {
+  background-color: blue;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 10;
+  min-width: max-content;
+}
+.tabla {
+  column-gap: 2em;
+}
+.parte-arriba {
+  background-color: blue;
+  width: inherit;
+  height: 50px;
+  border-radius: 20px 20px 0 0;
+}
