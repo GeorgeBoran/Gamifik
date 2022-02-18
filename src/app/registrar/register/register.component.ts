@@ -23,7 +23,6 @@ export class RegisterComponent implements OnInit {
 
   password: string = '';
   repassword: string = '';
-  showPassword: string = 'password';
 
   centro: string = '';
   fecha: string = '';
@@ -34,12 +33,11 @@ export class RegisterComponent implements OnInit {
   message: string = '';
   displays: string[] = [' ', 'none', 'none', 'none', 'none'];
 
-  showPass() {
-    if (this.showPassword == 'password') {
-      this.showPassword = 'text';
-    } else {
-      this.showPassword = 'password';
-    }
+  mostrarContra: boolean = false;
+
+  //Funcion para mostrar contrasena:
+  mostrarContrasena() {
+    this.mostrarContra = !this.mostrarContra;
   }
 
   next() {
