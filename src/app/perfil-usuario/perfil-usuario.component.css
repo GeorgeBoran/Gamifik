@@ -50,6 +50,7 @@
 }
 
 .caja-ranking {
+  overflow: hidden;
   display: grid;
   background-color: rgba(13, 160, 245, 0.411);
   box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.877);
@@ -86,6 +87,9 @@
   height: inherit;
   width: inherit;
 }
+
+
+
 
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
@@ -148,6 +152,12 @@
     height: 15%;
   }
 }
+@media all and (max-width: 767px) {
+  .componente-rankings{
+    height: 24%;
+    width: inherit;
+  }
+}
 
 @media (min-width: 220px) and (max-width: 320px) {
   .caja-principal {
@@ -158,7 +168,6 @@
     height: 80vh;
     transition: width 0.5s ease;
   }
-
   .caja-izquierda {
     display: inline-flex;
     width: inherit;
