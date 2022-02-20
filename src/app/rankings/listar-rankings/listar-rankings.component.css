@@ -37,7 +37,8 @@ li {
   border-radius: 3px;
   padding: 20px 25px;
   display: flex;
-  margin-bottom: 19.5px;
+  margin-bottom: 12px;
+  margin-top: 8px;
 }
 
 .tabla-fila {
@@ -73,6 +74,7 @@ li {
    }
 
   .tabla-cuerpo{
+    margin-top: 1em !important;
     height: inherit;
     width: inherit;
     scroll-behavior: smooth;
