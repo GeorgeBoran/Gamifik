@@ -59,6 +59,7 @@
 }
 
 .caja-ranking-iconos {
+  caret-color: transparent;
   background-color: rgba(13, 160, 245, 0.411);
   box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.877);
   border-radius: 20px;
@@ -88,8 +89,35 @@
   width: inherit;
 }
 
+/*ICONOS DE DEBAJO DE RANKINGS EN LOS CUALES SE PARCIPA:*/
+.iconos {
+  margin-left: 1.6em;
+  min-height: 40px;
+  min-width: 40px;
+  border: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.anadir {
+  background-image: url(../../assets/add-circle-outline.png);
+}
+.anadir:hover {
+  background-image: url(../../assets/add-circle.png);
+}
 
-
+.editar {
+  background-image: url(../../assets/edit-2-outline.png);
+}
+.editar:hover {
+  background-image: url(../../assets/edit-2.png);
+}
+.borrar {
+  background-image: url(../../assets/delete-bin-line.png);
+}
+.borrar:hover {
+  background-image: url(../../assets/delete-bin-5-line.png);
+}
 
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
@@ -108,7 +136,6 @@
   }
   .caja-derecha {
     justify-self: right;
-    position: absolute;
   }
 
   .caja-foto-nombre {
@@ -144,7 +171,7 @@
   }
   .caja-ranking {
     width: 100%;
-    height: 82%;
+    height: 85%;
     margin-bottom: 0.7em;
   }
   .caja-ranking-iconos {
@@ -153,8 +180,9 @@
   }
 }
 @media all and (max-width: 767px) {
-  .componente-rankings{
-    height: 24%;
+  .componente-rankings {
+    height: 65%;
+
     width: inherit;
   }
 }
@@ -206,15 +234,6 @@
     display: grid;
     justify-items: center;
     border-radius: 5px;
-  }
-  .caja-ranking {
-    width: 100%;
-    height: 82%;
-    margin-bottom: 0.7em;
-  }
-  .caja-ranking-iconos {
-    width: 100%;
-    height: 15%;
   }
 }
 
@@ -284,20 +303,17 @@
     width: 24.8vh;
     height: inherit;
   }
-
-  .caja-derecha {
+  .componente-rankings {
+    height: 73%;
+    background-color: #202124;
+    width: inherit;
+  }
+  .container .caja-derecha {
     width: 37.2vh;
     height: inherit;
   }
-
-  .caja-ranking {
-    width: 35.2vh;
-    height: 60vh;
-    margin-bottom: 0.7em;
-  }
   .caja-ranking-iconos {
-    width: 35.2vh;
-    height: 16.5vh;
+    height: 90px;
   }
 }
 
@@ -317,7 +333,6 @@
     justify-self: right;
     width: 38.4vh;
     height: inherit;
-    position: absolute;
   }
 
   .caja-foto {
