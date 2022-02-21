@@ -1,0 +1,27 @@
+  <!--Barra de navegacion:-->
+  <div class="barraNavegacion">
+
+    <!--Logo con router:-->
+    <div class="espacio-izquierda flex " [routerLink]="['/main']">
+      <div class="flex">
+        <a [routerLink]="['/pagina']"> <img class="logo" src="../../assets/logo_negro.png"></a>
+      </div>
+    </div>
+
+    <div class=" espacio-medio">
+    </div>
+
+    <div class="espacio-derecha flex">
+      <div class="rankings iconos">
+        <a [routerLink]="['/']"></a>
+      </div>
+      <div class="persona iconos">
+        <a [routerLink]="['/pagina']"></a>
+      </div>
+      <div class="deslogueo dropdown iconos" (click)="this.deslogueo()">
+        <a [routerLink]="['/']"></a>
+      </div>
+
+    </div>
+
+  </div>

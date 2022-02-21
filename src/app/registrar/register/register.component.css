@@ -1,0 +1,356 @@
+.hiper-link {
+  color: rgb(0, 0, 0);
+  font-size: large;
+}
+
+.parte-arriba {
+  caret-color: transparent;
+}
+.caja-extras {
+  caret-color: transparent;
+}
+
+.distancia-05em {
+  padding-bottom: 0.5em;
+}
+.distancia-1em {
+  padding-bottom: 1em;
+}
+.distancia-2em {
+  padding-bottom: 2em;
+}
+
+.distancia-3em {
+  padding-bottom: 3em;
+}
+
+.distancia-15em-margin {
+  margin-bottom: 5em;
+}
+
+.distancia-1em-margin {
+  margin-bottom: 1em;
+}
+
+.grid {
+  display: grid;
+}
+.distancia-input-04em {
+  margin-bottom: 0.4em;
+}
+.caja-imagen-usuario {
+  position: relative;
+  justify-self: center;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 0.4em;
+}
+
+.imagen-usuario {
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+}
+.boton-subir {
+  caret-color: transparent;
+  display: flex;
+  border-radius: 50%;
+  opacity: 0;
+  position: absolute;
+  background-color: #4d505ab0;
+  height: 150px;
+  width: 150px;
+  transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
+}
+.imagen-subir {
+  max-width: 65px;
+  max-height: 65px;
+}
+
+.boton-subir:hover {
+  opacity: 0.8;
+}
+
+.boton-radio {
+  width: max-content;
+  justify-self: center;
+  background: #454857;
+  padding: 4px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 3px rgba(35, 33, 45, 0.3),
+    0 0 0 3px rgba(185, 185, 185, 0.3);
+}
+
+.boton-radio input {
+  width: auto;
+  height: 100%;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 4px 8px;
+  background: #454857;
+  font-size: 16px;
+  transition: all 100ms linear;
+}
+
+.boton-radio input:checked {
+  background-image: linear-gradient(180deg, #95d891, #74bbad);
+  color: #fff;
+  box-shadow: 0 1px 1px #0000002e;
+  text-shadow: 0 1px 0px #79485f7a;
+}
+
+.boton-radio input:before {
+  content: attr(label);
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.inputs {
+  text-align: center;
+  -webkit-border-radius: 4px;
+  border-radius: 30px;
+  font-size: 16px;
+  height: 48px;
+  width: 100%;
+  padding: 13px 15px;
+  z-index: 1;
+  border: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.inputs:hover {
+  box-shadow: 1px 1px 1px 1px rgba(46, 47, 48, 0.88);
+}
+
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 25px !important;
+}
+
+progress[value]::-webkit-progress-value {
+  border-radius: 25px !important;
+  background-image: -webkit-linear-gradient(
+      -45deg,
+      transparent 33%,
+      rgba(255, 255, 255, 0.349) 33%,
+      rgba(250, 250, 250, 0.1) 66%,
+      transparent 66%
+    ),
+    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -webkit-linear-gradient(left, #14ee8f, #039153, #1ceb91, #039153);
+}
+.caja-barra p {
+  color: rgb(0, 0, 0);
+  font-size: large;
+}
+
+.far {
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-70%);
+  caret-color: transparent;
+  opacity: 0.5;
+}
+.far:hover {
+  opacity: 1;
+}
+
+.caja-imputs {
+  position: relative;
+}
+.caja-ojo-contra {
+  position: relative;
+}
+
+/*MEDIA PARA RESPONSIVE:*/
+@media (min-width: 320px) {
+  .caja-router {
+    padding: 1em 2em 2em 2em;
+    height: 80vh;
+    width: 45vh;
+    border-radius: 20px;
+    background-color: rgba(13, 160, 245, 0.411);
+    box-shadow: 4px 4px 4px 4px rgba(46, 47, 48, 0.88);
+    transition: width 0.5s ease;
+  }
+  .caja-principal {
+    display: grid;
+    background-color: rgba(233, 234, 236, 0.884);
+    box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.959);
+    border-radius: 20px;
+    width: 50vh;
+    height: 90vh;
+    transition: width 0.5s ease;
+  }
+  .caja {
+    height: 65vh;
+    align-self: baseline;
+  }
+  .espacio {
+    width: 100px;
+  }
+  .olvidado {
+    justify-self: left;
+  }
+
+  /*Logo:*/
+  .logo {
+    justify-self: auto;
+    padding-top: 0.6em;
+    width: 160px;
+    background-size: cover;
+    background-position: center;
+    transition: width 0.5s ease;
+  }
+
+  .caja-barra {
+    width: 100%;
+    height: 25px !important;
+  }
+
+  .barra-progreso {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 220px) and (max-width: 300px) {
+  .caja-router {
+    height: 80vh;
+    width: 35vh;
+    transition: width 0.5s ease;
+    background-color: rgba(13, 160, 245, 0.411);
+    box-shadow: 4px 4px 4px 4px rgba(46, 47, 48, 0.88);
+  }
+  .caja-principal {
+    display: grid;
+    background-color: rgba(233, 234, 236, 0.829);
+    box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.959);
+    border-radius: 20px;
+    width: 40vh;
+    height: 90vh;
+    transition: width 0.5s ease;
+  }
+
+  .caja {
+    align-self: baseline;
+    height: 65vh;
+  } /*Logo:*/
+
+  .logo {
+    width: 160px;
+    background-size: cover;
+    background-position: center;
+    transition: width 0.5s ease;
+  }
+  .espacio {
+    width: 20px;
+  }
+  .caja-barra {
+    width: 100%;
+    height: 25px !important;
+  }
+  .barra-progreso {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .caja-router {
+    width: 35vh;
+  }
+  .caja-principal {
+    width: 40vh;
+  }
+  .logo {
+    width: 180px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 600px) {
+  .logo {
+    width: 200px;
+  }
+  .espacio {
+    width: 120px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 801px) {
+  .caja-router {
+    width: 55vh;
+  }
+  .caja-principal {
+    width: 60vh;
+  }
+  .logo {
+    width: 220px;
+  }
+  .espacio {
+    width: 200px;
+  }
+}
+
+@media (min-width: 801px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .caja-router {
+    width: 55vh;
+  }
+  .caja-principal {
+    width: 60vh;
+  }
+  .logo {
+    width: 260px;
+  }
+  .espacio {
+    width: 220px;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+  .caja-router {
+    width: 95vh;
+  }
+  .caja-principal {
+    width: 100vh;
+  }
+  .logo {
+    width: 280px;
+  }
+  .espacio {
+    width: 260px;
+  }
+}
+
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+  .caja-router {
+    width: 105vh;
+  }
+  .caja-principal {
+    width: 110vh;
+  }
+  .logo {
+    width: 300px;
+  }
+  .espacio {
+    width: 280px;
+  }
+}

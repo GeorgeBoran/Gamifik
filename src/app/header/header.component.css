@@ -1,0 +1,129 @@
+/*Atributos de la barra de navegacion:*/
+.barraNavegacion {
+  background-color: rgba(255, 255, 255, 0.966);
+  min-height: 90px;
+  max-height: 110px;
+  width: 100%;
+  display: inline-flex;
+  border-radius: 20px;
+  caret-color: transparent;
+  box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.699);
+  margin-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+/*Compartimentacion de la barra de navegacion:*/
+.espacio-izquierda {
+  justify-content: left;
+  min-width: 30%;
+}
+
+.espacio-medio {
+  min-width: 40%;
+}
+
+.espacio-derecha {
+  justify-content: right;
+  min-width: 30%;
+  padding-right: 0.2em;
+}
+
+
+
+/*Desplegable:*/
+/*
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  font-size: medium;
+  display: none;
+  border: 1px solid black;
+  top: 100% !important;
+  right: 10% !important;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  border-radius: 10%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+SPAN DESPLEGABLE
+.opcionesAuth {
+  font-size: large;
+}
+
+*/
+/*Boton que abre un desplegable con varias opciones:*/
+.deslogueo {
+  background-image: url(../../assets/log-out-outline.png);
+  transition: background-image 0.3s ease;
+}
+.deslogueo:hover {
+  background-image: url(../../assets/log-out.png);
+}
+.persona {
+  background-image: url(../../assets/usuario.png);
+}
+.rankings {
+  background-image: url(../../assets/analytics.png);
+}
+
+.iconos {
+  margin-left: 1.6em;
+  min-height: 40px;
+  min-width: 40px;
+  border: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+/*Logo:*/
+.logo {
+  width: 140px;
+  padding-top: 0.6em;
+  padding-left: 0.6em;
+  background-size: cover;
+  background-position: center;
+}
+
+
+@media (min-width: 801px) {
+  /*Logo:*/
+  .logo {
+    width: 240px;
+  }
+}
+
+
+@media (min-width: 220px) and (max-width: 300px) {
+
+  .logo {
+    width: 100px;
+  }
+  .espacio-derecha{
+    margin-right: -1em;
+  }
+  .iconos{
+    margin-left: 1em;
+    margin-top: 0.4em;
+    min-width: 30px;
+    min-height: 30px;
+  }
+}
+
+@media (min-width: 801px) {
+  .iconos{
+    margin-left: 3em;
+  }
+}
