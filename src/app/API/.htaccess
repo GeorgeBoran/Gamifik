@@ -1,0 +1,4 @@
+ header always set Access-Control-Allow-Origin: *
+ header always set Access-Control-Max-Age "1000"
+ header always set Access-Control-Allow-Headers "X-Requested-With, Content-Type, Origin, Autorization, Accept, Client-Security-Token, Accept-Encoding"
+ header always set Access-Control-Allow-Methods "POST, GET, OpTIONS, DELETE, PUT"
