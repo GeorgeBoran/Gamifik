@@ -46,6 +46,7 @@
 }
 
 .caja-foto-nombre {
+  caret-color: transparent;
   background-color: rgba(13, 160, 245, 0.411);
 }
 
@@ -66,6 +67,7 @@
   transition: width 0.3s ease;
 }
 .caja-datos-cambiar {
+  padding-top: 2em;
   background-color: rgba(13, 160, 245, 0.411);
 }
 .caja-inputs {
@@ -76,17 +78,12 @@
 
 .pes {
   color: #202124;
-  font-size: 20px;
   margin: 0.1em 1em 0em 1em;
   z-index: 1;
 }
+
 .caja-nombre p {
   text-transform: uppercase;
-}
-
-.componente-rankings {
-  height: inherit;
-  width: inherit;
 }
 
 /*ICONOS DE DEBAJO DE RANKINGS EN LOS CUALES SE PARCIPA:*/
@@ -119,13 +116,21 @@
   background-image: url(../../assets/delete-bin-5-line.png);
 }
 
+.boton-cambiar-contra {
+  padding: 0.6em;
+  border-radius: 4px;
+  opacity: 1;
+}
+.boton-cambiar-contra:hover {
+  opacity: 0.9;
+}
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-principal {
     display: grid;
     box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.877);
     border-radius: 20px;
-    width: 50vh;
+    width: 55vh;
     height: 80vh;
     transition: width 0.5s ease;
   }
@@ -171,19 +176,15 @@
   }
   .caja-ranking {
     width: 100%;
-    height: 85%;
+    height: 82%;
     margin-bottom: 0.7em;
   }
   .caja-ranking-iconos {
     width: 100%;
     height: 15%;
   }
-}
-@media all and (max-width: 767px) {
-  .componente-rankings {
-    height: 65%;
-
-    width: inherit;
+  .pes {
+    font-size: 17px;
   }
 }
 
@@ -239,9 +240,8 @@
 
 @media (min-width: 320px) and (max-width: 480px) {
   .caja-principal {
-    width: 43vh;
+    width: 45vh;
   }
-
   .caja-izquierda {
     display: inline-flex;
     width: inherit;
@@ -255,14 +255,17 @@
   }
 
   .caja-foto-nombre {
-    width: 49%;
+    width: 48%;
     height: 100%;
   }
 
   .caja-datos-cambiar {
-    width: 49%;
+    width: 48%;
     height: 100%;
     margin-left: 1em;
+  }
+  .pes {
+    font-size: 18px;
   }
 }
 
@@ -283,14 +286,17 @@
   }
 
   .caja-foto-nombre {
-    width: 49%;
+    width: 48%;
     height: 100%;
   }
 
   .caja-datos-cambiar {
-    width: 49%;
+    width: 48%;
     height: 100%;
     margin-left: 1em;
+  }
+  .pes {
+    font-size: 20px;
   }
 }
 
@@ -298,22 +304,25 @@
   .caja-principal {
     width: 62vh;
   }
-
   .caja-izquierda {
     width: 24.8vh;
     height: inherit;
-  }
-  .componente-rankings {
-    height: 73%;
-    background-color: #202124;
-    width: inherit;
   }
   .container .caja-derecha {
     width: 37.2vh;
     height: inherit;
   }
+
+  .caja-ranking {
+    width: 36.4vh;
+    height: 66.5vh;
+    margin-bottom: 0.7em;
+  }
   .caja-ranking-iconos {
     height: 90px;
+  }
+  .pes {
+    font-size: 20px;
   }
 }
 
@@ -324,13 +333,11 @@
   }
 
   .caja-izquierda {
-    justify-self: left;
     width: 26.6vh;
     height: inherit;
     position: absolute;
   }
   .caja-derecha {
-    justify-self: right;
     width: 38.4vh;
     height: inherit;
   }
@@ -354,6 +361,9 @@
   .caja-ranking-iconos {
     width: 36.4vh;
     height: 16.5vh;
+  }
+  .pes {
+    font-size: 20px;
   }
 }
 
@@ -390,11 +400,17 @@
   .caja-nombre {
     margin-left: 2em;
   }
+  .pes {
+    font-size: 22px;
+  }
 }
 
 @media (min-width: 1025px) {
   /* big landscape tablets, laptops, and desktops */
 
+  .pes {
+    font-size: 22px;
+  }
   .caja-principal {
     width: 105vh;
     height: 80vh;

@@ -14,23 +14,23 @@
         </div>
       </div>
 
-      <div class="caja-datos-cambiar flex">
-
-        <div class="caja-inputs">
-          <p class="pes">Nombre</p>
-          <p class="pes">Apellidos</p>
-          <p class="pes">Email</p>
-          <p class="pes">Centro</p>
-          <p class="pes">Contrasena</p>
-
+      <div class="caja-datos-cambiar grid flex">
+        <div class="caja-inputs distancia-2em">
+          <p class="pes">Nombre: Juanjo</p>
+          <p class="pes">Apellido: Juanjo</p>
+          <p class="pes">Email: Juanjo@gmail.com</p>
+          <p class="pes">Centro: Juanjo</p>
+          <p class="pes distancia-1em">Contrasena: Juanjo</p>
+          <div class="flex">
+            <button class="boton-cambiar-contra">Cambiar Contrasena</button>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="caja-derecha">
-      <div class="caja-ranking">
-        <app-listar-rankings class="componente-rankings"></app-listar-rankings>
-      </div>
+      <app-listar-rankings class="caja-ranking"></app-listar-rankings>
+
       <div class="caja-ranking-iconos flex">
 
         <div class="iconos anadir">
