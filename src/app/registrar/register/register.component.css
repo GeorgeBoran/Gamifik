@@ -177,6 +177,13 @@ progress[value]::-webkit-progress-value {
   position: relative;
 }
 
+.caja-router,
+.caja-principal,
+.logo {
+  transition: width 0.5s ease;
+  transition: height 0.5s ease;
+}
+
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-router {
@@ -186,7 +193,6 @@ progress[value]::-webkit-progress-value {
     border-radius: 20px;
     background-color: rgba(13, 160, 245, 0.411);
     box-shadow: 4px 4px 4px 4px rgba(46, 47, 48, 0.88);
-    transition: width 0.5s ease;
   }
   .caja-principal {
     display: grid;
@@ -195,7 +201,6 @@ progress[value]::-webkit-progress-value {
     border-radius: 20px;
     width: 50vh;
     height: 90vh;
-    transition: width 0.5s ease;
   }
   .caja {
     height: 65vh;
@@ -215,7 +220,6 @@ progress[value]::-webkit-progress-value {
     width: 160px;
     background-size: cover;
     background-position: center;
-    transition: width 0.5s ease;
   }
 
   .caja-barra {
@@ -233,7 +237,6 @@ progress[value]::-webkit-progress-value {
   .caja-router {
     height: 80vh;
     width: 35vh;
-    transition: width 0.5s ease;
     background-color: rgba(13, 160, 245, 0.411);
     box-shadow: 4px 4px 4px 4px rgba(46, 47, 48, 0.88);
   }
@@ -244,7 +247,6 @@ progress[value]::-webkit-progress-value {
     border-radius: 20px;
     width: 40vh;
     height: 90vh;
-    transition: width 0.5s ease;
   }
 
   .caja {
@@ -256,7 +258,6 @@ progress[value]::-webkit-progress-value {
     width: 160px;
     background-size: cover;
     background-position: center;
-    transition: width 0.5s ease;
   }
   .espacio {
     width: 20px;

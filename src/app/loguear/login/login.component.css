@@ -74,6 +74,13 @@
   position: relative;
 }
 
+.caja-router,
+.caja-principal,
+.logo {
+  transition: height 0.5s ease;
+  transition: width 0.5s ease;
+}
+
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-router {
@@ -83,7 +90,6 @@
     border-radius: 20px;
     background-color: rgba(13, 160, 245, 0.411);
     box-shadow: 4px 4px 4px 4px rgba(46, 47, 48, 0.88);
-    transition: width 0.5s ease;
   }
   .caja-principal {
     display: grid;
@@ -92,7 +98,6 @@
     border-radius: 20px;
     width: 50vh;
     height: 90vh;
-    transition: width 0.5s ease;
   }
   .caja {
     align-self: baseline;
@@ -110,7 +115,6 @@
     width: 160px;
     background-size: cover;
     background-position: center;
-    transition: width 0.5s ease;
   }
 }
 
@@ -118,7 +122,6 @@
   .caja-router {
     height: 80vh;
     width: 35vh;
-    transition: width 0.5s ease;
     background-color: rgba(13, 160, 245, 0.411);
     box-shadow: 4px 4px 4px 4px rgba(46, 47, 48, 0.88);
   }
@@ -129,7 +132,6 @@
     border-radius: 20px;
     width: 40vh;
     height: 90vh;
-    transition: width 0.5s ease;
   }
   .caja {
     align-self: baseline;
@@ -140,7 +142,6 @@
     width: 160px;
     background-size: cover;
     background-position: center;
-    transition: width 0.5s ease;
   }
   .espacio {
     width: 20px;

@@ -29,16 +29,10 @@
 
 .caja-izquierda {
   padding: 10px 10px 10px 10px;
-  transition: width 0.3s ease;
 }
 
 .caja-derecha {
   padding: 10px 10px 10px 10px;
-  transition: width 0.3s ease;
-}
-
-.caja-foto {
-  transition: width 0.3s ease;
 }
 
 .caja-principal {
@@ -56,7 +50,6 @@
   background-color: rgba(13, 160, 245, 0.411);
   box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.877);
   border-radius: 20px;
-  transition: width 0.3s ease;
 }
 
 .caja-ranking-iconos {
@@ -64,7 +57,6 @@
   background-color: rgba(13, 160, 245, 0.411);
   box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.877);
   border-radius: 20px;
-  transition: width 0.3s ease;
 }
 .caja-datos-cambiar {
   padding-top: 2em;
@@ -88,21 +80,23 @@
 
 /*ICONOS DE DEBAJO DE RANKINGS EN LOS CUALES SE PARCIPA:*/
 .iconos {
-  margin-left: 1.6em;
+  margin: 0 1em 0 1em;
   min-height: 40px;
   min-width: 40px;
   border: none;
   cursor: pointer;
   background-repeat: no-repeat;
   background-size: contain;
+  transition: width 0.4s ease;
+  transition: height 0.4s ease;
 }
+
 .anadir {
   background-image: url(../../assets/add-circle-outline.png);
 }
 .anadir:hover {
   background-image: url(../../assets/add-circle.png);
 }
-
 .editar {
   background-image: url(../../assets/edit-2-outline.png);
 }
@@ -124,6 +118,20 @@
 .boton-cambiar-contra:hover {
   opacity: 0.9;
 }
+
+.caja-principal {
+  transition: width 0.5s ease;
+  transition: height 0.5s ease;
+}
+.caja-izquierda,
+.caja-derecha,
+.caja-foto,
+.caja-ranking,
+.caja-ranking-iconos {
+  transition: width 0.3s ease;
+  transition: height 0.3s ease;
+}
+
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-principal {
@@ -132,7 +140,6 @@
     border-radius: 20px;
     width: 55vh;
     height: 80vh;
-    transition: width 0.5s ease;
   }
   .caja-izquierda {
     justify-self: left;
@@ -195,7 +202,6 @@
     border-radius: 20px;
     width: 40vh;
     height: 80vh;
-    transition: width 0.5s ease;
   }
   .caja-izquierda {
     display: inline-flex;
@@ -353,6 +359,11 @@
     margin-left: 0.8em;
   }
 
+  .iconos {
+    margin: 0 2em 0 2em;
+    min-height: 50px;
+    min-width: 50px;
+  }
   .caja-ranking {
     width: 36.4vh;
     height: 60vh;
