@@ -45,7 +45,7 @@ li {
   border-radius: 10px;
   background-color: #ffffff;
   box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(46, 47, 48, 0.61);
-  transition: box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .tabla-fila:hover {
   box-shadow: 2px 2px 2px 2px rgba(46, 47, 48, 0.61);

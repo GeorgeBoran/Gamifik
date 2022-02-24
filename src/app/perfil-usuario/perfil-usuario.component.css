@@ -1,6 +1,3 @@
-.total {
-  width: 100%;
-}
 .hiper-link {
   color: rgb(46, 44, 44);
   font-size: large;
@@ -87,8 +84,7 @@
   cursor: pointer;
   background-repeat: no-repeat;
   background-size: contain;
-  transition: width 0.4s ease;
-  transition: height 0.4s ease;
+  transition: all 0.2s ease;
 }
 
 .anadir {
@@ -120,20 +116,25 @@
 }
 
 .caja-principal {
-  transition: width 0.5s ease;
-  transition: height 0.5s ease;
+  transition: all 0.5s ease;
 }
 .caja-izquierda,
 .caja-derecha,
 .caja-foto,
 .caja-ranking,
 .caja-ranking-iconos {
-  transition: width 0.3s ease;
-  transition: height 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.distancia-1em-top {
+  margin-top: 1em;
 }
 
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
+  .total {
+    width: 55vh;
+  }
   .caja-principal {
     display: grid;
     box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.877);
@@ -196,6 +197,9 @@
 }
 
 @media (min-width: 220px) and (max-width: 320px) {
+  .total {
+    width: 40vh;
+  }
   .caja-principal {
     display: grid;
     box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.877);
@@ -245,6 +249,9 @@
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
+  .total {
+    width: 45vh;
+  }
   .caja-principal {
     width: 45vh;
   }
@@ -276,6 +283,9 @@
 }
 
 @media (min-width: 480px) and (max-width: 600px) {
+  .total {
+    width: 51vh;
+  }
   .caja-principal {
     width: 51vh;
   }
@@ -307,6 +317,9 @@
 }
 
 @media (min-width: 600px) and (max-width: 801px) {
+  .total {
+    width: 62vh;
+  }
   .caja-principal {
     width: 62vh;
   }
@@ -334,6 +347,9 @@
 
 @media (min-width: 801px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .total {
+    width: 64vh;
+  }
   .caja-principal {
     width: 64vh;
   }
@@ -380,6 +396,10 @@
 
 @media (min-width: 980px) and (max-width: 1024px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .total {
+    width: 100vh;
+  }
+
   .caja-principal {
     width: 100vh;
   }
@@ -418,6 +438,9 @@
 
 @media (min-width: 1025px) {
   /* big landscape tablets, laptops, and desktops */
+  .total {
+    width: 105vh;
+  }
 
   .pes {
     font-size: 22px;
@@ -457,6 +480,11 @@
 
 @media (min-width: 1281px) {
   /* hi-res laptops and desktops */
+
+  .total {
+    width: 130vh;
+  }
+
   .caja-principal {
     width: 130vh;
     height: 80vh;

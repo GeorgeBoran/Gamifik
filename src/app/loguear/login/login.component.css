@@ -26,8 +26,13 @@
 .distancia-3em {
   padding-bottom: 3em;
 }
+
 .distancia-5em {
   padding-bottom: 5em;
+}
+
+.distancia-2em-top {
+  margin-top: 2em;
 }
 
 .grid {
@@ -48,11 +53,13 @@
   padding: 13px 15px;
   z-index: 1;
   border: none;
-  transition: box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
+
 .inputs:hover {
   box-shadow: 1px 1px 1px 1px rgba(46, 47, 48, 0.88);
 }
+
 .far {
   cursor: pointer;
   position: absolute;
@@ -77,10 +84,8 @@
 .caja-router,
 .caja-principal,
 .logo {
-  transition: height 0.5s ease;
-  transition: width 0.5s ease;
+  transition: all 0.5s ease;
 }
-
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-router {

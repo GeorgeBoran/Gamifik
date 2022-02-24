@@ -4,13 +4,14 @@
   min-height: 90px;
   max-height: 110px;
   width: 100%;
-  display: inline-flex;
   border-radius: 20px;
   caret-color: transparent;
   box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.699);
   margin-bottom: 1em;
   padding-left: 1em;
   padding-right: 1em;
+  transition: all 0.5s ease;
+  justify-content: space-between;
 }
 
 /*Compartimentacion de la barra de navegacion:*/
@@ -28,8 +29,6 @@
   min-width: 30%;
   padding-right: 0.2em;
 }
-
-
 
 /*Desplegable:*/
 /*
@@ -65,16 +64,18 @@ SPAN DESPLEGABLE
 /*Boton que abre un desplegable con varias opciones:*/
 .deslogueo {
   background-image: url(../../assets/log-out-outline.png);
-  transition: background-image 0.3s ease;
+  transition: all 0.3s ease;
 }
 .deslogueo:hover {
   background-image: url(../../assets/log-out.png);
 }
 .persona {
   background-image: url(../../assets/usuario.png);
+  transition: all 0.3s ease;
 }
 .rankings {
   background-image: url(../../assets/analytics.png);
+  transition: all 0.3s ease;
 }
 
 .iconos {
@@ -87,7 +88,6 @@ SPAN DESPLEGABLE
   background-size: contain;
 }
 
-
 /*Logo:*/
 .logo {
   width: 140px;
@@ -97,7 +97,6 @@ SPAN DESPLEGABLE
   background-position: center;
 }
 
-
 @media (min-width: 801px) {
   /*Logo:*/
   .logo {
@@ -105,16 +104,14 @@ SPAN DESPLEGABLE
   }
 }
 
-
 @media (min-width: 220px) and (max-width: 300px) {
-
   .logo {
     width: 100px;
   }
-  .espacio-derecha{
+  .espacio-derecha {
     margin-right: -1em;
   }
-  .iconos{
+  .iconos {
     margin-left: 1em;
     margin-top: 0.4em;
     min-width: 30px;
@@ -123,7 +120,7 @@ SPAN DESPLEGABLE
 }
 
 @media (min-width: 801px) {
-  .iconos{
+  .iconos {
     margin-left: 3em;
   }
 }
