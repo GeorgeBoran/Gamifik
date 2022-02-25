@@ -97,13 +97,6 @@ SPAN DESPLEGABLE
   background-position: center;
 }
 
-@media (min-width: 801px) {
-  /*Logo:*/
-  .logo {
-    width: 240px;
-  }
-}
-
 @media (min-width: 220px) and (max-width: 300px) {
   .logo {
     width: 100px;
@@ -120,7 +113,18 @@ SPAN DESPLEGABLE
 }
 
 @media (min-width: 801px) {
+  /*Logo:*/
+  .logo {
+    width: 160px;
+  }
   .iconos {
     margin-left: 3em;
+  }
+}
+
+@media (min-width: 1281px) {
+  /*Logo:*/
+  .logo {
+    width: 200px;
   }
 }

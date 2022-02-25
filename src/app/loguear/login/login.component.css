@@ -141,7 +141,8 @@
   .caja {
     align-self: baseline;
     height: 65vh;
-  } /*Logo:*/
+  }
+  /*Logo:*/
   .logo {
     padding-top: 1.6em;
     width: 160px;
