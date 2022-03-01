@@ -1,10 +1,15 @@
-<div class="caja-principal flex">
-  <div class="caja-router flex grid">
-    <div class="caja">
-      <div class="parte-arriba">
-        <div class="flex">
-          <img class="logo distancia-5em " src=" ../../assets/logo_negro.png">
+<div class="flex distancia-2em-top">
+  <div class="caja-principal flex">
+    <div class="caja-router flex grid">
+      <div class="caja">
+        <div class="parte-arriba">
+          <div class="flex">
+            <img class="logo distancia-5em " src=" ../../assets/logo_negro.png">
+          </div>
+          <h1 class="flex distancia-05em">Conectate</h1>
+          <h3 class="flex distancia-1em">Utiliza una Cuenta Goat</h3>
         </div>
+<<<<<<< HEAD
         <h1 class="flex distancia-05em">Conectate</h1>
         <h3 class="flex distancia-1em">Utiliza una Cuenta Goat</h3>
       </div>
@@ -18,23 +23,30 @@
           <i class="far {{eye}}" (click)="mostrarContrasena()"></i>
           <input class="inputs flex" [type]="mostrarContra?'text':'password'" name="password" [(ngModel)]="password"
             placeholder="Password" />
+=======
+        <div class="caja-imputs grid flex">
+          <div class="flex">
+            <input class="inputs distancia-input-04em" type="text" name="username" [(ngModel)]="username"
+              placeholder="Username" />
+          </div>
+
+          <div class="flex caja-ojo-contra">
+            <i class="far fa-eye" (click)="mostrarContrasena()"></i>
+            <input class="inputs flex" [type]="mostrarContra?'text':'password'" name="password" [(ngModel)]="password"
+              placeholder="Password" />
+          </div>
+>>>>>>> 8b0b59572ac7167381a51f91b7f49ff8c1258ae9
         </div>
+
+
+        <div class="flex boton-seguir">
+          <button class="boton-siguiente boton-siguiente-extra" (click)="loguear()">Siguiente</button>
+        </div>
+
       </div>
-
-
-
-
-
-
-
-      <div class="flex boton-seguir">
-        <button class="boton-siguiente boton-siguiente-extra" (click)="loguear()">Siguiente</button>
+      <div class="flex registrar">
+        <p class="hiper-link">No tienes cuenta? <a [routerLink]="['/registro']" class="color">Registrate</a></p>
       </div>
-
-
-    </div>
-    <div class="flex registrar">
-      <p class="hiper-link">No tienes cuenta? <a [routerLink]="['/registro']" class="color">Registrate</a></p>
     </div>
   </div>
 </div>

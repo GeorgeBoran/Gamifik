@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { LoginComponent } from './loguear/login/login.component';
 import { RegisterComponent } from './registrar/register/register.component';
+import { VisualizarRankingComponent } from './rankings/visualizar-ranking/visualizar-ranking.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'pagina',
     component: PerfilUsuarioComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'ranking',
+    component: VisualizarRankingComponent,
     pathMatch: 'full',
   },
 ];

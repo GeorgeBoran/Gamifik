@@ -1,50 +1,50 @@
-<div class="total">
-  <app-header></app-header>
-  <div class="caja-principal">
+<div class="flex distancia-1em-top">
+  <div class="total">
+    <app-header></app-header>
+    <div class="flex">
+      <div class="caja-principal">
+        <div class="caja-izquierda">
+          <div class="caja-foto-nombre flex ">
+            <div class="caja-foto flex distancia-1em-top">
 
-    <div class="caja-izquierda">
+            </div>
+            <div class="caja-nombre">
+              <h3>"username"</h3>
+              <p>Profesor</p>
+            </div>
+          </div>
 
-      <div class="caja-foto-nombre flex">
-        <div class="caja-foto flex">
-
+          <div class="caja-datos-cambiar grid flex">
+            <div class="caja-inputs distancia-2em">
+              <p class="pes">Nombre: Juanjo</p>
+              <p class="pes">Apellido: Juanjo</p>
+              <p class="pes">Email: Juanjo@gmail.com</p>
+              <p class="pes  distancia-1em">Centro: Juanjo</p>
+              <div class="flex">
+                <button class="boton-cambiar-contra">Cambiar Contrasena</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="caja-nombre">
-          <h3>"username"</h3>
-          <p>Profesor</p>
+
+        <div class="caja-derecha">
+          <app-listar-rankings class="caja-ranking"></app-listar-rankings>
+
+          <div class="caja-ranking-iconos flex">
+
+            <div class="iconos anadir">
+              <a [routerLink]="['/']"></a>
+            </div>
+            <div class="iconos editar">
+              <a [routerLink]="['/pagina']"></a>
+            </div>
+            <div class="iconos borrar">
+              <a [routerLink]="['/']"></a>
+            </div>
+
+          </div>
+
         </div>
       </div>
-
-      <div class="caja-datos-cambiar flex">
-
-        <div class="caja-inputs">
-          <p class="pes">Nombre</p>
-          <p class="pes">Apellidos</p>
-          <p class="pes">Email</p>
-          <p class="pes">Centro</p>
-          <p class="pes">Contrasena</p>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="caja-derecha">
-      <div class="caja-ranking">
-        <app-listar-rankings class="componente-rankings"></app-listar-rankings>
-      </div>
-      <div class="caja-ranking-iconos flex">
-
-        <div class="iconos anadir">
-          <a [routerLink]="['/']"></a>
-        </div>
-        <div class="iconos editar">
-          <a [routerLink]="['/pagina']"></a>
-        </div>
-        <div class="iconos borrar">
-          <a [routerLink]="['/']"></a>
-        </div>
-
-      </div>
-
     </div>
   </div>
-</div>

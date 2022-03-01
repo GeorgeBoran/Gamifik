@@ -26,8 +26,13 @@
 .distancia-3em {
   padding-bottom: 3em;
 }
+
 .distancia-5em {
   padding-bottom: 5em;
+}
+
+.distancia-2em-top {
+  margin-top: 2em;
 }
 
 .grid {
@@ -48,11 +53,13 @@
   padding: 13px 15px;
   z-index: 1;
   border: none;
-  transition: box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
+
 .inputs:hover {
   box-shadow: 1px 1px 1px 1px rgba(46, 47, 48, 0.88);
 }
+
 .far {
   cursor: pointer;
   position: absolute;
@@ -74,6 +81,11 @@
   position: relative;
 }
 
+.caja-router,
+.caja-principal,
+.logo {
+  transition: all 0.5s ease;
+}
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .caja-router {
@@ -83,7 +95,6 @@
     border-radius: 20px;
     background-color: rgba(13, 160, 245, 0.411);
     box-shadow: 4px 4px 4px 4px rgba(46, 47, 48, 0.88);
-    transition: width 0.5s ease;
   }
   .caja-principal {
     display: grid;
@@ -92,7 +103,6 @@
     border-radius: 20px;
     width: 50vh;
     height: 90vh;
-    transition: width 0.5s ease;
   }
   .caja {
     align-self: baseline;
@@ -110,7 +120,6 @@
     width: 160px;
     background-size: cover;
     background-position: center;
-    transition: width 0.5s ease;
   }
 }
 
@@ -118,7 +127,6 @@
   .caja-router {
     height: 80vh;
     width: 35vh;
-    transition: width 0.5s ease;
     background-color: rgba(13, 160, 245, 0.411);
     box-shadow: 4px 4px 4px 4px rgba(46, 47, 48, 0.88);
   }
@@ -129,18 +137,17 @@
     border-radius: 20px;
     width: 40vh;
     height: 90vh;
-    transition: width 0.5s ease;
   }
   .caja {
     align-self: baseline;
     height: 65vh;
-  } /*Logo:*/
+  }
+  /*Logo:*/
   .logo {
     padding-top: 1.6em;
     width: 160px;
     background-size: cover;
     background-position: center;
-    transition: width 0.5s ease;
   }
   .espacio {
     width: 20px;

@@ -1,0 +1,44 @@
+.bloquePrincipal {
+  background-color: rgba(209, 209, 209, 0.788);
+  height: max-content;
+  padding: 2em 20em 2em 20em;
+  position: relative;
+}
+
+.caja-bolitas {
+  position: relative;
+}
+
+.usuario {
+  margin-bottom: 1em;
+  list-style: none;
+  width: 12em;
+  height: 12em;
+  border-radius: 50%;
+  color: #fff;
+  border: 3px solid black;
+  justify-content: space-around;
+  background-image: url(../../../assets/gato.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.caja-datos-foto:nth-child(even) {
+  margin-left: 300px;
+}
+
+.caja-datos-foto {
+  display: flex;
+}
+
+.titulo-ranking {
+  font-size: large;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 3em;
+  margin-bottom: 2em;
+}
+
+.grid {
+  display: grid !important;
+}

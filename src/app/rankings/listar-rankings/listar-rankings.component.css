@@ -45,7 +45,7 @@ li {
   border-radius: 10px;
   background-color: #ffffff;
   box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(46, 47, 48, 0.61);
-  transition: box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .tabla-fila:hover {
   box-shadow: 2px 2px 2px 2px rgba(46, 47, 48, 0.61);
@@ -88,7 +88,10 @@ li {
 
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
-  .container {
+  .caja-ranking {
+    width: 100%;
+    height: 85%;
+    margin-bottom: 0.7em;
   }
 }
 @media all and (max-width: 767px) {
@@ -101,9 +104,6 @@ li {
 }
 
 @media (min-width: 600px) and (max-width: 801px) {
-  .container {
-    height: inherit;
-  }
 }
 
 @media (min-width: 801px) {

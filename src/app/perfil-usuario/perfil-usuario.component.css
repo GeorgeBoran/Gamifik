@@ -1,6 +1,3 @@
-.total {
-  width: 100%;
-}
 .hiper-link {
   color: rgb(46, 44, 44);
   font-size: large;
@@ -29,16 +26,10 @@
 
 .caja-izquierda {
   padding: 10px 10px 10px 10px;
-  transition: width 0.3s ease;
 }
 
 .caja-derecha {
   padding: 10px 10px 10px 10px;
-  transition: width 0.3s ease;
-}
-
-.caja-foto {
-  transition: width 0.3s ease;
 }
 
 .caja-principal {
@@ -46,6 +37,7 @@
 }
 
 .caja-foto-nombre {
+  caret-color: transparent;
   background-color: rgba(13, 160, 245, 0.411);
 }
 
@@ -55,7 +47,6 @@
   background-color: rgba(13, 160, 245, 0.411);
   box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.877);
   border-radius: 20px;
-  transition: width 0.3s ease;
 }
 
 .caja-ranking-iconos {
@@ -63,9 +54,9 @@
   background-color: rgba(13, 160, 245, 0.411);
   box-shadow: 3px 3px 3px 3px rgba(39, 25, 25, 0.877);
   border-radius: 20px;
-  transition: width 0.3s ease;
 }
 .caja-datos-cambiar {
+  padding-top: 2em;
   background-color: rgba(13, 160, 245, 0.411);
 }
 .caja-inputs {
@@ -76,36 +67,32 @@
 
 .pes {
   color: #202124;
-  font-size: 20px;
   margin: 0.1em 1em 0em 1em;
   z-index: 1;
 }
+
 .caja-nombre p {
   text-transform: uppercase;
 }
 
-.componente-rankings {
-  height: inherit;
-  width: inherit;
-}
-
 /*ICONOS DE DEBAJO DE RANKINGS EN LOS CUALES SE PARCIPA:*/
 .iconos {
-  margin-left: 1.6em;
+  margin: 0 1em 0 1em;
   min-height: 40px;
   min-width: 40px;
   border: none;
   cursor: pointer;
   background-repeat: no-repeat;
   background-size: contain;
+  transition: all 0.2s ease;
 }
+
 .anadir {
   background-image: url(../../assets/add-circle-outline.png);
 }
 .anadir:hover {
   background-image: url(../../assets/add-circle.png);
 }
-
 .editar {
   background-image: url(../../assets/edit-2-outline.png);
 }
@@ -119,15 +106,41 @@
   background-image: url(../../assets/delete-bin-5-line.png);
 }
 
+.boton-cambiar-contra {
+  padding: 0.6em;
+  border-radius: 4px;
+  opacity: 1;
+}
+.boton-cambiar-contra:hover {
+  opacity: 0.9;
+}
+
+.caja-principal {
+  transition: all 0.5s ease;
+}
+.caja-izquierda,
+.caja-derecha,
+.caja-foto,
+.caja-ranking,
+.caja-ranking-iconos {
+  transition: all 0.3s ease;
+}
+
+.distancia-1em-top {
+  margin-top: 1em;
+}
+
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
+  .total {
+    width: 55vh;
+  }
   .caja-principal {
     display: grid;
     box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.877);
     border-radius: 20px;
-    width: 50vh;
+    width: 55vh;
     height: 80vh;
-    transition: width 0.5s ease;
   }
   .caja-izquierda {
     justify-self: left;
@@ -171,30 +184,28 @@
   }
   .caja-ranking {
     width: 100%;
-    height: 85%;
+    height: 82%;
     margin-bottom: 0.7em;
   }
   .caja-ranking-iconos {
     width: 100%;
     height: 15%;
   }
-}
-@media all and (max-width: 767px) {
-  .componente-rankings {
-    height: 65%;
-
-    width: inherit;
+  .pes {
+    font-size: 17px;
   }
 }
 
 @media (min-width: 220px) and (max-width: 320px) {
+  .total {
+    width: 40vh;
+  }
   .caja-principal {
     display: grid;
     box-shadow: 9px 9px 9px 9px rgba(39, 25, 25, 0.877);
     border-radius: 20px;
     width: 40vh;
     height: 80vh;
-    transition: width 0.5s ease;
   }
   .caja-izquierda {
     display: inline-flex;
@@ -238,10 +249,12 @@
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  .caja-principal {
-    width: 43vh;
+  .total {
+    width: 45vh;
   }
-
+  .caja-principal {
+    width: 45vh;
+  }
   .caja-izquierda {
     display: inline-flex;
     width: inherit;
@@ -255,18 +268,24 @@
   }
 
   .caja-foto-nombre {
-    width: 49%;
+    width: 48%;
     height: 100%;
   }
 
   .caja-datos-cambiar {
-    width: 49%;
+    width: 48%;
     height: 100%;
     margin-left: 1em;
+  }
+  .pes {
+    font-size: 18px;
   }
 }
 
 @media (min-width: 480px) and (max-width: 600px) {
+  .total {
+    width: 51vh;
+  }
   .caja-principal {
     width: 51vh;
   }
@@ -283,54 +302,64 @@
   }
 
   .caja-foto-nombre {
-    width: 49%;
+    width: 48%;
     height: 100%;
   }
 
   .caja-datos-cambiar {
-    width: 49%;
+    width: 48%;
     height: 100%;
     margin-left: 1em;
+  }
+  .pes {
+    font-size: 20px;
   }
 }
 
 @media (min-width: 600px) and (max-width: 801px) {
+  .total {
+    width: 62vh;
+  }
   .caja-principal {
     width: 62vh;
   }
-
   .caja-izquierda {
     width: 24.8vh;
     height: inherit;
-  }
-  .componente-rankings {
-    height: 73%;
-    background-color: #202124;
-    width: inherit;
   }
   .container .caja-derecha {
     width: 37.2vh;
     height: inherit;
   }
+
+  .caja-ranking {
+    width: 36.4vh;
+    height: 66.5vh;
+    margin-bottom: 0.7em;
+  }
   .caja-ranking-iconos {
     height: 90px;
+  }
+  .pes {
+    font-size: 20px;
   }
 }
 
 @media (min-width: 801px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .total {
+    width: 64vh;
+  }
   .caja-principal {
     width: 64vh;
   }
 
   .caja-izquierda {
-    justify-self: left;
     width: 26.6vh;
     height: inherit;
     position: absolute;
   }
   .caja-derecha {
-    justify-self: right;
     width: 38.4vh;
     height: inherit;
   }
@@ -346,6 +375,11 @@
     margin-left: 0.8em;
   }
 
+  .iconos {
+    margin: 0 2em 0 2em;
+    min-height: 40px;
+    min-width: 40px;
+  }
   .caja-ranking {
     width: 36.4vh;
     height: 60vh;
@@ -355,10 +389,17 @@
     width: 36.4vh;
     height: 16.5vh;
   }
+  .pes {
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 980px) and (max-width: 1024px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .total {
+    width: 100vh;
+  }
+
   .caja-principal {
     width: 100vh;
   }
@@ -390,11 +431,20 @@
   .caja-nombre {
     margin-left: 2em;
   }
+  .pes {
+    font-size: 22px;
+  }
 }
 
 @media (min-width: 1025px) {
   /* big landscape tablets, laptops, and desktops */
+  .total {
+    width: 105vh;
+  }
 
+  .pes {
+    font-size: 22px;
+  }
   .caja-principal {
     width: 105vh;
     height: 80vh;
@@ -430,6 +480,11 @@
 
 @media (min-width: 1281px) {
   /* hi-res laptops and desktops */
+
+  .total {
+    width: 130vh;
+  }
+
   .caja-principal {
     width: 130vh;
     height: 80vh;
