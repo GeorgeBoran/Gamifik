@@ -15,7 +15,7 @@
         </div>
 
         <div class="flex caja-ojo-contra">
-          <i class="far fa-eye" (click)="mostrarContrasena()"></i>
+          <i class="far {{eye}}" (click)="mostrarContrasena()"></i>
           <input class="inputs flex" [type]="mostrarContra?'text':'password'" name="password" [(ngModel)]="password"
             placeholder="Password" />
         </div>

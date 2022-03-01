@@ -1,14 +1,15 @@
 import { StringMap } from "@angular/compiler/src/compiler_facade_interface";
 
-export interface alumno
+export interface user
 {
   mail: string ;
-  img: string ;
   username: string ;
 
   name: string ;
   cognom: string ;
   password: string;
 
-  fecha: string;
+  option: string;
+  tipo: boolean;
+  img: string ;
 }

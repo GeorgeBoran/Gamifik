@@ -11,10 +11,18 @@ export class LoginComponent implements OnInit {
   password: string = '';
 
   mostrarContra: boolean = false;
+  eye: string|any = 'fa-eye';
 
   //Funcion para mostrar contrasena:
   mostrarContrasena() {
     this.mostrarContra = !this.mostrarContra;
+    if ( this.eye == 'fa-eye' )
+    {
+      this.eye = 'fa-eye-slash';
+    } else
+    {
+      this.eye = 'fa-eye';
+    }
   }
 
   loguear() {

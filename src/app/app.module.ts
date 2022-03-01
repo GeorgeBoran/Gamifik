@@ -11,6 +11,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RankingsModule } from './rankings/rankings.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { RankingsModule } from './rankings/rankings.module';
     AppRoutingModule,
     CommonModule,
     FormsModule,
-    RankingsModule,
+    RankingsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

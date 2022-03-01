@@ -1,27 +1,18 @@
 <?php
-class Conexion{
-    //Variables
-    private $servidor='localhost';
-    private $database='goat_gamifik';
-    private $usuario='root';
-    private $password='';
-    public $con;
-    function __construct()
-    {
-        $this->con = mysqli_connect($this->servidor, $this->usuario, $this->password, $this->database);
-    }
-    //Funcion comprobar la conexion
-    function comprobarConexion(){
-        if (!$this->con) {
-            echo "no se han validado los datos";
-        }else {
-            return false;
-        }
-    }
-    //Funcion retornar la conexion
-    function getConexion(){
-        return $this->con;
-    }
-}
 
-?>
+global $enlace; //variable de tipo global para llamarla en cualquier parte de la aplicacion donde se llame
+
+
+function conexion()
+{
+    $enlace = mysqli_connect('localhost', 'root', '', 'goat'); //conexion con la base de datos
+    mysqli_set_charset($enlace, "utf8");
+
+    if (!$enlace) {
+        echo "Error: No se puede conectar a MySQL." . PHP_EOL;
+        echo "Errno de depuracion: " . mysqli_connect_errno() . PHP_EOL;
+        echo "Error de depuracion: " . mysqli_connect_error() . PHP_EOL;
+        exit;
+    }
+    return $enlace;
+}

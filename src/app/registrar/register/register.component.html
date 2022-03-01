@@ -31,14 +31,16 @@
           placeholder="Introduzca su Username" style="display:{{ displays[1] }};" />
 
         <div class="flex caja-ojo-contra" style="display:{{ displays[2] }};">
-          <i class="far fa-eye" (click)="mostrarContrasena()" style="display:{{ displays[2] }};"></i>
+          <i class="far {{eye}}" (click)="mostrarContrasena()" style="display:{{ displays[2] }};"></i>
           <input class="inputs distancia-input-04em" [type]="mostrarContra?'text':'password'" name="password"
             [(ngModel)]="password" placeholder="Password" style="display:{{ displays[2] }};" />
         </div>
 
+      <div class="flex caja-ojo-contra" style="display:{{ displays[2] }};">
+    <i class="far {{eye}}" (click)="mostrarContrasena()" style="display:{{ displays[2] }};"></i>
         <input class="inputs" [type]="mostrarContra?'text':'password'" name="repassword" [(ngModel)]="repassword"
           placeholder="Confirm Password" style="display:{{ displays[2] }};" />
-
+    </div>
 
         <input class="inputs distancia-input-04em" type="text" name="name" [(ngModel)]="name" placeholder="Name"
           style="display:{{ displays[3] }};" />
@@ -46,13 +48,14 @@
           style="display:{{ displays[3] }};" />
 
         <div *ngIf="alumno; else isProfesor">
-          <input class="inputs distancia-input-04em" type="text" name="centro" [(ngModel)]="centro" placeholder="Centro"
+          <input class="inputs distancia-input-04em" type="date" name="fecha" [(ngModel)]="fecha" placeholder="Fecha"
             style="display:{{ displays[4] }};" />
         </div>
 
         <ng-template #isProfesor>
-          <input class="inputs distancia-input-04em" type="date" name="fecha" [(ngModel)]="fecha" placeholder="Fecha"
-            style="display:{{ displays[4] }};" />
+          
+            <input class="inputs distancia-input-04em" type="text" name="centro" [(ngModel)]="centro" placeholder="Centro"
+              style="display:{{ displays[4] }};" />
         </ng-template>
       </div>
 

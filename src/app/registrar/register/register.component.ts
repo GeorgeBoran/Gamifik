@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
+import { UsersService } from 'src/app/services/users.service';
+import { sequence } from '@angular/animations';
+import { HttpClient } from '@angular/common/http';
+import { user } from 'src/app/user';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +13,7 @@ import swal from 'sweetalert2';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private sanitizer: DomSanitizer, private router: Router) {}
+  constructor(private sanitizer: DomSanitizer, private router: Router,private Service:UsersService) {}
 
   progreso: number = 0;
 
@@ -26,18 +30,27 @@ export class RegisterComponent implements OnInit {
 
   centro: string = '';
   fecha: string = '';
+  option: string = '';
 
   inputIMG: HTMLElement = document.getElementById('inputIMG') as HTMLElement;
 
   alumno: boolean = true;
-  message: string = '';
+  OK: boolean = true;
   displays: string[] = [' ', 'none', 'none', 'none', 'none'];
 
   mostrarContra: boolean = false;
+  eye: string|any = 'fa-eye';
 
   //Funcion para mostrar contrasena:
   mostrarContrasena() {
     this.mostrarContra = !this.mostrarContra;
+    if ( this.eye == 'fa-eye' )
+    {
+      this.eye = 'fa-eye-slash';
+    } else
+    {
+      this.eye = 'fa-eye';
+    }
   }
 
   next() {
@@ -46,9 +59,7 @@ export class RegisterComponent implements OnInit {
         this.progreso = 20;
         this.displays[0] = 'none';
         this.displays[1] = ' ';
-      } else {
-        swal.fire(this.message);
-      }
+      } 
     } else if (this.displays[1] == ' ') {
       if (this.comprobarUsername()) {
         if (this.img == '../../assets/avatar.jpg') {
@@ -74,17 +85,13 @@ export class RegisterComponent implements OnInit {
           this.displays[1] = 'none';
           this.displays[2] = ' ';
         }
-      } else {
-        swal.fire(this.message);
-      }
+      } 
     } else if (this.displays[2] == ' ') {
       if (this.comprobarPassword()) {
         this.progreso = 60;
         this.displays[3] = ' ';
         this.displays[2] = 'none';
-      } else {
-        swal.fire(this.message);
-      }
+      } 
     } else if (this.displays[3] == ' ') {
       if (this.name == '') {
         swal.fire('Introducir Nombre!');
@@ -96,11 +103,14 @@ export class RegisterComponent implements OnInit {
         this.displays[3] = 'none';
       }
     } else if (this.displays[4] == ' ') {
-      if (this.alumno && this.centro == '') {
-        swal.fire('Introducir nombre del centro!');
-      } else if (!this.alumno && this.fecha == '') {
-        swal.fire('Introducir fecha de nacimiento!');
-      } else {
+      if ( this.alumno && this.fecha == '' )
+      {
+        swal.fire( 'Introducir fecha de nacimiento!' );
+      } else if ( !this.alumno && this.centro == '' )
+      {
+        swal.fire( 'Introducir nombre del centro!' );
+      }
+      else{
         this.progreso = 100;
         this.registrarUsuario();
       }
@@ -141,21 +151,44 @@ export class RegisterComponent implements OnInit {
       }
     });
 
-  registrarUsuario() {
-    swal
-      .fire({
-        title: 'Usuario registrado!',
-        icon: 'warning',
-        showCancelButton: false,
-        cancelButtonColor: '#d33',
-        confirmButtonColor: '#3085d6',
-        confirmButtonText: 'OK',
-      })
-      .then((result) => {
-        if (result.isConfirmed) {
-          this.router.navigate(['/pagina']);
+  registrarUsuario ()
+  {
+    
+    if ( this.alumno )
+    {
+      this.option = this.fecha;
+    } else
+    {
+      this.option = this.centro;
+    }
+    const user: user = {mail: this.mail,username: this.username,name: this.name,cognom: this.cognom,password: this.password,option:this.option , tipo:this.alumno,img: this.img};
+    this.Service.registrarUsuario(user).subscribe(
+        ( datos: any ) =>
+        {
+          console.log( datos );
+          if ( datos == 'Registro correcto' )
+          {
+            swal.fire({
+                title: 'Usuario registrado!',
+                icon: 'warning',
+                showCancelButton: false,
+                cancelButtonColor: '#d33',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+              }).then((result) => {
+                if ( result.isConfirmed )
+                {
+                  localStorage.setItem( 'user-logged', JSON.stringify( user ) );
+                  this.router.navigate(['/pagina']);
+                }
+              });
+          } else
+          {
+            swal.fire( 'Error. Usuario no registrado!' );
+          }
         }
-      });
+      );
+   
   }
 
   selectType() {
@@ -166,33 +199,51 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  comprobarUsername() {
+  comprobarUsername()
+  {
+    this.OK = true;
     if (this.username == '') {
-      this.message = 'Introducir username!';
-      return false;
-    } else {
-      return true;
+      swal.fire ('Introducir username!');
+      this.OK = false;
+    } else
+    {
+     this.Service.comprobarUser(this.username).subscribe(
+        ( datos: any ) =>
+        {
+          console.log( datos );
+          if ( datos == 'user no valido' )
+          {
+            this.OK = false;
+            this.displays[2] = 'none';
+            this.displays[1] = ' ';
+            swal.fire( 'Nombre de usuario no valido!' );
+          }
+        }
+      );
     }
+    return this.OK;
   }
 
   comprobarPassword() {
     if (this.password == '') {
-      this.message = 'Debe introducir el password!';
+      swal.fire( 'Debe introducir el password!');
       return false;
     } else if (this.repassword == '') {
-      this.message = 'Debe confirmar el password!';
+      swal.fire('Debe confirmar el password!');
       return false;
-    } else if (this.password == this.repassword) {
+    } else
+      if ( this.password == this.repassword )
+    {
       return true;
     } else {
-      this.message = 'El Password no coincide!';
+      swal.fire('El Password no coincide!');
       return false;
     }
   }
 
   comprobarEmail() {
     if (this.mail == '') {
-      this.message = 'Introducir Email!';
+      swal.fire('Introducir Email!');
       return false;
     } else {
       for (let index = 0; index < this.mail.length; index++) {
@@ -202,7 +253,7 @@ export class RegisterComponent implements OnInit {
         }
       }
     }
-    this.message = 'Email no valido!';
+    swal.fire ('Email no valido!');
     return false;
   }
 
