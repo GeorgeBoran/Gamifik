@@ -130,6 +130,33 @@
   margin-top: 1em;
 }
 
+.usuario-imagen-perfil {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  padding: 0.2em;
+  object-fit: cover;
+}
+
+.boton-subir {
+  caret-color: transparent;
+  display: flex;
+  border-radius: 50%;
+  opacity: 0;
+  position: absolute;
+  background-color: #4d505ab0;
+  height: inherit;
+  width: inherit;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.boton-subir:hover {
+  opacity: 0.9;
+}
+
 /*MEDIA PARA RESPONSIVE:*/
 @media (min-width: 320px) {
   .total {
