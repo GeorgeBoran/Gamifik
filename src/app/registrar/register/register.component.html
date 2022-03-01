@@ -38,56 +38,32 @@
               [(ngModel)]="password" placeholder="Password" style="display:{{ displays[2] }};" />
           </div>
 
-<<<<<<< HEAD
-        <div class="flex caja-ojo-contra" style="display:{{ displays[2] }};">
-          <i class="far {{eye}}" (click)="mostrarContrasena()" style="display:{{ displays[2] }};"></i>
-          <input class="inputs distancia-input-04em" [type]="mostrarContra?'text':'password'" name="password"
-            [(ngModel)]="password" placeholder="Password" style="display:{{ displays[2] }};" />
-        </div>
+          <div class="flex caja-ojo-contra" style="display:{{ displays[2] }};">
+            <i class="far {{eye}}" (click)="mostrarContrasena()" style="display:{{ displays[2] }};"></i>
+            <input class="inputs distancia-input-04em" [type]="mostrarContra?'text':'password'" name="password"
+              [(ngModel)]="password" placeholder="Password" style="display:{{ displays[2] }};" />
+          </div>
 
-      <div class="flex caja-ojo-contra" style="display:{{ displays[2] }};">
-    <i class="far {{eye}}" (click)="mostrarContrasena()" style="display:{{ displays[2] }};"></i>
-        <input class="inputs" [type]="mostrarContra?'text':'password'" name="repassword" [(ngModel)]="repassword"
-          placeholder="Confirm Password" style="display:{{ displays[2] }};" />
-    </div>
-=======
-          <input class="inputs" [type]="mostrarContra?'text':'password'" name="repassword" [(ngModel)]="repassword"
-            placeholder="Confirm Password" style="display:{{ displays[2] }};" />
-
-
-          <input class="inputs distancia-input-04em" type="text" name="name" [(ngModel)]="name" placeholder="Name"
-            style="display:{{ displays[3] }};" />
-          <input class="inputs" type="text" name="cognom" [(ngModel)]="cognom" placeholder="Subname"
-            style="display:{{ displays[3] }};" />
->>>>>>> 8b0b59572ac7167381a51f91b7f49ff8c1258ae9
+          <div class="flex caja-ojo-contra" style="display:{{ displays[2] }};">
+            <i class="far {{eye}}" (click)="mostrarContrasena()" style="display:{{ displays[2] }};"></i>
+            <input class="inputs" [type]="mostrarContra?'text':'password'" name="repassword" [(ngModel)]="repassword"
+              placeholder="Confirm Password" style="display:{{ displays[2] }};" />
+          </div>
 
           <div *ngIf="alumno; else isProfesor">
             <input class="inputs distancia-input-04em" type="text" name="centro" [(ngModel)]="centro"
               placeholder="Centro" style="display:{{ displays[4] }};" />
           </div>
 
-<<<<<<< HEAD
-        <div *ngIf="alumno; else isProfesor">
-          <input class="inputs distancia-input-04em" type="date" name="fecha" [(ngModel)]="fecha" placeholder="Fecha"
-            style="display:{{ displays[4] }};" />
-        </div>
-
-        <ng-template #isProfesor>
-          
-            <input class="inputs distancia-input-04em" type="text" name="centro" [(ngModel)]="centro" placeholder="Centro"
-              style="display:{{ displays[4] }};" />
-        </ng-template>
-      </div>
-
-      <div class="flex boton-seguir">
-        <button class="boton-siguiente boton-siguiente-extra " (click)="next()">
-          Siguiente
-        </button>
-      </div>
-=======
-          <ng-template #isProfesor>
+          <div *ngIf="alumno; else isProfesor">
             <input class="inputs distancia-input-04em" type="date" name="fecha" [(ngModel)]="fecha" placeholder="Fecha"
               style="display:{{ displays[4] }};" />
+          </div>
+
+          <ng-template #isProfesor>
+
+            <input class="inputs distancia-input-04em" type="text" name="centro" [(ngModel)]="centro"
+              placeholder="Centro" style="display:{{ displays[4] }};" />
           </ng-template>
         </div>
 
@@ -96,7 +72,6 @@
             Siguiente
           </button>
         </div>
->>>>>>> 8b0b59572ac7167381a51f91b7f49ff8c1258ae9
 
       </div>
       <div>
