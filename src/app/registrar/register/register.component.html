@@ -44,10 +44,11 @@
               placeholder="Confirm Password" style="display:{{ displays[2] }};" />
           </div>
 
-          <div *ngIf="alumno; else isProfesor">
-            <input class="inputs distancia-input-04em" type="text" name="centro" [(ngModel)]="centro"
-              placeholder="Centro" style="display:{{ displays[4] }};" />
-          </div>
+          <input class="inputs distancia-input-04em" type="text" name="name" [(ngModel)]="name" placeholder="Name"
+          style="display:{{ displays[3] }};" />
+        <input class="inputs" type="text" name="cognom" [(ngModel)]="cognom" placeholder="Subname"
+          style="display:{{ displays[3] }};" />
+
 
           <div *ngIf="alumno; else isProfesor">
             <input class="inputs distancia-input-04em" type="date" name="fecha" [(ngModel)]="fecha" placeholder="Fecha"
@@ -55,9 +56,8 @@
           </div>
 
           <ng-template #isProfesor>
-
             <input class="inputs distancia-input-04em" type="text" name="centro" [(ngModel)]="centro"
-              placeholder="Centro" style="display:{{ displays[4] }};" />
+            placeholder="Centro" style="display:{{ displays[4] }};" />
           </ng-template>
         </div>
 
