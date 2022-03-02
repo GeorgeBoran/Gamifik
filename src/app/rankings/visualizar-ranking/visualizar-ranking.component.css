@@ -1,35 +1,75 @@
+
 .bloquePrincipal {
-  background-color: rgba(209, 209, 209, 0.788);
+  caret-color: transparent;
+  background-color: rgba(255, 255, 255, 0.925);
   height: max-content;
   padding: 2em 20em 2em 20em;
-  position: relative;
+  box-shadow: 0 3px 0 3px rgba(255, 255, 255, 0.11);
+}
+.total{
+  width: 100%;
+  height: 100%;
 }
 
 .caja-bolitas {
-  position: relative;
+
 }
 
 .usuario {
+  cursor: pointer;
+  position: relative;
   margin-bottom: 1em;
   list-style: none;
-  width: 12em;
-  height: 12em;
+  width: 13em;
+  height: 13em;
   border-radius: 50%;
-  color: #fff;
-  border: 3px solid black;
-  justify-content: space-around;
-  background-image: url(../../../assets/gato.jpg);
+  border: 5px solid gold;
+  box-shadow: 3px 3px 3px 3px rgba(255, 217, 0, 0.308);
   background-size: cover;
   background-position: center;
+  background-image: url(../../../assets/gato.jpg);
+  transition: all 0.4s ease;
+}
+.usuario:first-child:nth-last-child(n+3){
+  border-color: black;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.308);
+}
+
+.usuario:first-child:nth-last-child(n+3){
+  border-color: rgb(231, 231, 231);
+  box-shadow: 3px 3px 3px 3px rgba(255, 255, 255, 0.308);
+}
+
+.usuario:hover{
+  -webkit-transform: scale(1.12);
+  -moz-transform: scale(1.12);
+  -ms-transform: scale(1.12);
+  -o-transform: scale(1.12);
+}
+
+.caja-listado{
+display: block;
+}
+
+
+.caja-datos-foto {
+  margin-bottom: 4em;
+  gap: 3em;
 }
 
 .caja-datos-foto:nth-child(even) {
-  margin-left: 300px;
+  margin-right: 1em;
+  flex-direction: row-reverse;
 }
 
-.caja-datos-foto {
-  display: flex;
+.caja-datos-foto:nth-child(odd) {
+  margin-right: 1em;
 }
+
+.info-extra-listado:nth-child(even){
+  margin-left: 2em;
+}
+
 
 .titulo-ranking {
   font-size: large;
@@ -38,7 +78,24 @@
   padding: 3em;
   margin-bottom: 2em;
 }
+.titulo-listado{
+margin-bottom: 0.5em;
+}
 
 .grid {
   display: grid !important;
+}
+
+.caja-listado{
+  font-size: larger;
+}
+
+.bloquePrincipal:after {
+  content:"";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 2px dashed black;
+  transform: translate(-50%);
 }

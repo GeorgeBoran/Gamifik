@@ -4,14 +4,13 @@
 
       <div class="parte-arriba">
         <div class="flex">
-          <img class="logo distancia-5em " src=" ../../assets/logo_negro.png">
+          <img class="logo distancia-3em " src=" ../../assets/logo_negro.png">
         </div>
-        <h1 class="flex distancia-05em">Conectate</h1>
-        <h3 class="flex distancia-1em">Utiliza una Cuenta Goat</h3>
       </div>
 
-
       <div class="caja-imputs grid flex">
+        <h1 class="flex distancia-05em">Conectate</h1>
+        <h3 class="flex distancia-1em">Utiliza una Cuenta Goat</h3>
         <div class="flex">
           <input class="inputs distancia-input-04em" type="text" name="username" [(ngModel)]="username"
             placeholder="Username" />
@@ -22,7 +21,6 @@
           <input class="inputs flex" [type]="mostrarContra?'text':'password'" name="password" [(ngModel)]="password"
             placeholder="Password" />
         </div>
-
 
         <div class="flex boton-seguir">
           <button class="boton-siguiente boton-siguiente-extra" (click)="loguear()">Siguiente</button>

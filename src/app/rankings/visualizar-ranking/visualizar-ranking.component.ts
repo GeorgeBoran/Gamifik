@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-visualizar-ranking',
   templateUrl: './visualizar-ranking.component.html',

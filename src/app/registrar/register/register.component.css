@@ -35,7 +35,9 @@
 .distancia-2em-top {
   margin-top: 2em;
 }
-
+.distancia-1-5em-top{
+  margin-top: 1.5em;
+}
 .grid {
   display: grid;
 }
@@ -185,6 +187,10 @@ progress[value]::-webkit-progress-value {
 .caja-principal,
 .logo {
   transition: all 0.5s ease;
+}
+
+.caja-barra-cuenta{
+  transition: none !important
 }
 
 /*MEDIA PARA RESPONSIVE:*/
