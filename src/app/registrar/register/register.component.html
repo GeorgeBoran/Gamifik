@@ -4,18 +4,18 @@
       <div class="caja">
         <div class="parte-arriba grid">
           <div class="flex distancia-1em">
-            <img class="logo " src=" ../../assets/logo_negro.png" />
+            <img class="logo distancia-5em" src=" ../../assets/logo_negro.png" />
           </div>
 
-          <div (click)="selectType()" class="boton-radio flex "
+          <div (click)="selectType()" class="boton-radio flex  distancia-15em-margin"
             style="display:{{ displays[0] }};">
             <input label="Alumno" type="radio" id="alumno" name="eleccion" value="alumno" checked>
             <input label="Profesor" type="radio" id="profesor" name="eleccion" value="profesor">
           </div>
-          <h1 class="flex distancia-05em  distancia-1-5em-top">Registrate</h1>
+          <h1 class="flex distancia-05em distancia-1-5em-top">Registrate</h1>
           <h3 class="flex distancia-1em">Crea una Cuenta Goat</h3>
         </div>
-        <div class="flex grid caja-imputs">
+        <div class="flex grid caja-imputs distancia-1-5em-top">
           <input class="inputs distancia-input-04em" type="email" name="mail" [(ngModel)]="mail"
             placeholder="Introduzca su Email" style="display:{{ displays[0] }};" />
 
@@ -45,10 +45,9 @@
           </div>
 
           <input class="inputs distancia-input-04em" type="text" name="name" [(ngModel)]="name" placeholder="Name"
-          style="display:{{ displays[3] }};" />
-        <input class="inputs" type="text" name="cognom" [(ngModel)]="cognom" placeholder="Subname"
-          style="display:{{ displays[3] }};" />
-
+            style="display:{{ displays[3] }};" />
+          <input class="inputs" type="text" name="cognom" [(ngModel)]="cognom" placeholder="Subname"
+            style="display:{{ displays[3] }};" />
 
           <div *ngIf="alumno; else isProfesor">
             <input class="inputs distancia-input-04em" type="date" name="fecha" [(ngModel)]="fecha" placeholder="Fecha"
@@ -56,11 +55,11 @@
           </div>
 
           <ng-template #isProfesor>
+
             <input class="inputs distancia-input-04em" type="text" name="centro" [(ngModel)]="centro"
-            placeholder="Centro" style="display:{{ displays[4] }};" />
+              placeholder="Centro" style="display:{{ displays[4] }};" />
           </ng-template>
         </div>
-
         <div class="flex boton-seguir">
           <button class="boton-siguiente boton-siguiente-extra " (click)="next()">
             Siguiente
@@ -68,7 +67,7 @@
         </div>
 
       </div>
-      <div class="caja-barra-cuenta">
+      <div>
         <div class="flex loguear distancia-05em">
           <p class="hiper-link distancia-05em">
             Ya tienes cuenta? <a [routerLink]="['/login']" class="color">Conectate</a>
