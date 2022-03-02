@@ -130,12 +130,17 @@
   margin-top: 1em;
 }
 
+.hola {
+}
+
 .usuario-imagen-perfil {
   width: inherit;
   height: inherit;
   border-radius: 50%;
   padding: 0.2em;
   object-fit: cover;
+}
+.hola {
 }
 
 .boton-subir {
