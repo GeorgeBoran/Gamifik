@@ -5,26 +5,25 @@
       <div class="caja-principal">
         <div class="caja-izquierda">
           <div class="caja-foto-nombre flex ">
+            <img src="{{account.img}}" alt="">
             <div class="caja-foto flex distancia-1em-top">
-              <img class="usuario-imagen-perfil flex" src=" ../../assets/gato.jpg">
-              <div class="boton-subir flex">
-                <img class="flex imagen-subir" src="../../../assets/camera-change.png">
 
-              </div>
             </div>
-
             <div class="caja-nombre">
-              <h3>"username"</h3>
+              <h3>{{account.username}}</h3>
+              <ng-template #isProfesor>
               <p>Profesor</p>
+          </ng-template>
+              
             </div>
           </div>
 
           <div class="caja-datos-cambiar grid flex">
             <div class="caja-inputs distancia-2em">
-              <p class="pes">Nombre: Juanjo</p>
-              <p class="pes">Apellido: Juanjo</p>
-              <p class="pes">Email: Juanjo@gmail.com</p>
-              <p class="pes  distancia-1em">Centro: Juanjo</p>
+              <p class="pes">Nombre: {{account.name}}</p>
+              <p class="pes">Apellido:{{account.cognom}}</p>
+              <p class="pes">Email:{{account.mail}}</p>
+              <p class="pes  distancia-1em">Centro: {{account.option}}</p>
               <div class="flex">
                 <button class="boton-cambiar-contra">Cambiar Contrasena</button>
               </div>

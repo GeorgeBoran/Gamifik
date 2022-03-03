@@ -257,5 +257,11 @@ export class RegisterComponent implements OnInit {
     return false;
   }
 
-  ngOnInit(): void {}
+  ngOnInit (): void
+  {
+    if ( localStorage.getItem( 'user-logged' ) )
+    {
+      this.router.navigate(['/pagina']);
+    }
+  }
 }

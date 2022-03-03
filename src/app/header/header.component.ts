@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         /*CODIGO PARA DESLOGUEAR*/
-
+        localStorage.removeItem('user-logged');
         this.router.navigate(['/login']);
       }
     });

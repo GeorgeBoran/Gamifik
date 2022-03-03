@@ -24,7 +24,7 @@ if ($verifyNickname == 0 && $sql) {
 } else {
   if (isset($_GET['pwd'])) {
     $pwd = $_GET['pwd'];
-    $verifyPass = mysqli_query($con, "SELECT `password` FROM `alumnos`,`profesores` WHERE username ='" . $username  . "'");
+    $verifyPass = mysqli_query($con, "SELECT `password` FROM `usuarios` WHERE username ='" . $username  . "'");
     while ($fila = $verifyPass->fetch_assoc()) {
       if (password_verify($pwd, $fila['password'])) {
         echo json_encode('pwd correcto');
