@@ -10,6 +10,6 @@ export interface user
   password: string;
 
   option: string;
-  tipo: boolean;
+  tipo: any;
   img: string ;
 }

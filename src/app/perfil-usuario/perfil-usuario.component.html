@@ -9,11 +9,13 @@
               <img class="usuario-imagen-perfil" src="{{account.img}}" alt="">
             </div>
             <div class="caja-nombre">
-              <h3>{{account.username}}</h3>
-              <ng-template #isProfesor>
-              <p>Profesor</p>
-          </ng-template>
-
+              <h3>@{{account.username}}</h3>
+                <div *ngIf="account.tipo; else isProfesor">
+                  <p>Alumno</p>
+                </div>
+                <ng-template #isProfesor>
+                  <p>Profesor</p>
+                </ng-template>
             </div>
           </div>
 
@@ -24,7 +26,7 @@
               <p class="pes">Email:{{account.mail}}</p>
               <p class="pes  distancia-1em">Centro: {{account.option}}</p>
               <div class="flex">
-                <button class="boton-cambiar-contra">Cambiar Contrasena</button>
+                <button class="boton-cambiar-contra" (click)="changePassword()">Cambiar Contrasena</button>
               </div>
             </div>
           </div>
@@ -36,13 +38,13 @@
           <div class="caja-ranking-iconos flex">
 
             <div class="iconos anadir">
-              <a [routerLink]="['/']"></a>
+              <a ></a>
             </div>
             <div class="iconos editar">
               <a [routerLink]="['/pagina']"></a>
             </div>
             <div class="iconos borrar">
-              <a [routerLink]="['/']"></a>
+              <a ></a>
             </div>
 
           </div>
