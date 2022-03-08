@@ -130,17 +130,12 @@
   margin-top: 1em;
 }
 
-.hola {
-}
-
 .usuario-imagen-perfil {
   width: inherit;
   height: inherit;
   border-radius: 50%;
   padding: 0.2em;
   object-fit: cover;
-}
-.hola {
 }
 
 .boton-subir {
@@ -155,11 +150,15 @@
   transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
-  cursor: pointer;
+}
+
+.imagen-subir {
+  max-width: 65px;
+  max-height: 65px;
 }
 
 .boton-subir:hover {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 /*MEDIA PARA RESPONSIVE:*/
