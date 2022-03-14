@@ -16,10 +16,10 @@ export class PerfilUsuarioComponent implements OnInit
 
   constructor ( private router: Router, private Service: UsersService ) { }
 
-  
+
  async changePassword ()
  {
-   
+
        const { value: password } = await Swal.fire({
   title: 'Enter your password',
   input: 'password',
@@ -39,7 +39,7 @@ export class PerfilUsuarioComponent implements OnInit
                   }).then((result) => {
                     if (result.isConfirmed) {
                       this.changePassword();
-                    } 
+                    }
                   })
                 } else if ( datos == 'pwd correcto' )
                 {
@@ -57,8 +57,8 @@ export class PerfilUsuarioComponent implements OnInit
                     ]
                   }
                   } )
-                  
-                 
+
+
                   if ( formValues )
                   {
                     if ( JSON.stringify( formValues[ 0 ] ) != JSON.stringify( formValues[ 1 ] ) )
@@ -69,9 +69,6 @@ export class PerfilUsuarioComponent implements OnInit
                     {
                       Swal.fire( 'Password actulizado!' );
                     }
-                    
-                    
-                    
                   }
                 }
               }
@@ -89,6 +86,5 @@ export class PerfilUsuarioComponent implements OnInit
     }else{
       this.router.navigate(['/login']);
     }
-    
   }
 }

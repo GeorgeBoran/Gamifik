@@ -63,18 +63,18 @@ SPAN DESPLEGABLE
 */
 /*Boton que abre un desplegable con varias opciones:*/
 .deslogueo {
-  background-image: url(../../assets/log-out-outline.png);
+  background-image: url(../../../assets/log-out-outline.png);
   transition: all 0.3s ease;
 }
 .deslogueo:hover {
-  background-image: url(../../assets/log-out.png);
+  background-image: url(../../../assets/log-out.png);
 }
 .persona {
-  background-image: url(../../assets/usuario.png);
+  background-image: url(../../../assets/usuario.png);
   transition: all 0.3s ease;
 }
 .rankings {
-  background-image: url(../../assets/analytics.png);
+  background-image: url(../../../assets/analytics.png);
   transition: all 0.3s ease;
 }
 
