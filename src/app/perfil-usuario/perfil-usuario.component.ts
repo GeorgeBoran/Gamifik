@@ -69,5 +69,13 @@ export class PerfilUsuarioComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (localStorage.getItem('user-logged')) {
+      this.account = localStorage.getItem('user-logged');
+      this.account = JSON.parse(this.account);
+      console.log(this.account);
+    } else {
+      this.router.navigate(['/login']);
+    }
+  }
 }
