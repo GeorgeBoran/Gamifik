@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
         this.progreso = 20;
         this.displays[0] = 'none';
         this.displays[1] = ' ';
-      } 
+      }
     } else if (this.displays[1] == ' ') {
       if (this.comprobarUsername()) {
         if (this.img == '../../assets/avatar.jpg') {
@@ -85,13 +85,13 @@ export class RegisterComponent implements OnInit {
           this.displays[1] = 'none';
           this.displays[2] = ' ';
         }
-      } 
+      }
     } else if (this.displays[2] == ' ') {
       if (this.comprobarPassword()) {
         this.progreso = 60;
         this.displays[3] = ' ';
         this.displays[2] = 'none';
-      } 
+      }
     } else if (this.displays[3] == ' ') {
       if (this.name == '') {
         swal.fire('Introducir Nombre!');
@@ -151,9 +151,25 @@ export class RegisterComponent implements OnInit {
       }
     });
 
+    back(){
+      if(this.displays[1] == ' '){
+        this.displays[0] = ' ';
+        this.displays[1] ='none';
+      }else if(this.displays[2] == ' '){
+        this.displays[1] = ' ';
+        this.displays[2] ='none';
+      }else if(this.displays[3] == ' '){
+        this.displays[2] = ' ';
+        this.displays[3] ='none';
+      }
+      else if(this.displays[4] == ' '){
+        this.displays[3] = ' ';
+        this.displays[4] ='none';
+      }
+    }
   registrarUsuario ()
   {
-    
+
     if ( this.alumno )
     {
       this.option = this.fecha;
@@ -188,7 +204,7 @@ export class RegisterComponent implements OnInit {
           }
         }
       );
-   
+
   }
 
   selectType() {

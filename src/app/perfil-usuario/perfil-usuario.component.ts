@@ -12,6 +12,7 @@ import { user } from '../user';
   styleUrls: ['./perfil-usuario.component.css'],
 })
 export class PerfilUsuarioComponent implements OnInit {
+<<<<<<< HEAD
   verify: boolean = false;
   account: user | any = {};
   inputIMG: HTMLElement = document.getElementById('inputIMG') as HTMLElement;
@@ -188,15 +189,70 @@ export class PerfilUsuarioComponent implements OnInit {
           } else {
             Swal.fire({
               title: 'El password no puede estar vació!',
+=======
+  confirmPassword: string | undefined[] = [];
+  account: user | any = {};
+
+  constructor(private router: Router, private Service: UsersService) {}
+
+  async changePassword() {
+    const { value: password } = await Swal.fire({
+      title: 'Enter your password',
+      input: 'password',
+      inputLabel: 'Intorduce tu password actual.',
+      inputPlaceholder: 'Enter your password',
+      showCancelButton: true,
+    });
+    if (password) {
+      this.Service.login(this.account.username, password).subscribe(
+        async (datos: any) => {
+          if (datos == 'pwd incorrecto') {
+            Swal.fire({
+              title: 'Password incorrecto!',
+>>>>>>> 02ca982678847fb6a3cb8824ea97b196fc4f379a
               confirmButtonText: 'Ok',
             }).then((result) => {
               if (result.isConfirmed) {
                 this.changePassword();
               }
             });
+<<<<<<< HEAD
           }
         }
       }
+=======
+          } else if (datos == 'pwd correcto') {
+            Swal.fire('Password Correcto!');
+            const { value: formValues } = await Swal.fire({
+              title: 'New Password',
+              html:
+                '<input id="swal-input1" class="swal2-input" type="password" placeholder="Enter your new password">' +
+                '<input id="swal-input2" class="swal2-input " type="password" placeholder="Enter your new password">',
+              focusConfirm: false,
+              preConfirm: () => {
+                return [
+                  (<HTMLInputElement>document.getElementById('swal-input1'))
+                    .value,
+                  (<HTMLInputElement>document.getElementById('swal-input2'))
+                    .value,
+                ];
+              },
+            });
+
+            if (formValues) {
+              if (
+                JSON.stringify(formValues[0]) != JSON.stringify(formValues[1])
+              ) {
+                await Swal.fire('El password no coincide!');
+                this.changePassword();
+              } else {
+                Swal.fire('Password actulizado!');
+              }
+            }
+          }
+        }
+      );
+>>>>>>> 02ca982678847fb6a3cb8824ea97b196fc4f379a
     }
   }
 
