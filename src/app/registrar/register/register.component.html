@@ -28,7 +28,8 @@
               style="width: 100%; height: 100%; object-fit: cover; display:{{displays[1]}};" />
           </div>
 
-          <input type="file" id="inputIMG" accept="image/png, image/gif, image/jpeg" (change)="capturarFile($event)" style="display:none;" />
+          <input type="file" id="inputIMG" accept="image/png, image/gif, image/jpeg" (change)="capturarFile($event)"
+            style="display:none;" />
           <input class="inputs distancia-input-04em" type="text" name="username" [(ngModel)]="username"
             placeholder="Introduzca su Username" style="display:{{ displays[1] }};" />
 
@@ -66,8 +67,8 @@
           </button>
         </div>
 
-        <div class="flex boton-atras" *ngIf="mail">
-          <button class="boton-atras boton-atras-extra " (click)="back()">
+        <div class="flex" *ngIf="mail">
+          <button class="boton-atras boton-atras-extra flex " (click)="back()">
             Atras
           </button>
         </div>
