@@ -10,7 +10,7 @@ $datos = json_decode($datos);
 $datos->password = password_hash($datos->password, PASSWORD_DEFAULT);
 
 $sql = "INSERT INTO `usuarios`( `email`,`username`, `nombre`, `apellidos`, `password`,`fecha_centro`, `tipo`,`img`)
-VALUES ('$datos->mail','$datos->username', '$datos->name', '$datos->cognom,', '$datos->password' , '$datos->option' , '$datos->tipo','$datos->img');";
+VALUES ('$datos->mail','$datos->username', '$datos->name', '$datos->cognom', '$datos->password' , '$datos->option' , '$datos->tipo','$datos->img');";
 
 $registro = mysqli_query($conexion, $sql);
 

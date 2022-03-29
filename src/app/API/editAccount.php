@@ -7,17 +7,18 @@ $conexion = Conexion(); // CREA LA CONEXION
 
 $datos = file_get_contents("php://input");
 $datos = json_decode($datos);
-$datos->password = password_hash($datos->password, PASSWORD_DEFAULT);
+function password_is_hash($password)
+{
+  return password_get_info($password)['algoName'] !== 'unknown';
+}
 
-
-$getID = mysqli_query($conexion, "SELECT `id` FROM `usuarios` WHERE username ='" . $datos->username  . "'");
-while ($fila = $getID->fetch_assoc()) {
-  $id = $fila['id'];
+if (!password_is_hash($datos->password)) {
+  $datos->password = password_hash($datos->password, PASSWORD_DEFAULT);
 }
 
 $sql = "UPDATE `usuarios` 
 SET `email` = '$datos->mail', `username` = '$datos->username', `nombre` = '$datos->name', `apellidos` = '$datos->cognom', `password` = '$datos->password', `fecha_centro` = '$datos->option', `img` = '$datos->img' 
-WHERE `usuarios`.`id` = $id";
+WHERE `id` = $datos->id";
 
 $registro = mysqli_query($conexion, $sql);
 

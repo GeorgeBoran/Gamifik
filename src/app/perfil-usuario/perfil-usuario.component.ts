@@ -12,9 +12,9 @@ import { user } from '../user';
   styleUrls: ['./perfil-usuario.component.css'],
 })
 export class PerfilUsuarioComponent implements OnInit {
-<<<<<<< HEAD
   verify: boolean = false;
   account: user | any = {};
+  localUsername: string = '';
   inputIMG: HTMLElement = document.getElementById('inputIMG') as HTMLElement;
 
   constructor(
@@ -23,56 +23,150 @@ export class PerfilUsuarioComponent implements OnInit {
     private Service: UsersService
   ) {}
 
-  editName() {
+  async editFecha() {
+    const { value: date } = await Swal.fire({
+      title: 'New Date',
+      html: '<input id="swal-input1" class="swal2-input" type="date" placeholder="Enter your new password">',
+      focusConfirm: false,
+      showCancelButton: true,
+      preConfirm: () => {
+        return [
+          (<HTMLInputElement>document.getElementById('swal-input1')).value,
+        ];
+      },
+    });
+    if (date) {
+      this.account.option = date[0];
+      this.edit();
+    }
+  }
+
+  editCenter() {
     return new Promise(async (resolve, reject) => {
-      const { value: password } = await Swal.fire({
-        title: 'Enter your password',
-        input: 'password',
-        inputLabel: 'Intorduce tu password actual.',
-        inputPlaceholder: 'Enter your password',
+      const { value: center } = await Swal.fire({
+        title: 'Enter new email',
+        input: 'text',
+        inputLabel: 'Intorduce el nuevo mail.',
+        inputPlaceholder: 'Enter your new email',
         showCancelButton: true,
       });
-      if (password) {
-        this.Service.login(this.account.username, password).subscribe(
-          async (datos: any) => {
-            if (datos == 'pwd incorrecto') {
-              await Swal.fire({
-                title: 'Password incorrecto!',
-                confirmButtonText: 'Ok',
-              }).then((result) => {
-                if (result.isConfirmed) {
-                }
-              });
-              resolve(false);
-            } else if (datos == 'pwd correcto') {
-              this.account.password = password;
-              resolve(true);
-            }
+      if (center) {
+        this.account.option = center;
+        this.edit();
+      }
+    });
+  }
+
+  editMail() {
+    return new Promise(async (resolve, reject) => {
+      const { value: mail } = await Swal.fire({
+        title: 'Enter new email',
+        input: 'text',
+        inputLabel: 'Intorduce el nuevo mail.',
+        inputPlaceholder: 'Enter your new email',
+        showCancelButton: true,
+      });
+      if (mail) {
+        var validation: boolean = false;
+        for (let index = 0; index < mail.length; index++) {
+          const element = mail[index];
+          if (element == '@') {
+            validation = true;
           }
-        );
-      } else {
+        }
+        if (validation) {
+          this.account.mail = mail;
+          this.edit();
+        } else {
+          Swal.fire({
+            title: 'Email no valido!',
+            confirmButtonText: 'Ok',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.editMail();
+            }
+          });
+        }
+      }
+    });
+  }
+
+  editCognom() {
+    return new Promise(async (resolve, reject) => {
+      const { value: subname } = await Swal.fire({
+        title: 'Enter new lastname',
+        input: 'text',
+        inputLabel: 'Intorduce el nuevo apellido.',
+        inputPlaceholder: 'Enter your new lastname',
+        showCancelButton: true,
+      });
+      if (subname) {
+        this.account.cognom = subname;
+        this.edit();
+      }
+    });
+  }
+
+  editName() {
+    return new Promise(async (resolve, reject) => {
+      const { value: name } = await Swal.fire({
+        title: 'Enter new name',
+        input: 'text',
+        inputLabel: 'Intorduce el nuevo nombre.',
+        inputPlaceholder: 'Enter your new name',
+        showCancelButton: true,
+      });
+      if (name) {
+        this.account.name = name;
+        this.edit();
+      }
+    });
+  }
+
+  editUsername() {
+    return new Promise(async (resolve, reject) => {
+      const { value: name } = await Swal.fire({
+        title: 'Enter new userame',
+        input: 'text',
+        inputLabel: 'Intorduce el nuevo nombre de usuario.',
+        inputPlaceholder: 'Enter your new username',
+        showCancelButton: true,
+      });
+      if (name) {
+        this.Service.comprobarUser(name).subscribe((datos: any) => {
+          if (datos == 'user no valido') {
+            Swal.fire({
+              title: 'Nombre de usuario no valido!',
+              confirmButtonText: 'Ok',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.editUsername();
+              }
+            });
+          } else {
+            this.account.username = name;
+            this.edit();
+          }
+        });
       }
     });
   }
 
   async editAccount(boolean: boolean) {
-    console.log('Account a setear: ' + this.account);
-
     if (boolean) {
       this.edit();
     } else {
       if (await this.enterPassword(2)) {
+        console.log('Editando...');
         this.edit();
       }
     }
-    window.location.reload();
   }
 
   edit() {
     this.Service.editAccount(this.account).subscribe({
       next: (datos: any) => {
         if (datos == 'Edit correcto') {
-          this.account.password = '';
           localStorage.setItem('user-logged', JSON.stringify(this.account));
           Swal.fire('Datos de Usuario actualizados!');
         } else {
@@ -129,9 +223,14 @@ export class PerfilUsuarioComponent implements OnInit {
         inputPlaceholder: 'Enter your password',
         showCancelButton: true,
       });
+      console.log('Fase 1');
       if (password) {
+        console.log('Fase 2');
         this.Service.login(this.account.username, password).subscribe(
           async (datos: any) => {
+            console.log('Fase 3');
+            console.log('Datos in enter pass: ' + datos);
+            console.log(password);
             if (datos == 'pwd incorrecto') {
               await Swal.fire({
                 title: 'Password incorrecto!',
@@ -145,9 +244,7 @@ export class PerfilUsuarioComponent implements OnInit {
                   }
                 }
               });
-              resolve(false);
             } else if (datos == 'pwd correcto') {
-              this.account.password = password;
               resolve(true);
             }
           }
@@ -171,7 +268,6 @@ export class PerfilUsuarioComponent implements OnInit {
           ];
         },
       });
-      console.log(formValues);
       if (formValues) {
         if (JSON.stringify(formValues[0]) != JSON.stringify(formValues[1])) {
           await Swal.fire({
@@ -189,70 +285,15 @@ export class PerfilUsuarioComponent implements OnInit {
           } else {
             Swal.fire({
               title: 'El password no puede estar vació!',
-=======
-  confirmPassword: string | undefined[] = [];
-  account: user | any = {};
-
-  constructor(private router: Router, private Service: UsersService) {}
-
-  async changePassword() {
-    const { value: password } = await Swal.fire({
-      title: 'Enter your password',
-      input: 'password',
-      inputLabel: 'Intorduce tu password actual.',
-      inputPlaceholder: 'Enter your password',
-      showCancelButton: true,
-    });
-    if (password) {
-      this.Service.login(this.account.username, password).subscribe(
-        async (datos: any) => {
-          if (datos == 'pwd incorrecto') {
-            Swal.fire({
-              title: 'Password incorrecto!',
->>>>>>> 02ca982678847fb6a3cb8824ea97b196fc4f379a
               confirmButtonText: 'Ok',
             }).then((result) => {
               if (result.isConfirmed) {
                 this.changePassword();
               }
             });
-<<<<<<< HEAD
           }
         }
       }
-=======
-          } else if (datos == 'pwd correcto') {
-            Swal.fire('Password Correcto!');
-            const { value: formValues } = await Swal.fire({
-              title: 'New Password',
-              html:
-                '<input id="swal-input1" class="swal2-input" type="password" placeholder="Enter your new password">' +
-                '<input id="swal-input2" class="swal2-input " type="password" placeholder="Enter your new password">',
-              focusConfirm: false,
-              preConfirm: () => {
-                return [
-                  (<HTMLInputElement>document.getElementById('swal-input1'))
-                    .value,
-                  (<HTMLInputElement>document.getElementById('swal-input2'))
-                    .value,
-                ];
-              },
-            });
-
-            if (formValues) {
-              if (
-                JSON.stringify(formValues[0]) != JSON.stringify(formValues[1])
-              ) {
-                await Swal.fire('El password no coincide!');
-                this.changePassword();
-              } else {
-                Swal.fire('Password actulizado!');
-              }
-            }
-          }
-        }
-      );
->>>>>>> 02ca982678847fb6a3cb8824ea97b196fc4f379a
     }
   }
 
@@ -260,7 +301,7 @@ export class PerfilUsuarioComponent implements OnInit {
     if (localStorage.getItem('user-logged')) {
       this.account = localStorage.getItem('user-logged');
       this.account = JSON.parse(this.account);
-      console.log(this.account);
+      console.log('Local: ', this.account);
     } else {
       this.router.navigate(['/login']);
     }

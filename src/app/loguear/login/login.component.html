@@ -13,13 +13,13 @@
         <h3 class="flex distancia-1em">Utiliza una Cuenta Goat</h3>
         <div class="flex">
           <input class="inputs distancia-input-04em" type="text" name="username" [(ngModel)]="username"
-            placeholder="Username" />
+            placeholder="Username" (keydown.enter)='loguear()'/>
         </div>
 
         <div class="flex caja-ojo-contra">
           <i class="far {{eye}}" (click)="mostrarContrasena()"></i>
           <input class="inputs flex" [type]="mostrarContra?'text':'password'" name="password" [(ngModel)]="password"
-            placeholder="Password" />
+            placeholder="Password" (keydown.enter)='loguear()'/>
         </div>
 
         <div class="flex boton-seguir">

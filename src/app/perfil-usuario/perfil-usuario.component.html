@@ -17,7 +17,7 @@
             <input type="file" accept="image/png, image/gif, image/jpeg" id="inputIMG" (change)="capturarFile($event)" style="display:none;" />
 
             <div class="caja-nombre">
-              <h3>@{{account.username}}</h3>
+              <h3 (click)="editUsername()">@{{account.username}}</h3>
                 <div *ngIf="account.tipo; else isProfesor">
                   <p>Alumno</p>
                 </div>
@@ -29,14 +29,14 @@
 
           <div class="caja-datos-cambiar grid flex">
             <div class="caja-inputs distancia-2em">
-              <p class="pes">Nombre: {{account.name}}</p>
-              <p class="pes">Apellido:{{account.cognom}}</p>
-              <p class="pes">Email:{{account.mail}}</p>
+              <p class="pes" (click)="editName()">Nombre: {{account.name}}</p>
+              <p class="pes" (click)="editCognom()">Apellido:{{account.cognom}}</p>
+              <p class="pes"(click)="editMail()">Email:{{account.mail}}</p>
               <div *ngIf="account.tipo; else isCentro">
-                <p class="pes  distancia-1em">Fecha: {{account.option}}</p>
+                <p class="pes  distancia-1em" (click)="editFecha()">Fecha: {{account.option}}</p>
               </div>
               <ng-template #isCentro>
-                <p class="pes  distancia-1em">Centro: {{account.option}}</p>
+                <p class="pes  distancia-1em" (click)="editCenter()">Centro: {{account.option}}</p>
               </ng-template>
               
               <div class="flex">
