@@ -44,19 +44,12 @@
   padding-bottom: 3em;
 }
 
-.distancia-15em-margin {
-  margin-bottom: 5em;
-}
-
 .distancia-1em-margin {
   margin-bottom: 1em;
 }
 
 .distancia-2em-top {
   margin-top: 2em;
-}
-.distancia-1-5em-top {
-  margin-top: 1.5em;
 }
 .grid {
   display: grid;
@@ -101,6 +94,7 @@
 }
 
 .boton-radio {
+  margin-bottom: 4em !important;
   width: max-content;
   justify-self: center;
   background: #454857;
@@ -252,12 +246,13 @@ progress[value]::-webkit-progress-value {
   }
 
   .caja-barra {
-    width: 100%;
-    height: 25px !important;
+    width: 250px;
+    height: 30px !important;
+    justify-self: center;
   }
 
   .barra-progreso {
-    width: 100%;
+    min-width: 200px !important;
     height: 100%;
   }
 }
@@ -296,7 +291,7 @@ progress[value]::-webkit-progress-value {
     height: 25px !important;
   }
   .barra-progreso {
-    width: 100%;
+    min-width: 200px !important;
     height: 100%;
   }
 }

@@ -12,7 +12,7 @@
             <input label="Alumno" type="radio" id="alumno" name="eleccion" value="alumno" checked>
             <input label="Profesor" type="radio" id="profesor" name="eleccion" value="profesor">
           </div>
-          <h1 class="flex distancia-05em distancia-1-5em-top">Registrate</h1>
+          <h1 class="flex distancia-05em">Registrate</h1>
           <h3 class="flex distancia-1em">Crea una Cuenta Goat</h3>
         </div>
         <div class="flex grid caja-imputs distancia-1-5em-top">
@@ -61,17 +61,22 @@
               placeholder="Centro" style="display:{{ displays[4] }};" />
           </ng-template>
         </div>
-        <div class="flex boton-seguir">
-          <button class="boton-siguiente boton-siguiente-extra " (click)="next()">
-            Siguiente
-          </button>
+        <div class="flex">
+          <div class="" *ngIf="mail">
+            <button class="boton-atras boton-atras-extra flex " (click)="back()">
+              Atras
+            </button>
+          </div>
+          <div class=" boton-seguir">
+            <button class="boton-siguiente boton-siguiente-extra " (click)="next()">
+              Siguiente
+            </button>
+          </div>
+
         </div>
 
-        <div class="flex" *ngIf="mail">
-          <button class="boton-atras boton-atras-extra flex " (click)="back()">
-            Atras
-          </button>
-        </div>
+
+
 
       </div>
       <div>
@@ -80,10 +85,10 @@
             Ya tienes cuenta? <a [routerLink]="['/login']" class="color">Conectate</a>
           </p>
         </div>
-        <div class="caja-barra flex">
-          <p style="position:absolute"><b>{{progreso}}%</b></p>
-          <progress class="barra-progreso" id="progreso" value="{{ progreso }}" max="100"></progress>
-        </div>
+      </div>
+      <div class="caja-barra flex">
+        <p style="position:absolute"><b>{{progreso}}%</b></p>
+        <progress class="barra-progreso" id="progreso" value="{{ progreso }}" max="100"></progress>
       </div>
     </div>
   </div>
