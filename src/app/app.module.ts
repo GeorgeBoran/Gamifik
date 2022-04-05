@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './loguear/login/login.component';
 import { RegisterComponent } from './registrar/register/register.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
@@ -16,7 +15,6 @@ import { CompartidoModule } from './compartido/compartido.module';
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
     LoginComponent,
     RegisterComponent,
     PerfilUsuarioComponent,
@@ -28,7 +26,7 @@ import { CompartidoModule } from './compartido/compartido.module';
     FormsModule,
     RankingsModule,
     HttpClientModule,
-    CompartidoModule
+    CompartidoModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
