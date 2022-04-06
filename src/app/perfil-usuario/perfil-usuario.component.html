@@ -7,23 +7,24 @@
           <div class="caja-foto-nombre flex ">
             <div>
               <div class="caja-foto flex distancia-1em-top" (click)="imgClick()">
-              <img class="usuario-imagen-perfil" src="{{account.img}}" alt="">
-              <div class="boton-subir flex">
-                <img class="flex imagen-subir" src="../../assets/cloud-upload.png">
-              </div>
+                <img class="usuario-imagen-perfil" src="{{account.img}}" alt="">
+                <div class="boton-subir flex">
+                  <img class="flex imagen-subir" src="../../assets/cloud-upload.png">
+                </div>
               </div>
             </div>
 
-            <input type="file" accept="image/png, image/gif, image/jpeg" id="inputIMG" (change)="capturarFile($event)" style="display:none;" />
+            <input type="file" accept="image/png, image/gif, image/jpeg" id="inputIMG" (change)="capturarFile($event)"
+              style="display:none;" />
 
             <div class="caja-nombre">
               <h3 (click)="editUsername()">@{{account.username}}</h3>
-                <div *ngIf="account.tipo; else isProfesor">
-                  <p>Alumno</p>
-                </div>
-                <ng-template #isProfesor>
-                  <p>Profesor</p>
-                </ng-template>
+              <div *ngIf="account.tipo; else isProfesor">
+                <p>Alumno</p>
+              </div>
+              <ng-template #isProfesor>
+                <p>Profesor</p>
+              </ng-template>
             </div>
           </div>
 
@@ -31,22 +32,26 @@
             <div class="caja-inputs distancia-2em">
               <div class="flex hover-pes">
                 <p class="pes" (click)="editName()">Nombre: {{account.name}}</p>
-                  <div class="edit" alt=""> </div>
-                </div>
-              <div class="flex hover-pes"> <p class="pes" (click)="editCognom()">Apellido:{{account.cognom}}</p>
+                <div class="edit" alt=""> </div>
+              </div>
+              <div class="flex hover-pes">
+                <p class="pes" (click)="editCognom()">Apellido:{{account.cognom}}</p>
                 <div class="edit" alt=""></div>
 
-                </div>
-              <div class="flex hover-pes"><p class="pes"(click)="editMail()">Email:{{account.mail}}</p>
+              </div>
+              <div class="flex hover-pes">
+                <p class="pes" (click)="editMail()">Email:{{account.mail}}</p>
                 <div class="edit" alt=""></div>
               </div>
               <div *ngIf="account.tipo; else isCentro">
-                <div class="flex hover-pes"> <p class="pes  distancia-1em" (click)="editFecha()">Fecha: {{account.option}}</p>
+                <div class="flex hover-pes">
+                  <p class="pes  distancia-1em" (click)="editFecha()">Fecha: {{account.option}}</p>
                   <div class="edit" alt=""></div>
                 </div>
               </div>
               <ng-template #isCentro>
-                <div class="flex hover-pes"><p class="pes  distancia-1em" (click)="editCenter()">Centro: {{account.option}}</p>
+                <div class="flex hover-pes">
+                  <p class="pes  distancia-1em" (click)="editCenter()">Centro: {{account.option}}</p>
                   <div class="edit" alt=""></div>
                 </div>
               </ng-template>
@@ -63,16 +68,20 @@
 
           <div class="caja-ranking-iconos flex">
 
-            <div class="iconos anadir">
-              <a ></a>
+            <div *ngIf="account.tipo; else isProfe">
             </div>
-            <div class="iconos editar">
-              <a [routerLink]="['/pagina']"></a>
-            </div>
-            <div class="iconos borrar">
-              <a ></a>
-            </div>
+            <ng-template #isProfe>
+              <div class="iconos anadir">
+                <a></a>
+              </div>
+              <div class="iconos editar">
+                <a></a>
+              </div>
 
+              <div class="iconos borrar">
+                <a></a>
+              </div>
+            </ng-template>
           </div>
 
         </div>
