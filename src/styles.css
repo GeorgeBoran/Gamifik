@@ -2,6 +2,10 @@
   scroll-behavior: smooth;
   margin: 0px;
   box-sizing: border-box;
+  font-family: var(--montserrat);
+}
+:root {
+  --montserrat: "Montserrat", sans-serif;
 }
 
 html {
