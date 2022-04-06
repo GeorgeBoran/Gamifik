@@ -6,9 +6,9 @@ import { user } from '../user';
   providedIn: 'root'
 })
 export class UsersService {
-  URL = 'http://localhost/Gamifica/Gamifik-master/src/app/API/';    
+  URL = 'http://localhost:8080/';
   constructor ( private http: HttpClient ) { }
-  
+
   comprobarUser(username:string) {
     return this.http.get(`${this.URL}comprobarUsername.php?username=${username}`);
   }
@@ -32,6 +32,6 @@ export class UsersService {
   {
     return this.http.post( `${ this.URL }editAccount.php`, JSON.stringify( User ) );
   }
-  
-  
+
+
 }

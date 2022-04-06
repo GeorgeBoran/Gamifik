@@ -69,7 +69,23 @@
   color: #202124;
   margin: 0.1em 1em 0em 1em;
   z-index: 1;
+  cursor: pointer;
 }
+
+
+.edit{
+  width: 30px;
+  height: 30px;
+  background-color: none;
+  align-items: center;
+  background-position: center;
+  background-size: contain;
+}
+
+.hover-pes:hover .edit{
+  background-image: url(../../assets/edit-2-outline.png);
+}
+
 
 .caja-nombre p {
   text-transform: uppercase;
@@ -110,6 +126,7 @@
   padding: 0.6em;
   border-radius: 4px;
   opacity: 1;
+  cursor: pointer;
 }
 .boton-cambiar-contra:hover {
   opacity: 0.9;
@@ -139,6 +156,7 @@
 }
 
 .boton-subir {
+  cursor: pointer;
   caret-color: transparent;
   display: flex;
   border-radius: 50%;

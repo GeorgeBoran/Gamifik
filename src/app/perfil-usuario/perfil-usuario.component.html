@@ -29,16 +29,28 @@
 
           <div class="caja-datos-cambiar grid flex">
             <div class="caja-inputs distancia-2em">
-              <p class="pes" (click)="editName()">Nombre: {{account.name}}</p>
-              <p class="pes" (click)="editCognom()">Apellido:{{account.cognom}}</p>
-              <p class="pes"(click)="editMail()">Email:{{account.mail}}</p>
+              <div class="flex hover-pes">
+                <p class="pes" (click)="editName()">Nombre: {{account.name}}</p>
+                  <div class="edit" alt=""> </div>
+                </div>
+              <div class="flex hover-pes"> <p class="pes" (click)="editCognom()">Apellido:{{account.cognom}}</p>
+                <div class="edit" alt=""></div>
+
+                </div>
+              <div class="flex hover-pes"><p class="pes"(click)="editMail()">Email:{{account.mail}}</p>
+                <div class="edit" alt=""></div>
+              </div>
               <div *ngIf="account.tipo; else isCentro">
-                <p class="pes  distancia-1em" (click)="editFecha()">Fecha: {{account.option}}</p>
+                <div class="flex hover-pes"> <p class="pes  distancia-1em" (click)="editFecha()">Fecha: {{account.option}}</p>
+                  <div class="edit" alt=""></div>
+                </div>
               </div>
               <ng-template #isCentro>
-                <p class="pes  distancia-1em" (click)="editCenter()">Centro: {{account.option}}</p>
+                <div class="flex hover-pes"><p class="pes  distancia-1em" (click)="editCenter()">Centro: {{account.option}}</p>
+                  <div class="edit" alt=""></div>
+                </div>
               </ng-template>
-              
+
               <div class="flex">
                 <button class="boton-cambiar-contra" (click)="changePassword()">Cambiar Contrasena</button>
               </div>
