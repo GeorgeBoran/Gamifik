@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
 import { RankingsModule } from './rankings/rankings.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CompartidoModule } from './compartido/compartido.module';
-
 @NgModule({
   declarations: [
     AppComponent,

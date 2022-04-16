@@ -4,6 +4,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { LoginComponent } from './loguear/login/login.component';
 import { RegisterComponent } from './registrar/register/register.component';
 import { VisualizarRankingComponent } from './rankings/visualizar-ranking/visualizar-ranking.component';
+import { AddRankingComponent } from './rankings/add-ranking/add-ranking.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,11 @@ const routes: Routes = [
   {
     path: 'ranking',
     component: VisualizarRankingComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'addranking',
+    component: AddRankingComponent,
     pathMatch: 'full',
   },
 ];
