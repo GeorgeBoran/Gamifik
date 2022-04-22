@@ -72,8 +72,7 @@
   cursor: pointer;
 }
 
-
-.edit{
+.edit {
   width: 30px;
   height: 30px;
   background-color: none;
@@ -82,10 +81,9 @@
   background-size: contain;
 }
 
-.hover-pes:hover .edit{
+.hover-pes:hover .edit {
   background-image: url(../../assets/edit-2-outline.png);
 }
-
 
 .caja-nombre p {
   text-transform: uppercase;
@@ -233,7 +231,7 @@
   }
   .caja-ranking {
     width: 100%;
-    height: 82%;
+    height: 100%;
     margin-bottom: 0.7em;
   }
   .caja-ranking-iconos {
@@ -383,7 +381,7 @@
 
   .caja-ranking {
     width: 36.4vh;
-    height: 66.5vh;
+    height: 100%;
     margin-bottom: 0.7em;
   }
   .caja-ranking-iconos {
@@ -431,7 +429,7 @@
   }
   .caja-ranking {
     width: 36.4vh;
-    height: 60vh;
+    height: 100%;
     margin-bottom: 0.7em;
   }
   .caja-ranking-iconos {
@@ -460,7 +458,7 @@
   }
   .caja-ranking {
     width: 55vh;
-    height: 60vh;
+    height: 100%;
     margin-bottom: 0.7em;
   }
   .caja-ranking-iconos {
@@ -507,7 +505,7 @@
 
   .caja-ranking {
     width: 61vh;
-    height: 60vh;
+    height: 100%;
   }
   .caja-ranking-iconos {
     width: 61vh;
@@ -549,7 +547,7 @@
 
   .caja-ranking {
     width: 76vh;
-    height: 60vh;
+    height: 100%;
   }
   .caja-ranking-iconos {
     width: 76vh;

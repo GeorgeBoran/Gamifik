@@ -9,40 +9,14 @@
   </ul>
 
   <ul class="tabla-cuerpo">
-    <li class="tabla-fila">
-      <div class="col col-1" data-label="Nr.">1</div>
-      <div class="col col-2" data-label="Nombre">Tienda 360</div>
-      <div class="col col-3" data-label="Fecha Creacion">22/12/2021</div>
-    </li>
-    <li class="tabla-fila">
-      <div class="col col-1" data-label="Nr.">2</div>
-      <div class="col col-2" data-label="Nombre">Gamifika</div>
-      <div class="col col-3" data-label="Fecha Creacion">10/02/2022</div>
-    </li>
-    <li class="tabla-fila">
-      <div class="col col-1" data-label="Nr.">3</div>
-      <div class="col col-2" data-label="Nombre">Gamifika</div>
-      <div class="col col-3" data-label="Fecha Creacion">10/02/2022</div>
-    </li>
-    <li class="tabla-fila">
-      <div class="col col-1" data-label="Nr.">4</div>
-      <div class="col col-2" data-label="Nombre">Gamifika</div>
-      <div class="col col-3" data-label="Fecha Creacion">10/02/2022</div>
-    </li>
-    <li class="tabla-fila">
-      <div class="col col-1" data-label="Nr.">5</div>
-      <div class="col col-2" data-label="Nombre">Gamifika</div>
-      <div class="col col-3" data-label="Fecha Creacion">10/02/2022</div>
-    </li>
-    <li class="tabla-fila">
-      <div class="col col-1" data-label="Nr.">6</div>
-      <div class="col col-2" data-label="Nombre">Gamifika</div>
-      <div class="col col-3" data-label="Fecha Creacion">10/02/2022</div>
-    </li>
-    <li class="tabla-fila">
-      <div class="col col-1" data-label="Nr.">6</div>
-      <div class="col col-2" data-label="Nombre">Gamifika</div>
-      <div class="col col-3" data-label="Fecha Creacion">10/02/2022</div>
-    </li>
+    <ng-template ngFor let-item [ngForOf]="rankings" let-i="index" >
+      <li class="tabla-fila" (click)="selectRanking(i)" style= '{{item.select}}'  >
+        <div class="col col-1" data-label="Nr.">{{i+1}}</div>
+        <div class="col col-2" data-label="Nombre">{{item.nombre}}</div>
+        <div class="col col-3" data-label="Fecha Creacion">{{item.fecha}}</div>
+      </li>
+    </ng-template>
+    
+    
   </ul>
 </div>

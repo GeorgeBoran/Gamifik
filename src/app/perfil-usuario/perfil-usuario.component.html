@@ -18,7 +18,11 @@
               style="display:none;" />
 
             <div class="caja-nombre">
-              <h3 (click)="editUsername()">@{{account.username}}</h3>
+              <div class="flex hover-pes" (click)="editUsername()">
+                <h3 (click)="editUsername()">@{{account.username}}</h3>
+                <div class="edit" alt=""></div>
+              </div>
+              
               <div *ngIf="account.tipo; else isProfesor">
                 <p>Alumno</p>
               </div>
@@ -30,28 +34,28 @@
 
           <div class="caja-datos-cambiar grid flex">
             <div class="caja-inputs distancia-2em">
-              <div class="flex hover-pes">
-                <p class="pes" (click)="editName()">Nombre: {{account.name}}</p>
+              <div class="flex hover-pes" (click)="editName()">
+                <p class="pes" >Nombre: {{account.name}}</p>
                 <div class="edit" alt=""> </div>
               </div>
-              <div class="flex hover-pes">
-                <p class="pes" (click)="editCognom()">Apellido:{{account.cognom}}</p>
+              <div class="flex hover-pes" (click)="editCognom()">
+                <p class="pes" >Apellido:{{account.cognom}}</p>
                 <div class="edit" alt=""></div>
 
               </div>
-              <div class="flex hover-pes">
-                <p class="pes" (click)="editMail()">Email:{{account.mail}}</p>
+              <div class="flex hover-pes" (click)="editMail()">
+                <p class="pes" >Email:{{account.mail}}</p>
                 <div class="edit" alt=""></div>
               </div>
               <div *ngIf="account.tipo; else isCentro">
-                <div class="flex hover-pes">
-                  <p class="pes  distancia-1em" (click)="editFecha()">Fecha: {{account.option}}</p>
+                <div class="flex hover-pes" (click)="editFecha()">
+                  <p class="pes  distancia-1em" >Fecha: {{account.option}}</p>
                   <div class="edit" alt=""></div>
                 </div>
               </div>
               <ng-template #isCentro>
-                <div class="flex hover-pes">
-                  <p class="pes  distancia-1em" (click)="editCenter()">Centro: {{account.option}}</p>
+                <div class="flex hover-pes" (click)="editCenter()">
+                  <p class="pes  distancia-1em" >Centro: {{account.option}}</p>
                   <div class="edit" alt=""></div>
                 </div>
               </ng-template>
@@ -64,26 +68,22 @@
         </div>
 
         <div class="caja-derecha">
-          <app-listar-rankings class="caja-ranking"></app-listar-rankings>
 
-          <div class="caja-ranking-iconos flex">
-
-            <div *ngIf="account.tipo; else isProfe">
+          <app-listar-rankings class="caja-ranking" (newSelect)="selectRanking($event)"  [rankingSelected]="rankingSelected" [tipoAccount]="account.tipo"></app-listar-rankings>
+            <div  *ngIf="!account.tipo;" >
+              <div class="caja-ranking-iconos flex" *ngIf="rankingSelected!=null" >
+                  <div class="iconos anadir" (click)="more()">
+                    <a></a>
+                  </div>
+                  <div class="iconos editar" (click)="editRanking()">
+                    <a></a>
+                  </div>
+                  <div class="iconos borrar" (click)="deleteRanking()">
+                    <a></a>
+                  </div>
+              </div>
             </div>
-            <ng-template #isProfe>
-              <div class="iconos anadir">
-                <a></a>
-              </div>
-              <div class="iconos editar">
-                <a></a>
-              </div>
-
-              <div class="iconos borrar">
-                <a></a>
-              </div>
-            </ng-template>
-          </div>
-
+            
         </div>
       </div>
     </div>

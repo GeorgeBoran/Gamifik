@@ -15,6 +15,7 @@ export class PerfilUsuarioComponent implements OnInit {
   verify: boolean = false;
   account: user | any = {};
   localUsername: string = '';
+  rankingSelected: number | null | undefined;
   inputIMG: HTMLElement = document.getElementById('inputIMG') as HTMLElement;
 
   constructor(
@@ -22,6 +23,76 @@ export class PerfilUsuarioComponent implements OnInit {
     private router: Router,
     private Service: UsersService
   ) {}
+
+  editRanking() {
+    if (this.rankingSelected == null) {
+      Swal.fire('No Ranking Selected!');
+    } else {
+      new Promise(async (resolve, reject) => {
+        const { value: rankingName } = await Swal.fire({
+          title: 'Enter new ranking name',
+          input: 'text',
+          inputLabel: 'Intorduce el nombre nuevo del ranking.',
+          inputPlaceholder: 'Ranking name',
+          showCancelButton: true,
+        });
+        if (rankingName) {
+          Swal.fire('Ranking Name!');
+        }
+      });
+    }
+  }
+
+  deleteRanking() {
+    if (this.rankingSelected == null) {
+      Swal.fire('No Ranking Selected!');
+    } else {
+      Swal.fire({
+        title: 'Seguro que quieres eliminar el Ranking?',
+        showDenyButton: false,
+        showCancelButton: true,
+        confirmButtonText: 'Borrar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire('Borrado!', '', 'success');
+        }
+      });
+    }
+  }
+
+  selectRanking(ranking: number | null | undefined) {
+    this.rankingSelected = ranking;
+  }
+
+  more() {
+    if (this.rankingSelected == null) {
+      new Promise(async (resolve, reject) => {
+        const { value: rankingName } = await Swal.fire({
+          title: 'Enter new Ranking',
+          input: 'text',
+          inputLabel: 'Intorduce el nombre del nuevo ranking.',
+          inputPlaceholder: 'Ranking name',
+          showCancelButton: true,
+        });
+        if (rankingName) {
+          Swal.fire('Ranking Name!');
+        }
+      });
+    } else {
+      new Promise(async (resolve, reject) => {
+        const { value: userName } = await Swal.fire({
+          title: 'Add new user',
+          input: 'text',
+          inputLabel: 'Intorduce el nombre del usuario que quieras agregar.',
+          inputPlaceholder: 'Username',
+          showCancelButton: true,
+        });
+        if (userName) {
+          Swal.fire('Uusario agregado!');
+        }
+      });
+    }
+  }
 
   async editFecha() {
     const { value: date } = await Swal.fire({
