@@ -45,6 +45,8 @@ export class RegisterComponent implements OnInit {
   mostrarContra: boolean = false;
   eye: string | any = 'fa-eye';
 
+  emailProfe: string = '';
+
   //Funcion para mostrar contrasena:
   mostrarContrasena() {
     this.mostrarContra = !this.mostrarContra;
@@ -105,8 +107,8 @@ export class RegisterComponent implements OnInit {
         this.displays[3] = 'none';
       }
     } else if (this.displays[4] == ' ') {
-      if (this.alumno && this.fecha == '') {
-        swal.fire('Introducir fecha de nacimiento!');
+      if (this.alumno && this.fecha == '' || this.emailProfe == '') {
+        swal.fire('Campo fecha de nacimiento o email del profesor vacío!');
       } else if (!this.alumno && this.centro == '') {
         swal.fire('Introducir nombre del centro!');
       } else {
