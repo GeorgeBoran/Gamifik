@@ -9,14 +9,12 @@
   </ul>
 
   <ul class="tabla-cuerpo">
-    <ng-template ngFor let-item [ngForOf]="rankings" let-i="index" >
-      <li class="tabla-fila" (click)="selectRanking(i)" style= '{{item.select}}'  >
+    <ng-template ngFor let-item [ngForOf]="rankings" let-i="index">
+      <li class="tabla-fila" (click)="selectRanking(i)" style='{{item.select}}'>
         <div class="col col-1" data-label="Nr.">{{i+1}}</div>
         <div class="col col-2" data-label="Nombre">{{item.nombre}}</div>
         <div class="col col-3" data-label="Fecha Creacion">{{item.fecha}}</div>
       </li>
     </ng-template>
-    
-    
   </ul>
 </div>

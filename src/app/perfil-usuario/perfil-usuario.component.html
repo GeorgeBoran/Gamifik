@@ -22,7 +22,7 @@
                 <h3 (click)="editUsername()">@{{account.username}}</h3>
                 <div class="edit" alt=""></div>
               </div>
-              
+
               <div *ngIf="account.tipo; else isProfesor">
                 <p>Alumno</p>
               </div>
@@ -35,27 +35,27 @@
           <div class="caja-datos-cambiar grid flex">
             <div class="caja-inputs distancia-2em">
               <div class="flex hover-pes" (click)="editName()">
-                <p class="pes" >Nombre: {{account.name}}</p>
+                <p class="pes">Nombre: {{account.name}}</p>
                 <div class="edit" alt=""> </div>
               </div>
               <div class="flex hover-pes" (click)="editCognom()">
-                <p class="pes" >Apellido:{{account.cognom}}</p>
+                <p class="pes">Apellido:{{account.cognom}}</p>
                 <div class="edit" alt=""></div>
 
               </div>
               <div class="flex hover-pes" (click)="editMail()">
-                <p class="pes" >Email:{{account.mail}}</p>
+                <p class="pes">Email:{{account.mail}}</p>
                 <div class="edit" alt=""></div>
               </div>
               <div *ngIf="account.tipo; else isCentro">
                 <div class="flex hover-pes" (click)="editFecha()">
-                  <p class="pes  distancia-1em" >Fecha: {{account.option}}</p>
+                  <p class="pes  distancia-1em">Fecha: {{account.option}}</p>
                   <div class="edit" alt=""></div>
                 </div>
               </div>
               <ng-template #isCentro>
                 <div class="flex hover-pes" (click)="editCenter()">
-                  <p class="pes  distancia-1em" >Centro: {{account.option}}</p>
+                  <p class="pes  distancia-1em">Centro: {{account.option}}</p>
                   <div class="edit" alt=""></div>
                 </div>
               </ng-template>
@@ -69,21 +69,19 @@
 
         <div class="caja-derecha">
 
-          <app-listar-rankings class="caja-ranking" (newSelect)="selectRanking($event)"  [rankingSelected]="rankingSelected" [tipoAccount]="account.tipo"></app-listar-rankings>
-            <div  *ngIf="!account.tipo;" >
-              <div class="caja-ranking-iconos flex" *ngIf="rankingSelected!=null" >
-                  <div class="iconos anadir" (click)="more()">
-                    <a></a>
-                  </div>
-                  <div class="iconos editar" (click)="editRanking()">
-                    <a></a>
-                  </div>
-                  <div class="iconos borrar" (click)="deleteRanking()">
-                    <a></a>
-                  </div>
+          <app-listar-rankings class="caja-ranking" (newSelect)="selectRanking($event)"
+            [rankingSelected]="rankingSelected" [tipoAccount]="account.tipo"></app-listar-rankings>
+          <div *ngIf="!account.tipo;">
+            <div class="caja-ranking-iconos flex" *ngIf="rankingSelected!=null">
+              <div class="iconos anadir" (click)="more()">
+              </div>
+              <div class="iconos editar" (click)="editRanking()">
+              </div>
+              <div class="iconos borrar" (click)="deleteRanking()">
               </div>
             </div>
-            
+          </div>
+
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@
             <input label="Alumno" type="radio" id="alumno" name="eleccion" value="alumno" checked>
             <input label="Profesor" type="radio" id="profesor" name="eleccion" value="profesor">
           </div>
-          <h1 class="flex distancia-05em">Registrate</h1>
+          <h3 class="flex distancia-05em">Registrate</h3>
           <h3 class="flex distancia-1em">Crea una Cuenta Goat</h3>
         </div>
         <div class="flex grid caja-imputs distancia-1-5em-top">
@@ -51,10 +51,10 @@
             style="display:{{ displays[3] }};" />
 
           <div *ngIf="alumno; else isProfesor">
-            <input class="inputs distancia-input-04em" type="date" name="fecha" [(ngModel)]="fecha" placeholder="Fecha"
-              style="display:{{ displays[4] }};" />
-            <input class="inputs distancia-input-04em" type="type" name="emailProfe" [(ngModel)]="emailProfe" placeholder="Email de tu profesor"
-              style="display:{{ displays[4] }};" />
+            <input class="inputs flex distancia-input-04em" type="date" name="fecha" [(ngModel)]="fecha"
+              placeholder="Fecha" style="display:{{ displays[4] }};" />
+            <input class="inputs flex distancia-input-04em" type="type" name="emailProfe" [(ngModel)]="emailProfe"
+              placeholder="Email de tu profesor" style="display:{{ displays[4] }};" />
           </div>
 
           <ng-template #isProfesor>
