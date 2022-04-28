@@ -1,10 +1,10 @@
 .hiper-link {
   color: rgb(0, 0, 0);
-  font-size: large;
+  font-size: small;
 }
 .boton-atras {
   margin-top: -4em;
-  width: 160px;
+  width: 80px;
   font-size: 16px;
   font-weight: 600;
   color: linear-gradient(to right, #039153, #04f18b, #03b367, #05d37a);
@@ -135,14 +135,16 @@
   text-align: center;
   -webkit-border-radius: 4px;
   border-radius: 30px;
-  font-size: 16px;
+  font-size: 14px;
   height: 48px;
-  width: 100%;
+  max-width: 200px;
+  width: 200px;
   padding: 13px 15px;
   z-index: 1;
   border: none;
   transition: all 0.3s ease-in-out;
 }
+
 .inputs:hover {
   box-shadow: 1px 1px 1px 1px rgba(46, 47, 48, 0.88);
 }
@@ -255,6 +257,13 @@ progress[value]::-webkit-progress-value {
     min-width: 200px !important;
     height: 100%;
   }
+
+  .parte-arriba h3 {
+    font-size: medium;
+  }
+  .inputs {
+    width: 180px;
+  }
 }
 
 @media (min-width: 220px) and (max-width: 300px) {
@@ -345,6 +354,13 @@ progress[value]::-webkit-progress-value {
   }
   .espacio {
     width: 220px;
+  }
+  .hiper-link {
+    color: rgb(0, 0, 0);
+    font-size: medium;
+  }
+  .parte-arriba h3 {
+    font-size: larger;
   }
 }
 
