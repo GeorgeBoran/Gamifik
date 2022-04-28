@@ -8,7 +8,7 @@
        </div>
      </div>
      <div class="espacio-derecha flex">
-       <div class="persona iconos">
+       <div class="persona iconos" [routerLink]="['/pagina']" *ngIf="this.router.url != '/pagina'">
          <a [routerLink]="['/pagina']"></a>
        </div>
        <div class="deslogueo dropdown iconos" (click)="this.deslogueo()">

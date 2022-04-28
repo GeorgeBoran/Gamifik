@@ -6,7 +6,7 @@ import { user } from '../user';
   providedIn: 'root',
 })
 export class UsersService {
-  URL = 'http://localhost:8080/';
+  URL = 'http://localhost/Gamifica/Gamifik-master/src/app/API/';
   constructor(private http: HttpClient) {}
 
   comprobarUser(username: string) {

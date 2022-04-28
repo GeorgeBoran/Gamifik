@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Route, Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { RakingService } from '../services/raking.service';
 import { UsersService } from '../services/users.service';
 import { user } from '../user';
 
@@ -15,13 +16,22 @@ export class PerfilUsuarioComponent implements OnInit {
   verify: boolean = false;
   account: user | any = {};
   localUsername: string = '';
-  rankingSelected: number | null | undefined;
+  rankingSelected: string | null | undefined;
+  dataNewRanking: { rankingName: string; idUser: string } = {
+    rankingName: '',
+    idUser: '',
+  };
+  addUserData: { rankingName: string | null | undefined; username: string } = {
+    rankingName: '',
+    username: '',
+  };
   inputIMG: HTMLElement = document.getElementById('inputIMG') as HTMLElement;
 
   constructor(
     private sanitizer: DomSanitizer,
     private router: Router,
-    private Service: UsersService
+    private Service: UsersService,
+    private Sranking: RakingService
   ) {}
 
   editRanking() {
@@ -44,40 +54,25 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   deleteRanking() {
-    if (this.rankingSelected == null) {
-      Swal.fire('No Ranking Selected!');
-    } else {
-      Swal.fire({
-        title: 'Seguro que quieres eliminar el Ranking?',
-        showDenyButton: false,
-        showCancelButton: true,
-        confirmButtonText: 'Borrar',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire('Borrado!', '', 'success');
-        }
-      });
-    }
+    Swal.fire({
+      title: 'Seguro que quieres eliminar el Ranking?',
+      showDenyButton: false,
+      showCancelButton: true,
+      confirmButtonText: 'Borrar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire('Borrado!', '', 'success');
+      }
+    });
   }
 
-  selectRanking(ranking: number | null | undefined) {
+  selectRanking(ranking: string | null | undefined) {
     this.rankingSelected = ranking;
   }
 
-  more() {
+  addUser() {
     if (this.rankingSelected == null) {
-      new Promise(async (resolve, reject) => {
-        const { value: rankingName } = await Swal.fire({
-          title: 'Enter new Ranking',
-          input: 'text',
-          inputLabel: 'Intorduce el nombre del nuevo ranking.',
-          inputPlaceholder: 'Ranking name',
-          showCancelButton: true,
-        });
-        if (rankingName) {
-          Swal.fire('Ranking Name!');
-        }
-      });
+      Swal.fire('No Ranking Selected!');
     } else {
       new Promise(async (resolve, reject) => {
         const { value: userName } = await Swal.fire({
@@ -88,10 +83,69 @@ export class PerfilUsuarioComponent implements OnInit {
           showCancelButton: true,
         });
         if (userName) {
+          this.addUserData = {
+            rankingName: this.rankingSelected,
+            username: userName,
+          };
+          this.Sranking.addUserRanking(this.addUserData).subscribe(
+            (datos: any) => {
+              if (datos == 'Correcto!') {
+                Swal.fire('Usuario agregado!');
+              } else if (datos == 'User no valido!') {
+                Swal.fire({
+                  title: 'Uusario no encontrado!',
+                  confirmButtonText: 'Ok',
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    this.addUser();
+                  }
+                });
+              } else if ('Usuario ya registrado!') {
+                Swal.fire({
+                  title: 'Uusario ya registrado!',
+                  confirmButtonText: 'Ok',
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    this.addUser();
+                  }
+                });
+              } else {
+                Swal.fire('Error al agregar Usuario!');
+              }
+            }
+          );
           Swal.fire('Uusario agregado!');
         }
       });
     }
+  }
+
+  addRanking() {
+    new Promise(async (resolve, reject) => {
+      const { value: rankingName } = await Swal.fire({
+        title: 'Enter new Ranking',
+        input: 'text',
+        inputLabel: 'Intorduce el nombre del nuevo ranking.',
+        inputPlaceholder: 'Ranking name',
+        showCancelButton: true,
+      });
+      if (rankingName) {
+        Swal.fire('Ranking Name!');
+        this.dataNewRanking = {
+          rankingName: rankingName,
+          idUser: this.account.id,
+        };
+        this.Sranking.crearRanking(this.dataNewRanking).subscribe(
+          (datos: any) => {
+            if (datos == 'Creacion correcta') {
+              Swal.fire('Ranking creado!');
+            } else {
+              Swal.fire('Error al crear Ranking!');
+            }
+          }
+        );
+      }
+    });
   }
 
   async editFecha() {
@@ -228,7 +282,6 @@ export class PerfilUsuarioComponent implements OnInit {
       this.edit();
     } else {
       if (await this.enterPassword(2)) {
-        console.log('Editando...');
         this.edit();
       }
     }
@@ -294,14 +347,10 @@ export class PerfilUsuarioComponent implements OnInit {
         inputPlaceholder: 'Enter your password',
         showCancelButton: true,
       });
-      console.log('Fase 1');
+
       if (password) {
-        console.log('Fase 2');
         this.Service.login(this.account.username, password).subscribe(
           async (datos: any) => {
-            console.log('Fase 3');
-            console.log('Datos in enter pass: ' + datos);
-            console.log(password);
             if (datos == 'pwd incorrecto') {
               await Swal.fire({
                 title: 'Password incorrecto!',
@@ -369,10 +418,10 @@ export class PerfilUsuarioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    localStorage.removeItem('rankingSelected');
     if (localStorage.getItem('user-logged')) {
       this.account = localStorage.getItem('user-logged');
       this.account = JSON.parse(this.account);
-      console.log('Local: ', this.account);
     } else {
       this.router.navigate(['/login']);
     }

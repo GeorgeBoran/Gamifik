@@ -53,8 +53,6 @@
           <div *ngIf="alumno; else isProfesor">
             <input class="inputs distancia-input-04em" type="date" name="fecha" [(ngModel)]="fecha" placeholder="Fecha"
               style="display:{{ displays[4] }};" />
-            <input class="inputs distancia-input-04em" type="type" name="emailProfe" [(ngModel)]="emailProfe" placeholder="Email de tu profesor"
-              style="display:{{ displays[4] }};" />
           </div>
 
           <ng-template #isProfesor>

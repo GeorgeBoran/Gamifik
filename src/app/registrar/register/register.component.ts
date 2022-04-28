@@ -107,8 +107,8 @@ export class RegisterComponent implements OnInit {
         this.displays[3] = 'none';
       }
     } else if (this.displays[4] == ' ') {
-      if (this.alumno && this.fecha == '' || this.emailProfe == '') {
-        swal.fire('Campo fecha de nacimiento o email del profesor vacío!');
+      if (this.alumno && this.fecha == '') {
+        swal.fire('Campo fecha de nacimiento vacía!');
       } else if (!this.alumno && this.centro == '') {
         swal.fire('Introducir nombre del centro!');
       } else {

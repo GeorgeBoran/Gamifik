@@ -3,27 +3,27 @@
 
   <div class="bloquePrincipal grid">
     <div class="titulo-ranking">
-      <h1>ranking name</h1>
+      <h1>{{rankingName}}</h1>
     </div>
-
+    <ng-template ngFor let-item [ngForOf]="users" let-i="index">
     <div class="caja-datos-foto flex">
       <div class="caja-usuario">
         <div class="usuario flex">
-          <img class="usuario-foto" src="../../../assets/gato.jpg">
+          <img class="usuario-foto" src="{{item.img}}">
         </div>
       </div>
 
       <ul class="caja-listado grid">
         <h2 class="titulo-listado">
-          Posicion: 1
+          Posicion: {{i+1}}
         </h2>
         <div class="info-extra-listado ">
-          <p>@georgeboran</p>
-          <p>+2 Posiciones</p>
+          <p>@{{item.username}}</p>
+          <p >{{item.puntuacion}}</p>
         </div>
       </ul>
     </div>
-
+    </ng-template>
     <div class="caja-boton-atras">
       <div class="boton flex" (click)="volverTop()">
         <img src="../../../assets/ic_expand_less_18px.png">

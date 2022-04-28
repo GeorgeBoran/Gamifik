@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { RakingService } from 'src/app/services/raking.service';
 
 @Component({
   selector: 'app-listar-rankings',
@@ -7,19 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./listar-rankings.component.css'],
 })
 export class ListarRankingsComponent implements OnInit {
-  @Input() rankingSelected: number | null | undefined;
+  rankingSelected: number | null | undefined;
   rankings: { nombre: string; fecha: string; select: string }[] = [];
-  @Output() newSelect: EventEmitter<number | null> = new EventEmitter();
+
+  @Output() newSelect: EventEmitter<string | null> = new EventEmitter();
   @Input() tipoAccount: any;
 
-  constructor(private router: Router) {
-    for (let index = 0; index < 9; index++) {
-      this.rankings.push({
-        nombre: 'Ranking ' + (index + 1) + '',
-        fecha: '20/12/2022',
-        select: '',
-      });
-    }
+  constructor(private router: Router, private Sranking: RakingService) {
+    this.Sranking.listarRanking().subscribe((datos: any) => {
+      for (let index = 0; index < datos.length; index++) {
+        this.rankings.push({
+          nombre: datos[index][1],
+          fecha: datos[index][2],
+          select: '',
+        });
+      }
+    });
     console.log(this.rankings);
   }
 
@@ -28,6 +32,7 @@ export class ListarRankingsComponent implements OnInit {
       this.router.navigate(['/ranking']);
     } else {
       if (this.rankingSelected == id) {
+        localStorage.setItem('rankingSelected', this.rankings[id].nombre);
         this.router.navigate(['/ranking']);
       } else {
         if (this.rankingSelected != null) {
@@ -37,8 +42,7 @@ export class ListarRankingsComponent implements OnInit {
         this.rankingSelected = id;
       }
     }
-    console.log(this.rankingSelected);
-    this.newSelect.emit(this.rankingSelected);
+    this.newSelect.emit(this.rankings[id].nombre);
   }
 
   ngOnInit(): void {}

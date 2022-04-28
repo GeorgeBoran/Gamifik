@@ -6,7 +6,11 @@ import { CompartidoModule } from '../compartido/compartido.module';
 import { AddRankingComponent } from './add-ranking/add-ranking.component';
 
 @NgModule({
-  declarations: [ListarRankingsComponent, VisualizarRankingComponent, AddRankingComponent],
+  declarations: [
+    ListarRankingsComponent,
+    VisualizarRankingComponent,
+    AddRankingComponent,
+  ],
   exports: [ListarRankingsComponent],
   imports: [CommonModule, CompartidoModule],
 })
