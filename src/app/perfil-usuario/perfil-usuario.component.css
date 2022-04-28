@@ -31,6 +31,8 @@
 .caja-derecha {
   padding: 10px 10px 10px 10px;
   box-sizing: content-box;
+  display: flex;
+  flex-flow: column;
 }
 
 .caja-principal {
@@ -232,12 +234,12 @@
   }
   .caja-ranking {
     width: 95%;
-    height: 25vh;
+    height: 30vh;
     margin-bottom: 0.7em;
   }
   .caja-ranking-iconos {
-    width: 90%;
-    height: 10vh;
+    width: 95%;
+    height: 7vh;
   }
   .pes {
     font-size: 17px;
@@ -326,7 +328,10 @@
     margin-left: 1em;
   }
   .pes {
-    font-size: 18px;
+    font-size: 12px;
+  }
+  .boton-cambiar-contra {
+    font-size: 11px;
   }
 }
 
@@ -360,58 +365,59 @@
     margin-left: 1em;
   }
   .pes {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
 @media (min-width: 600px) and (max-width: 801px) {
   .total {
-    width: 62vh;
+    width: 80vw;
   }
   .caja-principal {
-    width: 62vh;
+    width: 80vw;
   }
   .caja-izquierda {
-    width: 24.8vh;
+    width: 35vw;
     height: inherit;
   }
   .container .caja-derecha {
-    width: 37.2vh;
-    height: inherit;
+    width: 45vw;
   }
 
   .caja-ranking {
-    width: 36.4vh;
+    width: 44vw;
     height: 78vh;
     margin-bottom: 0.7em;
-    margin-left: 1em;
   }
   .caja-ranking-iconos {
-    width: 36.4vh;
+    width: 45vw;
     height: 90px;
-    margin-left: 1em;
   }
   .pes {
-    font-size: 20px;
+    font-size: 15px;
+  }
+  .boton-cambiar-contra {
+    font-size: 15px;
+    background-color: red;
   }
 }
 
 @media (min-width: 801px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
   .total {
-    width: 64vh;
+    width: 81vw;
   }
   .caja-principal {
-    width: 64vh;
+    width: 81vw;
   }
 
   .caja-izquierda {
-    width: 26.6vh;
+    width: 30vw;
     height: inherit;
     position: absolute;
   }
   .caja-derecha {
-    width: 38.4vh;
+    width: 52vw;
     height: inherit;
   }
 
@@ -430,46 +436,57 @@
     margin: 0 2em 0 2em;
     min-height: 40px;
     min-width: 40px;
+    margin-left: 1em;
   }
   .caja-ranking {
-    width: 36.4vh;
-    height: 97%;
-    margin-left: 1em;
+    width: 50vw;
+    height: 97.5%;
     margin-bottom: 0.7em;
+    margin-left: 1em;
   }
   .caja-ranking-iconos {
-    width: 36.4vh;
-    height: 16.5vh;
+    width: 50vw;
+    height: 7vh;
     margin-left: 1em;
+    margin-bottom: 1.2em;
   }
+
   .pes {
     font-size: 20px;
+  }
+  .boton-cambiar-contra {
+    font-size: 15px;
+  }
+  .boton-cambiar-contra {
+    font-size: 15px;
+    background-color: yellowgreen;
   }
 }
 
 @media (min-width: 980px) and (max-width: 1024px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
   .total {
-    width: 100vh;
+    width: 80vw;
   }
 
   .caja-principal {
-    width: 100vh;
+    width: 80vw;
   }
   .caja-izquierda {
-    width: 44vh;
+    width: 30vw;
   }
   .caja-derecha {
-    width: 57vh;
+    width: 50vw;
   }
   .caja-ranking {
-    width: 55vh;
-    height: 100%;
+    width: 48vw;
+    height: 97%;
     margin-bottom: 0.7em;
   }
   .caja-ranking-iconos {
-    width: 55vh;
-    height: 16vh;
+    width: 48vw;
+    height: 8vh;
+    margin-bottom: 1.6em;
   }
 
   .caja-foto {
@@ -485,14 +502,18 @@
     margin-left: 2em;
   }
   .pes {
-    font-size: 22px;
+    font-size: 20px;
+  }
+  .boton-cambiar-contra {
+    font-size: 15px;
+    background-color: yellow;
   }
 }
 
 @media (min-width: 1025px) {
   /* big landscape tablets, laptops, and desktops */
   .total {
-    width: 105vh;
+    width: 80vw;
   }
 
   .pes {
@@ -503,19 +524,20 @@
     height: 80vh;
   }
   .caja-izquierda {
-    width: 42vh;
+    width: 30vw;
   }
   .caja-derecha {
-    width: 63vh;
+    width: 50vw;
   }
 
   .caja-ranking {
-    width: 61vh;
-    height: 100%;
+    width: 48vw;
+    height: 97.5%;
   }
   .caja-ranking-iconos {
-    width: 61vh;
-    height: 16.5vh;
+    width: 48vw;
+    height: 7vh;
+    margin-bottom: 1.2em;
   }
   .caja-foto {
     width: 28vh;
@@ -529,34 +551,46 @@
   .caja-nombre {
     margin-left: 2.6em;
   }
+  .pes {
+    font-size: 20px;
+  }
+  .boton-cambiar-contra {
+    font-size: 15px;
+    background-color: blue;
+  }
 }
 
 @media (min-width: 1281px) {
   /* hi-res laptops and desktops */
 
+  .boton-cambiar-contra {
+    background-color: red;
+  }
   .total {
-    width: 130vh;
+    width: 80vw;
   }
 
   .caja-principal {
-    width: 130vh;
+    width: 81vw;
     height: 80vh;
   }
 
   .caja-izquierda {
-    width: 52vh;
+    width: 30vw;
   }
 
   .caja-derecha {
-    width: 78vh;
+    max-height: 78vh;
+    width: 50vw;
   }
 
   .caja-ranking {
-    width: 76vh;
+    width: 49vw;
     height: 100%;
   }
   .caja-ranking-iconos {
-    width: 76vh;
-    height: 16.5vh;
+    width: 49vw;
+    height: 8vh;
+    margin-bottom: 0;
   }
 }
