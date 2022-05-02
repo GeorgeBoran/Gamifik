@@ -56,4 +56,107 @@ export class VisualizarRankingComponent implements OnInit {
       behavior: 'smooth',
     });
   }
+
+varPrueba:string = 'Funciona';
+
+  pruebaSweet(){
+    Swal.fire({
+      imageUrl:'../../assets/emocional.webp',
+      title: 'Medalla X',
+      width: 600,
+      heightAuto: false,
+      padding: '3em',
+      color: '#716add',
+      imageHeight: 200,
+      showConfirmButton: true,
+      showCancelButton: true,
+      text: 'Descripcion de la medalla',
+      html:'<link rel="stylesheet" href="visualizar-ranking.component.css">',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url('../../assets/cooperacion.webp')
+        left top
+        no-repeat
+      `,
+    })
+  }
+
+
+
+
+
+  mostrarMenu:boolean = false;
+  cancel:boolean = false;
+  mostrarPopup(){
+    if(this.mostrarMenu == false){
+      this.mostrarMenu = true;
+    }
+  }
+
+  cancelar(){
+    if(this.mostrarMenu == true){
+      this.mostrarMenu = false;
+    }
+  }
+
+  public atributosSkill: {
+    skillName: string ;
+    imgSkill: string;
+    descSkill: string;
+  } | any;
+
+
+  softSkills(skill:number){
+    //Se inicializa el objeto popupDatos
+    this.atributosSkill = {
+      skillName: '',
+      imgSkill: '',
+      descSkill: '',
+    }
+
+    if(skill == 1){
+      this.atributosSkill.skillName ='Responsabilidad';
+      this.atributosSkill.imgSkill ='./assets/responsabilidad.webp';
+      this.atributosSkill.descSkill ='Habilidad de lograr con calidad las tareas asignadas, en el lugar y el momento adecuados, con el objetivo de responder a nuestros compromisos y respetando las normas acordadas.';
+      console.log(this.atributosSkill.skillName);
+    }else if(skill == 2){
+      this.atributosSkill.skillName ='Cooperación';
+      this.atributosSkill.imgSkill ='./assets/cooperacion.webp';
+      this.atributosSkill.descSkill ='Habilidad de interaccionar de forma constructiva y a partir de la escucha, con el objetivo de conseguir una meta común y consensuada.';
+    }else if(skill == 3){
+      this.atributosSkill.skillName ='Autonomía e Iniciativa';
+      this.atributosSkill.imgSkill ='./assets/autonomia.webp';
+      this.atributosSkill.descSkill ='Habilidad de emprender acciones e implicarse en las actividades, utilizando los recursos propios, y de saber cuándo pedir ayuda.';
+    }else if(skill == 4){
+      this.atributosSkill.skillName ='Gestión Emocional';
+      this.atributosSkill.imgSkill ='./assets/gestionemocional.webp';
+      this.atributosSkill.descSkill ='Habilidad de percibir y aceptar las emociones propias y las de los demás, con el objetivo de desarrollar estrategias de gestión personal eficaces.';
+    }else if(skill == 5){
+      this.atributosSkill.skillName ='Habilidades de pensamiento';
+      this.atributosSkill.imgSkill ='./assets/pensamiento.webp';
+      this.atributosSkill.descSkill ='Habilidad de relacionar, cuestionar, generar y exponer ideas.';
+    }
+  }
+
+  otorgarMedalla(){
+    Swal.fire({
+      icon: 'warning',
+      title: 'Estas seguro, una vez otorgada la medalla no se podra revertir?',
+      showConfirmButton: true,
+      showDenyButton: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire('Se le ha otorgado la medalla al alumno!', '', 'success')
+      } else if (result.isDenied) {
+        Swal.fire('Los cambios no se han guardado', '', 'info')
+      }
+    })
+  }
+
+  condecorarAlumno(){
+
+  }
+
+
+
 }
