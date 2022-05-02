@@ -93,7 +93,7 @@ varPrueba:string = 'Funciona';
     }
   }
 
-  cancelar(){
+  cerrarMenu(){
     if(this.mostrarMenu == true){
       this.mostrarMenu = false;
     }
@@ -147,6 +147,7 @@ varPrueba:string = 'Funciona';
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire('Se le ha otorgado la medalla al alumno!', '', 'success')
+        this.cerrarMenu();
       } else if (result.isDenied) {
         Swal.fire('Los cambios no se han guardado', '', 'info')
       }
