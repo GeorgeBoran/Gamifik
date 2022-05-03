@@ -398,7 +398,6 @@
   }
   .boton-cambiar-contra {
     font-size: 15px;
-    background-color: red;
   }
 }
 
@@ -459,7 +458,6 @@
   }
   .boton-cambiar-contra {
     font-size: 15px;
-    background-color: yellowgreen;
   }
 }
 
@@ -506,7 +504,6 @@
   }
   .boton-cambiar-contra {
     font-size: 15px;
-    background-color: yellow;
   }
 }
 
@@ -556,7 +553,6 @@
   }
   .boton-cambiar-contra {
     font-size: 15px;
-    background-color: blue;
   }
 }
 
@@ -564,7 +560,6 @@
   /* hi-res laptops and desktops */
 
   .boton-cambiar-contra {
-    background-color: red;
   }
   .total {
     width: 80vw;
