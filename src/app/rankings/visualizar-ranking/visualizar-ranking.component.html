@@ -8,8 +8,13 @@
     <ng-template ngFor let-item [ngForOf]="users" let-i="index">
     <div class="caja-datos-foto flex">
       <div class="caja-usuario">
-        <div class="usuario flex">
+        <div class="usuario flex" (click)="mostrarPopup()">
           <img class="usuario-foto" src="{{item.img}}">
+        </div>
+        <div class="skills">
+          <img width="70px" src="../../assets/emocional.webp" alt="">
+          <img width="70px" src="../../assets/cooperacion.webp" alt="">
+          <img width="70px" src="../../assets/emocional.webp" alt="">
         </div>
       </div>
 
@@ -30,4 +35,29 @@
       </div>
     </div>
   </div>
+
+
+
+  <div class="menuSoftSkills" *ngIf="mostrarMenu == true">
+    <div class="backdrop">
+      <div class="contSoftSkills">
+        <ul class="softSkills">
+          <li (click)="softSkills(1)"><img class="responsabilidad" src="./assets/responsabilidad.webp" alt="" height="150px"></li>
+          <li (click)="softSkills(2)"><img class="cooperacion" src="./assets/cooperacion.webp" alt="" height="150px"></li>
+          <li (click)="softSkills(3)"><img class="autonomia" src="./assets/autonomia.webp" alt="" height="150px"></li>
+          <li (click)="softSkills(4)"><img class="gestionemocional" src="./assets/gestionemocional.webp" alt="" height="150px"></li>
+          <li (click)="softSkills(5)"><img class="pensamiento" src="./assets/pensamiento.webp" alt="" height="150px"></li>
+        </ul>
+      </div>
+      <div class="popup">
+        <h1>{{atributosSkill.skillName}}</h1>
+        <img class="popupIMG" src="{{atributosSkill.imgSkill}}" alt="">
+        <p class="par">{{atributosSkill.descSkill}}</p>
+        <button class="confirmBtn botones" (click)="otorgarMedalla()">Condecorar</button>
+        <button class="denyBtn botones" (click)="cerrarMenu()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+
 </div>
