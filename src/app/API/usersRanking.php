@@ -12,11 +12,12 @@ $ranking = $_GET['rankingName'];
 // REALIZA LA CONSULTA A LA DB
 $users = mysqli_query($conexion, "SELECT `User-ID`,`Puntuación` FROM `$ranking` ORDER BY `Puntuación`;");
 $check = mysqli_num_rows($users);
-while ($resultado = mysqli_fetch_array($users)) {
-  $datos[] = $resultado;
-  $json = json_encode($datos); // GENERA EL JSON CON LOS DATOS OBTENIDOS
-}
+
 if ($check > 0) {
+  while ($resultado = mysqli_fetch_array($users)) {
+    $datos[] = $resultado;
+    $json = json_encode($datos); // GENERA EL JSON CON LOS DATOS OBTENIDOS
+  }
   echo $json; // MUESTRA EL JSON GENERADO AL EJECUTAR DIRECTAMENTE EL LOCALHOST
 } else {
   echo json_encode('Vacio!');

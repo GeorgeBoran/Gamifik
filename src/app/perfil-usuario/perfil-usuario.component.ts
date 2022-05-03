@@ -17,14 +17,11 @@ export class PerfilUsuarioComponent implements OnInit {
   account: user | any = {};
   localUsername: string = '';
   rankingSelected: string | null | undefined;
-  dataNewRanking: { rankingName: string; idUser: string } = {
-    rankingName: '',
-    idUser: '',
-  };
   addUserData: { rankingName: string | null | undefined; username: string } = {
     rankingName: '',
     username: '',
   };
+
   inputIMG: HTMLElement = document.getElementById('inputIMG') as HTMLElement;
 
   constructor(
@@ -33,6 +30,45 @@ export class PerfilUsuarioComponent implements OnInit {
     private Service: UsersService,
     private Sranking: RakingService
   ) {}
+
+  deleteUser() {
+    if (this.rankingSelected == null) {
+      Swal.fire('No Ranking Selected!');
+    } else {
+      new Promise(async (resolve, reject) => {
+        const { value: userName } = await Swal.fire({
+          title: 'Delete user',
+          input: 'text',
+          inputLabel: 'Intorduce el nombre del usuario que quieras eliminar.',
+          inputPlaceholder: 'Username',
+          showCancelButton: true,
+        });
+        if (userName) {
+          this.addUserData = {
+            rankingName: this.rankingSelected,
+            username: userName,
+          };
+          this.Sranking.deleteUser(this.addUserData).subscribe((datos: any) => {
+            if (datos == 'Correcto!') {
+              Swal.fire('Usuario eliminado del Ranking!');
+            } else if (datos == 'Usuario creador!') {
+              Swal.fire('No se puede eliminar al usuario creador!');
+            } else if (datos == 'Usuario no registrado!') {
+              Swal.fire({
+                title: 'Usuario no encontrado !',
+                confirmButtonText: 'Ok',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  this.deleteUser();
+                }
+              });
+            }
+          });
+          Swal.fire('Usuario eliminado!');
+        }
+      });
+    }
+  }
 
   editRanking() {
     if (this.rankingSelected == null) {
@@ -61,7 +97,13 @@ export class PerfilUsuarioComponent implements OnInit {
       confirmButtonText: 'Borrar',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Borrado!', '', 'success');
+        this.Sranking.deleteRanking(this.rankingSelected).subscribe(
+          (datos: any) => {
+            if (datos == 'Ranking eliminado!') {
+              Swal.fire('Ranking Eliminado!', '', 'success');
+            }
+          }
+        );
       }
     });
   }
@@ -118,34 +160,6 @@ export class PerfilUsuarioComponent implements OnInit {
         }
       });
     }
-  }
-
-  addRanking() {
-    new Promise(async (resolve, reject) => {
-      const { value: rankingName } = await Swal.fire({
-        title: 'Enter new Ranking',
-        input: 'text',
-        inputLabel: 'Intorduce el nombre del nuevo ranking.',
-        inputPlaceholder: 'Ranking name',
-        showCancelButton: true,
-      });
-      if (rankingName) {
-        Swal.fire('Ranking Name!');
-        this.dataNewRanking = {
-          rankingName: rankingName,
-          idUser: this.account.id,
-        };
-        this.Sranking.crearRanking(this.dataNewRanking).subscribe(
-          (datos: any) => {
-            if (datos == 'Creacion correcta') {
-              Swal.fire('Ranking creado!');
-            } else {
-              Swal.fire('Error al crear Ranking!');
-            }
-          }
-        );
-      }
-    });
   }
 
   async editFecha() {

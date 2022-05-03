@@ -70,13 +70,13 @@
         <div class="caja-derecha">
 
 
-          <app-listar-rankings class="caja-ranking" (newSelect)="selectRanking($event)" [tipoAccount]="account.tipo"></app-listar-rankings>
+          <app-listar-rankings class="caja-ranking" (newSelect)="selectRanking($event)" [tipoAccount]="account.tipo" [idUser]="account.id"></app-listar-rankings>
             <div  *ngIf="!account.tipo;" >
               <div class="caja-ranking-iconos flex" *ngIf="rankingSelected!=null" >
                   <div class="iconos anadir" (click)="addUser()">
                     <a></a>
                   </div>
-                  <div class="iconos anadir" (click)="addRanking()">
+                  <div class="iconos anadir" (click)="deleteUser()">
                     <a></a>
                   </div>
                   <div class="iconos editar" (click)="editRanking()">

@@ -19,12 +19,29 @@ export class RakingService {
       `${this.URL}usersRanking.php?rankingName=${rankingName}`
     );
   }
+
   downloadUser(id: number) {
     return this.http.get(`${this.URL}downloadUserInfo.php?idUser=${id}`);
   }
 
+  deleteRanking(rankingName: string | null | undefined) {
+    return this.http.get(
+      `${this.URL}deleteRanking.php?rankingName=${rankingName}`
+    );
+  }
+
   public crearRanking(datos: { rankingName: string; idUser: string }) {
     return this.http.post(`${this.URL}crearRanking.php`, JSON.stringify(datos));
+  }
+
+  public deleteUser(datos: {
+    rankingName: string | null | undefined;
+    username: string;
+  }) {
+    return this.http.post(
+      `${this.URL}deleteUserRanking.php`,
+      JSON.stringify(datos)
+    );
   }
 
   public listarRanking() {
