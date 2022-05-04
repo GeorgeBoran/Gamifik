@@ -30,6 +30,22 @@ export class RakingService {
     );
   }
 
+  adminRanking(rankingName: string | null | undefined, user: string) {
+    return this.http.get(
+      `${this.URL}adminRanking.php?rankingName=${rankingName}&user=${user}`
+    );
+  }
+
+  setPoints(
+    rankingName: string | null | undefined,
+    user: number,
+    points: number
+  ) {
+    return this.http.get(
+      `${this.URL}setPointsRanking.php?rankingName=${rankingName}&user=${user}&points=${points}`
+    );
+  }
+
   public crearRanking(datos: { rankingName: string; idUser: string }) {
     return this.http.post(`${this.URL}crearRanking.php`, JSON.stringify(datos));
   }

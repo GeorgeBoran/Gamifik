@@ -24,7 +24,13 @@
         </h2>
         <div class="info-extra-listado ">
           <p>@{{item.username}}</p>
-          <p >{{item.puntuacion}} puntos</p>
+          <div *ngIf="edit; else notAdmin">
+            <p (click)="setPoints(item.userid)" >{{item.puntuacion}} puntos *</p>
+          </div>
+          <ng-template #notAdmin>
+            <p>{{item.puntuacion}} puntos</p>
+          </ng-template>
+          
         </div>
       </ul>
     </div>

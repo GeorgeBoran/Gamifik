@@ -10,7 +10,7 @@ $conexion = Conexion(); // CREA LA CONEXION
 $ranking = $_GET['rankingName'];
 
 // REALIZA LA CONSULTA A LA DB
-$users = mysqli_query($conexion, "SELECT `User-ID`,`Puntuación` FROM `$ranking` ORDER BY `Puntuación`;");
+$users = mysqli_query($conexion, "SELECT `User-ID`,`Puntuación` FROM `$ranking` ORDER BY `Puntuación` Desc;");
 $check = mysqli_num_rows($users);
 
 if ($check > 0) {

@@ -53,6 +53,8 @@ export class ListarRankingsComponent implements OnInit {
 
   selectRanking(id: number) {
     if (this.tipoAccount) {
+      this.newSelect.emit(this.rankings[id].nombre);
+      localStorage.setItem('rankingSelected', this.rankings[id].nombre);
       this.router.navigate(['/ranking']);
     } else {
       if (this.rankingSelected == id) {
