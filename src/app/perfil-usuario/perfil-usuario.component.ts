@@ -14,7 +14,9 @@ import { user } from '../user';
 })
 export class PerfilUsuarioComponent implements OnInit {
   verify: boolean = false;
+
   account: user | any = {};
+
   localUsername: string = '';
   rankingSelected: string | null | undefined;
   addUserData: { rankingName: string | null | undefined; username: string } = {
@@ -83,7 +85,14 @@ export class PerfilUsuarioComponent implements OnInit {
           showCancelButton: true,
         });
         if (rankingName) {
-          Swal.fire('Ranking Name!');
+          this.Sranking.editRankingName(
+            this.rankingSelected,
+            rankingName
+          ).subscribe((datos: any) => {
+            if (datos == 'Correcto!') {
+              window.location.reload();
+            }
+          });
         }
       });
     }
@@ -101,6 +110,7 @@ export class PerfilUsuarioComponent implements OnInit {
           (datos: any) => {
             if (datos == 'Ranking eliminado!') {
               Swal.fire('Ranking Eliminado!', '', 'success');
+              window.location.reload();
             }
           }
         );

@@ -20,6 +20,15 @@ export class RakingService {
     );
   }
 
+  editRankingName(
+    oldRankingName: string | null | undefined,
+    newRankingName: string
+  ) {
+    return this.http.get(
+      `${this.URL}editRankingName.php?oldName=${oldRankingName}&newName=${newRankingName}`
+    );
+  }
+
   downloadUser(id: number) {
     return this.http.get(`${this.URL}downloadUserInfo.php?idUser=${id}`);
   }

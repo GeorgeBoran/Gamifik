@@ -47,16 +47,17 @@
                 <p class="pes">Email:{{account.mail}}</p>
                 <div class="edit" alt=""></div>
               </div>
+
               <div *ngIf="account.tipo; else isCentro">
                 <div class="flex hover-pes" (click)="editFecha()">
-                  <p class="pes  distancia-1em">Fecha: {{account.option}}</p>
-                  <div class="edit" alt=""></div>
+                  <p class="pes  distancia-1em" (click)="editFecha()" >Fecha: {{account.option}}</p>
+                  <div class="edit" alt="" (click)="editFecha()"></div>
                 </div>
               </div>
               <ng-template #isCentro>
                 <div class="flex hover-pes" (click)="editCenter()">
-                  <p class="pes  distancia-1em">Centro: {{account.option}}</p>
-                  <div class="edit" alt=""></div>
+                  <p class="pes  distancia-1em" (click)="editCenter()" >Centro: {{account.option}}</p>
+                  <div class="edit" alt="" (click)="editCenter()"></div>
                 </div>
               </ng-template>
 
