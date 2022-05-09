@@ -9,17 +9,17 @@
       </div>
 
       <div class="caja-imputs grid flex">
-        <h1 class="flex distancia-05em">Conectate</h1>
-        <h3 class="flex distancia-1em">Utiliza una Cuenta Goat</h3>
+        <h1 class="flex distancia-05em h11">Conectate</h1>
+        <h3 class="flex distancia-1em h33">Utiliza una Cuenta Goat</h3>
         <div class="flex">
           <input class="inputs distancia-input-04em" type="text" name="username" [(ngModel)]="username"
-            placeholder="Username" (keydown.enter)='loguear()'/>
+            placeholder="Username" (keydown.enter)='loguear()' />
         </div>
 
         <div class="flex caja-ojo-contra">
           <i class="far {{eye}}" (click)="mostrarContrasena()"></i>
           <input class="inputs flex" [type]="mostrarContra?'text':'password'" name="password" [(ngModel)]="password"
-            placeholder="Password" (keydown.enter)='loguear()'/>
+            placeholder="Password" (keydown.enter)='loguear()' />
         </div>
 
         <div class="flex boton-seguir">

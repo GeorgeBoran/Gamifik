@@ -1,10 +1,14 @@
 .hiper-link {
   color: rgb(0, 0, 0);
-  font-size: large;
+  font-size: small;
 }
 
 .parte-arriba {
   caret-color: transparent;
+}
+.h33,
+.h11 {
+  font-size: medium;
 }
 
 .caja-extras {
@@ -208,6 +212,9 @@
   }
   .espacio {
     width: 220px;
+  }
+  .hiper-link {
+    font-size: medium;
   }
 }
 
