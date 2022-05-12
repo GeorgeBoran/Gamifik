@@ -32,7 +32,6 @@ export class ListarRankingsComponent implements OnInit {
         showCancelButton: true,
       });
       if (rankingName) {
-        Swal.fire('Ranking Name!');
         this.dataNewRanking = {
           rankingName: rankingName,
           idUser: this.idUser,
@@ -42,6 +41,15 @@ export class ListarRankingsComponent implements OnInit {
             if (datos == 'Creacion correcta') {
               Swal.fire('Ranking creado!');
               window.location.reload();
+            } else if ('No Valido!') {
+              Swal.fire({
+                title: 'Nombre de ranking no valido Ranking!',
+                confirmButtonText: 'Ok',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  this.addRanking();
+                }
+              });
             } else {
               Swal.fire('Error al crear Ranking!');
             }
