@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { RakingService } from 'src/app/services/raking.service';
 import { user } from 'src/app/user';
 import Swal from 'sweetalert2';
+import { SoftSkills } from 'src/app/skills';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-visualizar-ranking',
@@ -19,6 +21,21 @@ export class VisualizarRankingComponent implements OnInit {
     img: string;
     username: string;
   }[] = [];
+
+
+
+  skillID:any = 0;
+  skillName:any = '';
+  submitted:boolean = false;
+
+   atributosSkill:
+    | {
+        skillName: string;
+        imgSkill: string;
+        descSkill: string;
+      }
+    | any;
+
 
   constructor(private router: Router, private Sranking: RakingService) {}
 
@@ -80,6 +97,7 @@ export class VisualizarRankingComponent implements OnInit {
             this.edit
         );
       }
+
     );
 
     this.Sranking.usersRanking(this.rankingName).subscribe((datos: any) => {
@@ -103,7 +121,12 @@ export class VisualizarRankingComponent implements OnInit {
         }
       }
     });
+
+
+
   }
+
+
 
   volverTop() {
     window.scroll({
@@ -113,29 +136,6 @@ export class VisualizarRankingComponent implements OnInit {
     });
   }
 
-  varPrueba: string = 'Funciona';
-
-  pruebaSweet() {
-    Swal.fire({
-      imageUrl: '../../assets/emocional.webp',
-      title: 'Medalla X',
-      width: 600,
-      heightAuto: false,
-      padding: '3em',
-      color: '#716add',
-      imageHeight: 200,
-      showConfirmButton: true,
-      showCancelButton: true,
-      text: 'Descripcion de la medalla',
-      html: '<link rel="stylesheet" href="visualizar-ranking.component.css">',
-      backdrop: `
-        rgba(0,0,123,0.4)
-        url('../../assets/cooperacion.webp')
-        left top
-        no-repeat
-      `,
-    });
-  }
 
   mostrarMenu: boolean = false;
   cancel: boolean = false;
@@ -151,13 +151,7 @@ export class VisualizarRankingComponent implements OnInit {
     }
   }
 
-  public atributosSkill:
-    | {
-        skillName: string;
-        imgSkill: string;
-        descSkill: string;
-      }
-    | any;
+
 
   softSkills(skill: number) {
     //Se inicializa el objeto popupDatos
@@ -172,7 +166,6 @@ export class VisualizarRankingComponent implements OnInit {
       this.atributosSkill.imgSkill = './assets/responsabilidad.webp';
       this.atributosSkill.descSkill =
         'Habilidad de lograr con calidad las tareas asignadas, en el lugar y el momento adecuados, con el objetivo de responder a nuestros compromisos y respetando las normas acordadas.';
-      console.log(this.atributosSkill.skillName);
     } else if (skill == 2) {
       this.atributosSkill.skillName = 'Cooperación';
       this.atributosSkill.imgSkill = './assets/cooperacion.webp';
@@ -194,23 +187,166 @@ export class VisualizarRankingComponent implements OnInit {
       this.atributosSkill.descSkill =
         'Habilidad de relacionar, cuestionar, generar y exponer ideas.';
     }
+
   }
 
-  otorgarMedalla() {
-    Swal.fire({
-      icon: 'warning',
-      title: 'Estas seguro, una vez otorgada la medalla no se podra revertir?',
-      showConfirmButton: true,
-      showDenyButton: true,
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire('Se le ha otorgado la medalla al alumno!', '', 'success');
-        this.cerrarMenu();
-      } else if (result.isDenied) {
-        Swal.fire('Los cambios no se han guardado', '', 'info');
+
+  setSkill1(user:number){
+    new Promise(async (resolve, reject) => {
+      const { value: skills } = await Swal.fire({
+        icon: 'warning',
+        title: 'Estas seguro, una vez otorgada la medalla no se podra revertir?',
+        showConfirmButton: true,
+        showDenyButton: true,
+      });
+      if (skills) {
+        this.Sranking.setResponsabilidad(this.rankingName, user, skills).subscribe(
+          (datos: any) => {
+            if (datos == 'Correcto!') {
+              Swal.fire({
+                title: 'Se le ha otorgado la medalla al alumno!',
+                showDenyButton: false,
+                showCancelButton: false,
+                confirmButtonText: 'OK',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.reload();
+                }
+              });
+            } else {
+              Swal.fire('Error!');
+            }
+          }
+        );
       }
     });
   }
 
-  condecorarAlumno() {}
+  setSkill2(user:number){
+    new Promise(async (resolve, reject) => {
+      const { value: skills } = await Swal.fire({
+        icon: 'warning',
+        title: 'Estas seguro, una vez otorgada la medalla no se podra revertir?',
+        showConfirmButton: true,
+        showDenyButton: true,
+      });
+      if (skills) {
+        this.Sranking.setCooperacion(this.rankingName, user, skills).subscribe(
+          (datos: any) => {
+            if (datos == 'Correcto!') {
+              Swal.fire({
+                title: 'Se le ha otorgado la medalla al alumno!',
+                showDenyButton: false,
+                showCancelButton: false,
+                confirmButtonText: 'OK',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.reload();
+                }
+              });
+            } else {
+              Swal.fire('Error!');
+            }
+          }
+        );
+      }
+    });
+  }
+
+  setSkill3(user:number){
+    new Promise(async (resolve, reject) => {
+      const { value: skills } = await Swal.fire({
+        icon: 'warning',
+        title: 'Estas seguro, una vez otorgada la medalla no se podra revertir?',
+        showConfirmButton: true,
+        showDenyButton: true,
+      });
+      if (skills) {
+        this.Sranking.setAutonomia(this.rankingName, user, skills).subscribe(
+          (datos: any) => {
+            if (datos == 'Correcto!') {
+              Swal.fire({
+                title: 'Se le ha otorgado la medalla al alumno!',
+                showDenyButton: false,
+                showCancelButton: false,
+                confirmButtonText: 'OK',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.reload();
+                }
+              });
+            } else {
+              Swal.fire('Error!');
+            }
+          }
+        );
+      }
+    });
+  }
+
+
+  setSkill4(user:number){
+    new Promise(async (resolve, reject) => {
+      const { value: skills } = await Swal.fire({
+        icon: 'warning',
+        title: 'Estas seguro, una vez otorgada la medalla no se podra revertir?',
+        showConfirmButton: true,
+        showDenyButton: true,
+      });
+      if (skills) {
+        this.Sranking.setEmocional(this.rankingName, user, skills).subscribe(
+          (datos: any) => {
+            if (datos == 'Correcto!') {
+              Swal.fire({
+                title: 'Se le ha otorgado la medalla al alumno!',
+                showDenyButton: false,
+                showCancelButton: false,
+                confirmButtonText: 'OK',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.reload();
+                }
+              });
+            } else {
+              Swal.fire('Error!');
+            }
+          }
+        );
+      }
+    });
+  }
+
+  setSkill5(user:number){
+    new Promise(async (resolve, reject) => {
+      const { value: skills } = await Swal.fire({
+        icon: 'warning',
+        title: 'Estas seguro, una vez otorgada la medalla no se podra revertir?',
+        showConfirmButton: true,
+        showDenyButton: true,
+      });
+      if (skills) {
+        this.Sranking.setPensamiento(this.rankingName, user, skills).subscribe(
+          (datos: any) => {
+            if (datos == 'Correcto!') {
+              Swal.fire({
+                title: 'Se le ha otorgado la medalla al alumno!',
+                showDenyButton: false,
+                showCancelButton: false,
+                confirmButtonText: 'OK',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.reload();
+                }
+              });
+            } else {
+              Swal.fire('Error!');
+            }
+          }
+        );
+      }
+    });
+  }
+
+
+
 }

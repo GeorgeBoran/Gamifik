@@ -5,7 +5,7 @@ global $enlace; //variable de tipo global para llamarla en cualquier parte de la
 
 function conexion()
 {
-    $enlace = mysqli_connect('localhost', 'root', '', 'goat'); //conexion con la base de datos
+    $enlace = mysqli_connect('localhost', 'root', '', 'goatprueba'); //conexion con la base de datos
     mysqli_set_charset($enlace, "utf8");
 
     if (!$enlace) {

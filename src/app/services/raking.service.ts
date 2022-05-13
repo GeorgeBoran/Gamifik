@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { SoftSkills } from '../skills';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RakingService {
-  URL = 'http://localhost/Gamifica/Gamifik-master/src/app/API/';
+  URL = 'http://localhost/';
   constructor(private http: HttpClient) {}
 
   comprobarRanking(rankingName: string) {
@@ -78,5 +79,30 @@ export class RakingService {
     username: string;
   }) {
     return this.http.post(`${this.URL}addUsers.php`, JSON.stringify(datos));
+  }
+  public getSkills(skillID:number, skillName:string){
+    return this.http.get(`${this.URL}getSkills.php?skillID=${skillID}skillName=${skillName}`, {responseType: 'text'});
+  }
+
+
+
+  public setResponsabilidad(rankingName: string | null | undefined, user: number, responsabilidad:number){
+    return this.http.get(`${this.URL}setSkill1.php?rankingName=${rankingName}&user=${user}&responsabilidad=${responsabilidad}`);
+  }
+
+  public setCooperacion(rankingName: string | null | undefined, user: number, cooperacion:number){
+    return this.http.get(`${this.URL}setSkill2.php?rankingName=${rankingName}&user=${user}&cooperacion=${cooperacion}`);
+  }
+
+  public setAutonomia(rankingName: string | null | undefined, user: number, autonomia:number){
+    return this.http.get(`${this.URL}setSkill3.php?rankingName=${rankingName}&user=${user}&autonomia_iniciativa=${autonomia}`);
+  }
+
+  public setEmocional(rankingName: string | null | undefined, user: number, gestion_emocional:number){
+    return this.http.get(`${this.URL}setSkill4.php?rankingName=${rankingName}&user=${user}&gestion_emocional=${gestion_emocional}`);
+  }
+
+  public setPensamiento(rankingName: string | null | undefined, user: number, habilidad_pensamiento:number){
+    return this.http.get(`${this.URL}setSkill5.php?rankingName=${rankingName}&user=${user}&habilidad_pensamiento=${habilidad_pensamiento}`);
   }
 }

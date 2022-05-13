@@ -12,9 +12,7 @@
           <img class="usuario-foto" src="{{item.img}}">
         </div>
         <div class="skills">
-          <img width="70px" src="../../assets/emocional.webp" alt="">
           <img width="70px" src="../../assets/cooperacion.webp" alt="">
-          <img width="70px" src="../../assets/emocional.webp" alt="">
         </div>
       </div>
 
@@ -30,10 +28,13 @@
           <ng-template #notAdmin>
             <p>{{item.puntuacion}} puntos</p>
           </ng-template>
-          
+
         </div>
       </ul>
     </div>
+
+
+
     </ng-template>
     <div class="caja-boton-atras">
       <div class="boton flex" (click)="volverTop()">
@@ -56,11 +57,17 @@
         </ul>
       </div>
       <div class="popup">
+
         <h1>{{atributosSkill.skillName}}</h1>
         <img class="popupIMG" src="{{atributosSkill.imgSkill}}" alt="">
         <p class="par">{{atributosSkill.descSkill}}</p>
-        <button class="confirmBtn botones" (click)="otorgarMedalla()">Condecorar</button>
+        <ng-template ngFor let-item [ngForOf]="users" let-i>
+
+          <button class="confirmBtn botones"(click)="setSkill1(item.userid)">Condecorar</button>
+
+        </ng-template>
         <button class="denyBtn botones" (click)="cerrarMenu()">Cancelar</button>
+
       </div>
     </div>
   </div>
