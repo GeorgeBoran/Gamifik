@@ -55,7 +55,7 @@ export class PerfilUsuarioComponent implements OnInit {
               Swal.fire('Usuario eliminado del Ranking!');
             } else if (datos == 'Usuario creador!') {
               Swal.fire('No se puede eliminar al usuario creador!');
-            } else if (datos == 'Usuario no registrado!') {
+            } else if (datos == 'User no valido!') {
               Swal.fire({
                 title: 'Usuario no encontrado !',
                 confirmButtonText: 'Ok',
@@ -66,7 +66,6 @@ export class PerfilUsuarioComponent implements OnInit {
               });
             }
           });
-          Swal.fire('Usuario eliminado!');
         }
       });
     }
@@ -91,6 +90,15 @@ export class PerfilUsuarioComponent implements OnInit {
           ).subscribe((datos: any) => {
             if (datos == 'Correcto!') {
               window.location.reload();
+            } else if (datos == 'No Valido!') {
+              Swal.fire({
+                title: 'Nombre de Ranking no valido!',
+                confirmButtonText: 'Ok',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  this.editRanking();
+                }
+              });
             }
           });
         }
@@ -100,7 +108,10 @@ export class PerfilUsuarioComponent implements OnInit {
 
   deleteRanking() {
     Swal.fire({
-      title: 'Seguro que quieres eliminar el Ranking?',
+      title:
+        'Seguro que quieres eliminar el Ranking "' +
+        this.rankingSelected +
+        '" ?',
       showDenyButton: false,
       showCancelButton: true,
       confirmButtonText: 'Borrar',
@@ -193,10 +204,10 @@ export class PerfilUsuarioComponent implements OnInit {
   editCenter() {
     return new Promise(async (resolve, reject) => {
       const { value: center } = await Swal.fire({
-        title: 'Enter new email',
+        title: 'Enter new center name',
         input: 'text',
-        inputLabel: 'Intorduce el nuevo mail.',
-        inputPlaceholder: 'Enter your new email',
+        inputLabel: 'Intorduce el nuevo nombre de centro.',
+        inputPlaceholder: 'Enter your new center name',
         showCancelButton: true,
       });
       if (center) {

@@ -1,10 +1,14 @@
 .hiper-link {
   color: rgb(0, 0, 0);
-  font-size: large;
+  font-size: small;
 }
 
 .parte-arriba {
   caret-color: transparent;
+}
+.h33,
+.h11 {
+  font-size: medium;
 }
 
 .caja-extras {
@@ -47,7 +51,6 @@
   text-align: center;
   -webkit-border-radius: 4px;
   border-radius: 30px;
-  font-size: 16px;
   height: 48px;
   width: 100%;
   padding: 13px 15px;
@@ -208,6 +211,13 @@
   }
   .espacio {
     width: 220px;
+  }
+  .hiper-link {
+    font-size: medium;
+  }
+  .h11,
+  .h33 {
+    font-size: larger;
   }
 }
 

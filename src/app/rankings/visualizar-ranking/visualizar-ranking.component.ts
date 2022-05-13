@@ -40,6 +40,21 @@ export class VisualizarRankingComponent implements OnInit {
   constructor(private router: Router, private Sranking: RakingService) {}
 
   setPoints(user: number) {
+    /* Swal.fire({
+      title: 'Enter your name',
+      input: 'number',
+      showCancelButton: true,
+      customClass: {
+        validationMessage: 'my-validation-message',
+      },
+      preConfirm: (value) => {
+        if (!value) {
+          Swal.showValidationMessage('Your name is required');
+        } else if (Number.isInteger(value)) {
+          Swal.showValidationMessage('Your name is required2');
+        }
+      },
+    }); */
     new Promise(async (resolve, reject) => {
       const { value: points } = await Swal.fire({
         title: 'Set Points',
@@ -47,26 +62,37 @@ export class VisualizarRankingComponent implements OnInit {
         inputLabel: 'Intorduce los puntos para este usuario.',
         inputPlaceholder: 'Points',
         showCancelButton: true,
+        customClass: {
+          validationMessage: 'my-validation-message',
+        },
       });
       if (points) {
-        this.Sranking.setPoints(this.rankingName, user, points).subscribe(
-          (datos: any) => {
-            if (datos == 'Correcto!') {
-              Swal.fire({
-                title: 'Set Points!',
-                showDenyButton: false,
-                showCancelButton: false,
-                confirmButtonText: 'OK',
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  window.location.reload();
-                }
-              });
-            } else {
-              Swal.fire('Error!');
+        Swal.showValidationMessage('Letras no validas!');
+        if (Number.isInteger(points)) {
+          Swal.showValidationMessage('Your name is required2');
+        } else {
+          this.Sranking.setPoints(this.rankingName, user, points).subscribe(
+            (datos: any) => {
+              if (datos == 'Correcto!') {
+                Swal.fire({
+                  title: 'Set Points!',
+                  showDenyButton: false,
+                  showCancelButton: false,
+                  confirmButtonText: 'OK',
+                  customClass: {
+                    validationMessage: 'my-validation-message',
+                  },
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    window.location.reload();
+                  }
+                });
+              } else {
+                Swal.fire('Error!');
+              }
             }
-          }
-        );
+          );
+        }
       }
     });
   }

@@ -9,6 +9,8 @@ $conexion = Conexion(); // CREA LA CONEXION
 $datos = file_get_contents("php://input");
 $datos = json_decode($datos);
 
+$sql3 = mysqli_query($conexion, "SELECT * FROM `rankings` WHERE `rankings`.`Nombre` = '" . $datos->rankingName . "';");
+$check = mysqli_num_rows($sql3);
 
 $sql1 = "CREATE TABLE `goat`.`$datos->rankingName` ( `ID` INT NOT NULL AUTO_INCREMENT , `User-ID` INT NOT NULL ,
 `Puntuación` INT NOT NULL , `Fecha de Inicio` DATE NOT NULL , `responsabilidad` INT NOT NULL , `cooperacion` INT NOT NULL, `autonomia_iniciativa` INT NOT NULL , `gestion_emocional` INT NOT NULL, `habilidad_pensamiento` INT NOT NULL, PRIMARY KEY (`ID`)) ENGINE = InnoDB;";
@@ -16,11 +18,14 @@ $sql1 = "CREATE TABLE `goat`.`$datos->rankingName` ( `ID` INT NOT NULL AUTO_INCR
 $sql2 = "INSERT INTO `rankings`(`Nombre`,`Creador`)
 VALUES ('$datos->rankingName','$datos->idUser')";
 
-$addRanking = mysqli_query($conexion, $sql1);
-$registerRanking = mysqli_query($conexion, $sql2);
+    $addRanking = mysqli_query($conexion, $sql1);
+    $registerRanking = mysqli_query($conexion, $sql2);
 
-if (!$addRanking) {
-    echo json_encode('Error.');
-} else {
-    echo json_encode('Creacion correcta');
+    if (!$addRanking) {
+        echo json_encode('Error.');
+    } else {
+        echo json_encode('Creacion correcta');
+    }
+ else {
+    echo json_encode('No Valido!');
 }
