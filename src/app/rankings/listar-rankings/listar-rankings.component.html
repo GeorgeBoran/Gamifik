@@ -1,17 +1,23 @@
 <div class="container ">
 
-  <ul class="tabla-titulo " >
+  <ul class="tabla-titulo ">
     <li class="tabla-header">
       <div class="col col-1">nr.</div>
       <div class="col col-2">nombre</div>
       <div class="col col-3">creado</div>
-      <div class="iconos anadir" *ngIf="!tipoAccount" (click)="addRanking()">
-        <a>+</a>
+      <div class="flex">
+        <div class="col col-4 iconos  anadir" *ngIf="!tipoAccount" (click)="addRanking()">
+          <a></a>
+        </div>
       </div>
     </li>
   </ul>
-
   <ul class="tabla-cuerpo">
+    <div class="flex derecha">
+      <div class="iconos anadir" *ngIf="!tipoAccount" (click)="addRanking()">
+        <a></a>
+      </div>
+    </div>
     <ng-template ngFor let-item [ngForOf]="rankings" let-i="index">
       <li class="tabla-fila" (click)="selectRanking(i)" style='{{item.select}}'>
         <div class="col col-1" data-label="Nr.">{{i+1}}</div>

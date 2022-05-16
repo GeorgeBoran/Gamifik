@@ -13,7 +13,26 @@
   letter-spacing: 0.03em;
   border-radius: 10px;
 }
-
+.iconos {
+  border-radius: 50%;
+  background-color: #ffffffb8;
+  min-height: 30px;
+  min-width: 30px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 0.2s ease;
+  justify-self: right;
+}
+.derecha {
+  justify-content: right;
+}
+.anadir {
+  background-image: url(../../../assets/add-circle-outline.png);
+}
+.anadir:hover {
+  background-image: url(../../../assets/add-circle.png);
+}
 .tabla-titulo {
   height: 10%;
   padding: 0em 1em;
@@ -54,12 +73,19 @@ li {
   flex-basis: 10%;
 }
 .col-2 {
-  flex-basis: 70%;
+  flex-basis: 60%;
 }
 .col-3 {
   flex-basis: 25%;
 }
-
+.col-4 {
+  flex-basis: 10%;
+}
+@media all and (min-width: 767px) {
+  .derecha {
+    display: none;
+  }
+}
 @media all and (max-width: 767px) {
   .tabla-titulo {
     display: none;

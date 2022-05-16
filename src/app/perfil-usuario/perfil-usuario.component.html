@@ -50,13 +50,13 @@
 
               <div *ngIf="account.tipo; else isCentro">
                 <div class="flex hover-pes" (click)="editFecha()">
-                  <p class="pes  distancia-1em" (click)="editFecha()" >Fecha: {{account.option}}</p>
+                  <p class="pes  distancia-1em" (click)="editFecha()">Fecha: {{account.option}}</p>
                   <div class="edit" alt="" (click)="editFecha()"></div>
                 </div>
               </div>
               <ng-template #isCentro>
                 <div class="flex hover-pes" (click)="editCenter()">
-                  <p class="pes  distancia-1em" (click)="editCenter()" >Centro: {{account.option}}</p>
+                  <p class="pes  distancia-1em" (click)="editCenter()">Centro: {{account.option}}</p>
                   <div class="edit" alt="" (click)="editCenter()"></div>
                 </div>
               </ng-template>
@@ -71,28 +71,29 @@
         <div class="caja-derecha">
 
 
-          <app-listar-rankings class="caja-ranking" (newSelect)="selectRanking($event)" [tipoAccount]="account.tipo" [idUser]="account.id"></app-listar-rankings>
-            <div  *ngIf="!account.tipo;" >
-              <div class="caja-ranking-iconos flex" *ngIf="rankingSelected!=null" >
-                  <div class="iconos anadir" (click)="addUser()">
-                    <a></a>
-                  </div>
-                  <div class="iconos anadir" (click)="deleteUser()">
-                    <a></a>
-                  </div>
-                  <div class="iconos editar" (click)="editRanking()">
-                    <a></a>
-                  </div>
-                  <div class="iconos borrar" (click)="deleteRanking()">
-                    <a></a>
-                  </div>
-
-         
+          <app-listar-rankings class="caja-ranking" (newSelect)="selectRanking($event)" [tipoAccount]="account.tipo"
+            [idUser]="account.id"></app-listar-rankings>
+          <div *ngIf="!account.tipo;">
+            <div class="caja-ranking-iconos flex" *ngIf="rankingSelected!=null">
+              <div class="iconos eliminar" (click)="deleteUser()">
+                <a></a>
               </div>
+              <div class="iconos anadir" (click)="addUser()">
+                <a></a>
+              </div>
+              <div class="iconos editar" (click)="editRanking()">
+                <a></a>
+              </div>
+              <div class="iconos borrar" (click)="deleteRanking()">
+                <a></a>
+              </div>
+
+
             </div>
           </div>
-
         </div>
+
       </div>
     </div>
   </div>
+</div>

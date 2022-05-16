@@ -107,6 +107,13 @@
 .anadir {
   background-image: url(../../assets/add-circle-outline.png);
 }
+.eliminar {
+  background-image: url(../../assets/minus-circle-outline.png);
+}
+.eliminar:hover {
+  background-image: url(../../assets/minus-circle.png);
+}
+
 .anadir:hover {
   background-image: url(../../assets/add-circle.png);
 }
